@@ -6,19 +6,20 @@ import java.util.Scanner;
 
 public class CourseAdmin {
 
-    private  String findFile = null;
-    private  ArrayList<String> list;
+    //private  String findFile = null;
+    //private  ArrayList<String> list;
 
     public void getCourse() throws FileNotFoundException{
-        Scanner sc = new Scanner(System.in);
+        //Scanner sc = new Scanner(System.in);
         CourseList cList = new CourseList();
+        cList.getHCourse("725G00")
 
         //Hämtar listan över kurser
         //findFile = "courseID.txt";
         //String content = new Scanner(new File(findFile)).useDelimiter("\\Z").next();
         //Filens innehåll --> array
         //list = new ArrayList<>(Arrays.asList(content.split("\n")));
-        while(true) {
+        /*while(true) {
             //System.out.println(list);
             //System.out.println("Which course would you like to view?\nIf you would like to end the session write \"end\".");
             //Välj relevant
@@ -41,5 +42,6 @@ public class CourseAdmin {
             }
         }
         public
+        */
     }
 }
