@@ -13,7 +13,7 @@ public class CourseAdmin {
         //Scanner sc = new Scanner(System.in);
         CourseList cList = new CourseList();
         cList.getHCourse("725G00");
-
+        //lel
 
         //Hämtar listan över kurser
         //findFile = "courseID.txt";
