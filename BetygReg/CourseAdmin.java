@@ -1,6 +1,7 @@
 package BetygReg;
 
 import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class CourseAdmin {
 
@@ -8,11 +9,12 @@ public class CourseAdmin {
     //private  ArrayList<String> list;
 
     public void getCourseList() throws FileNotFoundException{
-        //Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         CourseList cList = new CourseList("test");
+        System.out.print("Choose course:");
 
         //Tester
-        System.out.println(cList.getHCourse("725G00").getAssignmentHList().get("0").getName());
+        //System.out.println(cList.getHCourse("725G00").getAssignmentHList().get("0").getName());
         //System.out.println(cList.getHCourse("725G01").getStudentList().get("0").getGradeObject().getGrade());
         //cList.getHCourse("725G01").getStudentList().get("0").getGradeObject().setGrade("VG");
 
@@ -23,6 +25,8 @@ public class CourseAdmin {
 
        // cList.getHCourse("725G00").getStudentList().getStudentHashMap().;
                 String students = "";
+
+        String input = sc.nextLine();
 
 
 /*        Iterator it = cList.getHCourse("725G00").getStudentList().getStudentHashMap().entrySet().iterator();

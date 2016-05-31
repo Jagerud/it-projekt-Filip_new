@@ -18,7 +18,7 @@ public class Student {
 	/*public String getGradeObject(){
 		return grade;
 	} */
-	public void alterGrade(){
+	public void alterGrade(){ //TODO where the fuck=?!==!=!
 		System.out.println("Set grade. (u, g, vg)");
 		Scanner sc = new Scanner(System.in);
 		gradeObject.setGrade(sc.nextLine().toLowerCase());

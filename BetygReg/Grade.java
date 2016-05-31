@@ -45,5 +45,6 @@ public class Grade {
         if(grade.compareTo(grades[0])==0 || grade.compareTo(grades[1])==0 || grade.compareTo(grades[2])==0) {
             this.grade = grade;
         }
+
 	}
 }
