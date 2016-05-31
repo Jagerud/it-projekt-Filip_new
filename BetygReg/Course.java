@@ -14,9 +14,13 @@ public class Course {
     public Course(String name){
         this.name = name;
     }
-    public HashMap<String,Student> getStudentList(){     //returnerar Studentobjekt i en arraylist
+    /*public HashMap<String,Student> getStudentList(){     //returnerar Studentobjekt i en arraylist
         return sList.getStudentHashMap();
+ */
+    public StudentList getStudentList(){
+        return sList;
     }
+
     public String getStudents(){
         String students = "";
 
@@ -30,7 +34,7 @@ public class Course {
         }
         return students;
     }
-    public HashMap<String, Assignment> getAssignementHList(){ //returnerar Assignmentobjekt i hashmap
+    public HashMap<String, Assignment> getAssignmentHList(){ //returnerar Assignmentobjekt i hashmap
         return aList.getAssignmentHList();
     }
 
