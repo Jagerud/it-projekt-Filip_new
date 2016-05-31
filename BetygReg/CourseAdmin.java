@@ -1,6 +1,8 @@
 package BetygReg;
 
 import java.io.FileNotFoundException;
+import java.util.Iterator;
+import java.util.Map;
 
 public class CourseAdmin {
 
@@ -13,15 +15,27 @@ public class CourseAdmin {
 
         //Tester
         System.out.println(cList.getHCourse("725G00").getAssignementHList().get("0").getName());
-        System.out.println(cList.getHCourse("725G01").getStudentList().get("0").getGradeObject().getGrade());
-        cList.getHCourse("725G01").getStudentList().get("0").getGradeObject().setGrade("VG");
+        //System.out.println(cList.getHCourse("725G01").getStudentList().get("0").getGradeObject().getGrade());
+        //cList.getHCourse("725G01").getStudentList().get("0").getGradeObject().setGrade("VG");
 
-        System.out.println(cList.getHCourse("725G01").getStudentList().get("0").getGradeObject().getGrade());
+        //System.out.println(cList.getHCourse("725G01").getStudentList().get("0").getGradeObject().getGrade());
         System.out.println(cList.getCourses());
-        System.out.println(cList.getHCourse("725G00").getStudents()); //TODO inte kopplade till kurs?
+//        System.out.println(cList.getHCourse("725G00").getStudents()); //TODO inte kopplade till kurs?
+//        System.out.println(cList.getHCourse("725G00").getStudentList().getStudents());
+
+       // cList.getHCourse("725G00").getStudentList().getStudentHashMap().;
+                String students = "";
 
 
+/*        Iterator it = cList.getHCourse("725G00").getStudentList().getStudentHashMap().entrySet().iterator();
 
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry)it.next();
+            System.out.println(pair.getKey() + " = " + pair.getValue());
+            students = students + pair.getKey() +  ", ";
+            it.remove(); // avoids a ConcurrentModificationException
+        }
+*/
         //lel
 
         //Hämtar listan över kurser

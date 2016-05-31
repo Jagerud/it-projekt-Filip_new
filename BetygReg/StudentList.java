@@ -8,7 +8,7 @@ public class StudentList {
 	//private String findFile;
 	//private ArrayList<String> studentList;
 	//private ArrayList<String> list2 = new ArrayList<>();
-	private ArrayList<Student> studentList = new ArrayList<>(); //TODO Fyll med student
+	//private ArrayList<Student> studentList = new ArrayList<>(); //TODO Fyll med student
     private HashMap<String, Student> studentHashMap = new HashMap<>();
 
 	//private boolean loop;
@@ -86,8 +86,9 @@ public class StudentList {
     public HashMap<String,Student> getStudentHashMap(){
         return studentHashMap;
     }
-    /*public String getStudents(){
+    public String getStudents(){
             String students = "";
+
 
             Iterator it = studentHashMap.entrySet().iterator();
 
@@ -98,7 +99,8 @@ public class StudentList {
                 it.remove(); // avoids a ConcurrentModificationException
             }
             return students;
-        }*/
+        }
+
 
 	private void addBullShit(){
         Student shit1 = new Student("0","shit1");
