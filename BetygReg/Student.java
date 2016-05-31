@@ -3,8 +3,8 @@ import java.util.*;
 
 public class Student {
 
-	private String id;
-    private String name;
+	private String id=null;
+    private String name=null;
 	//private String grade;
 	private Grade gradeObject;
 

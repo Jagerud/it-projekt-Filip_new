@@ -10,10 +10,12 @@ public class StudentList {
 	//private ArrayList<String> list2 = new ArrayList<>();
 	//private ArrayList<Student> studentList = new ArrayList<>(); //TODO Fyll med student
     private HashMap<String, Student> studentHashMap = new HashMap<>();
+    private ArrayList<Student> studentsList = new ArrayList<>();
 
 	//private boolean loop;
 	//private Student current;
 	public StudentList(){
+        addBullShitList();
         addBullShit();
 	}
 	//TODO hämta alla studentobjekt och spara i en array kallad studentlist
@@ -83,29 +85,49 @@ public class StudentList {
 	/*public ArrayList<Student> getList(){
 		return studentList;
 	} */
+
     public void test(){
         System.out.println(studentHashMap.get("0").getName());
     }
     public HashMap<String,Student> getStudentHashMap(){
+
         return studentHashMap;
     }
+    /*
     public String getStudents(){
             String students = "";
-
 
             Iterator it = studentHashMap.entrySet().iterator();
 
             while (it.hasNext()) {
                 Map.Entry pair = (Map.Entry)it.next();
-                //System.out.println(pair.getKey() + " = " + pair.getValue());
+                System.out.println(pair.getKey() + " = " + pair.getValue());
+                pair.getValue().
                 students = students + pair.getKey() +  ", ";
                 it.remove(); // avoids a ConcurrentModificationException
             }
             return students;
         }
+*/
+    public String getStudents() {
+        String students = "";
+        for (int i = 0; i < studentsList.size(); i++) {
+            students = students + studentsList.get(i).getName() + ", ";
+        }
+        return students;
+    }
 
+	private void addBullShitList(){
+        Student shit1 = new Student("0","shit1");
+        Student shit2 = new Student("1","shit2");
+        Student shit3 = new Student("2","shit3");
+        studentsList.add(shit1);
+        studentsList.add(shit2);
+        studentsList.add(shit3);
 
-	private void addBullShit(){
+	}
+
+    private void addBullShit(){
         Student shit1 = new Student("0","shit1");
         Student shit2 = new Student("1","shit2");
         Student shit3 = new Student("2","shit3");
@@ -113,5 +135,5 @@ public class StudentList {
         studentHashMap.put(shit2.getId(),shit2);
         studentHashMap.put(shit3.getId(),shit3);
 
-	}
+    }
 }

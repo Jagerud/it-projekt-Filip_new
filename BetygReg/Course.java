@@ -26,11 +26,11 @@ public class Course {
     public String getName(){
         return name;
     }
-
+/*
     public String getStudents(){
         String students = "";
 
-        Iterator it = sList.getStudentHashMap().entrySet().iterator();
+        //Iterator it = sList.entrySet().iterator();
 
         while (it.hasNext()) {
             Map.Entry pair = (Map.Entry)it.next();
@@ -39,9 +39,12 @@ public class Course {
             it.remove(); // avoids a ConcurrentModificationException
         }
         return students;
-    }
+    } */
     public HashMap<String, Assignment> getAssignmentHList(){ //returnerar Assignmentobjekt i hashmap
         return aList.getAssignmentHList();
+    }
+    public HashMap<String, Student> getStudentHList(){ //returnerar Assignmentobjekt i hashmap
+        return sList.getStudentHashMap();
     }
 
 
