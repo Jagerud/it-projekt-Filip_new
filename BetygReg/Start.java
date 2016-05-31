@@ -7,6 +7,6 @@ public class Start {
         CourseAdmin courseAdmin = new CourseAdmin();
         courseAdmin.getCourseList();
 
-        //BAJSKORVCARL
+        //BAJSKORVFILIP
     }
 }
