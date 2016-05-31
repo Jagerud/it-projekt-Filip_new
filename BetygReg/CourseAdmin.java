@@ -22,7 +22,7 @@ public class CourseAdmin {
         //list = new ArrayList<>(Arrays.asList(content.split("\n")));
         /*while(true) {
             //System.out.println(list);
-            //System.out.println("Which course would you like to view?\nIf you would like to end the session write \"end\".");
+            //System.out.println("Which course would you ike to view?\nIf you would like to end the session write \"end\".");
             //Välj relevant
             //String cID = sc.nextLine();
             //cID = cID.toUpperCase();
