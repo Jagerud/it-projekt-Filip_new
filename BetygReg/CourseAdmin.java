@@ -1,20 +1,18 @@
 package BetygReg;
 
 import java.io.FileNotFoundException;
-import java.util.Iterator;
-import java.util.Map;
 
 public class CourseAdmin {
 
     //private  String findFile = null;
     //private  ArrayList<String> list;
 
-    public void getCourse() throws FileNotFoundException{
+    public void getCourseList() throws FileNotFoundException{
         //Scanner sc = new Scanner(System.in);
         CourseList cList = new CourseList("test");
 
         //Tester
-        System.out.println(cList.getHCourse("725G00").getAssignementHList().get("0").getName());
+        System.out.println(cList.getHCourse("725G00").getAssignmentHList().get("0").getName());
         //System.out.println(cList.getHCourse("725G01").getStudentList().get("0").getGradeObject().getGrade());
         //cList.getHCourse("725G01").getStudentList().get("0").getGradeObject().setGrade("VG");
 

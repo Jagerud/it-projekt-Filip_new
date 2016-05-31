@@ -34,7 +34,7 @@ public class Course {
         }
         return students;
     }
-    public HashMap<String, Assignment> getAssignementHList(){ //returnerar Assignmentobjekt i hashmap
+    public HashMap<String, Assignment> getAssignmentHList(){ //returnerar Assignmentobjekt i hashmap
         return aList.getAssignmentHList();
     }
 
