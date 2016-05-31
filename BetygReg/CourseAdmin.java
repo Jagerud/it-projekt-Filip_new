@@ -9,9 +9,9 @@ public class CourseAdmin {
     //private  ArrayList<String> list;
 
     public void getCourseList() throws FileNotFoundException{
-        Scanner sc = new Scanner(System.in);
+        //Scanner sc = new Scanner(System.in);
         CourseList cList = new CourseList("test");
-        System.out.print("Choose course:");
+        System.out.print("Choose course: ");
 
         //Tester
         //System.out.println(cList.getHCourse("725G00").getAssignmentHList().get("0").getName());
@@ -20,14 +20,15 @@ public class CourseAdmin {
 
         //System.out.println(cList.getHCourse("725G01").getStudentList().get("0").getGradeObject().getGrade());
         System.out.println(cList.getCourses());
-//        System.out.println(cList.getHCourse("725G00").getStudents()); //TODO inte kopplade till kurs?
-//        System.out.println(cList.getHCourse("725G00").getStudentList().getStudents());
+        //System.out.println(cList.getHCourse("725G00").getStudents()); //TODO inte kopplade till kurs?
+        //System.out.println(cList.getHCourse("725G00").getStudentList().getStudents());
 
-       // cList.getHCourse("725G00").getStudentList().getStudentHashMap().;
+        // cList.getHCourse("725G00").getStudentList().getStudentHashMap().;
                 String students = "";
 
-        String input = sc.nextLine();
+        //String input = sc.nextLine();
 
+        cList.getHCourse("725G00").printStudents();
 
 /*        Iterator it = cList.getHCourse("725G00").getStudentList().getStudentHashMap().entrySet().iterator();
 

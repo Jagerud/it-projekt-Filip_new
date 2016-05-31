@@ -14,9 +14,13 @@ public class Course {
     public Course(String name){
         this.name = name;
     }
+
+    public void printStudents() {
+        System.out.println(sList.getStudents());
+    }
     /*public HashMap<String,Student> getStudentList(){     //returnerar Studentobjekt i en arraylist
         return sList.getStudentHashMap();
- */
+
     public StudentList getStudentList(){
         return sList;
     }
@@ -33,10 +37,9 @@ public class Course {
             it.remove(); // avoids a ConcurrentModificationException
         }
         return students;
-    }
+    }*/
+
     public HashMap<String, Assignment> getAssignmentHList(){ //returnerar Assignmentobjekt i hashmap
         return aList.getAssignmentHList();
     }
-
-
 }

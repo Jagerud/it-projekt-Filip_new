@@ -5,14 +5,12 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/**
- * Created by Jaeger on 2016-05-30.
- */
 public class CourseList {
     private HashMap<String,Course> courseHash = new HashMap<>();
     private String name;
     //private ArrayList<Course> courseList = new ArrayList<>();
     //private Course activeCourse = new Course("725G00"); //manuell inmatning av första kurs, ska hätmas ifrån databas
+
     public CourseList(String name){
         this.name = name;
         //courseList.add(activeCourse); //Hämtar kurser ifrån databas? annars från här
@@ -38,7 +36,7 @@ public class CourseList {
     //public StudentList getStudentList(){
 
     //}
-    public String getCourses(){
+    public String getCourses() {
         String courses = "";
         /*for(int i=0;i<courseHash.size();i++ ) {
             courses = "" + courseHash.get(i) + " ";

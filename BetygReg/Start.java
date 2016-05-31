@@ -7,8 +7,8 @@ public class Start {
         CourseAdmin courseAdmin = new CourseAdmin();
         courseAdmin.getCourseList();
 
-        //Cepe
 
-        //heheh
+        //Course test = new Course("bajs");
+        //test.printStudents();
     }
 }

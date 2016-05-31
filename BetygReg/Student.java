@@ -15,9 +15,11 @@ public class Student {
 		gradeObject =  new Grade();
 		//grade2 = grades2;
 	}
+
 	/*public String getGradeObject(){
 		return grade;
 	} */
+
 	public void alterGrade(){ //TODO where the fuck=?!==!=!
 		System.out.println("Set grade. (u, g, vg)");
 		Scanner sc = new Scanner(System.in);
@@ -39,4 +41,3 @@ public class Student {
         return name;
     }
 }
-
