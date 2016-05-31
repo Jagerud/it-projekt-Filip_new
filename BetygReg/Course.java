@@ -14,23 +14,26 @@ public class Course {
     public Course(String name){
         this.name = name;
     }
+
+    public void printStudents() {
+        System.out.println(sList.getStudents());
+    }
+
+    public AssignmentList getaList() {
+        return aList;
+    }
+
     /*public HashMap<String,Student> getStudentList(){     //returnerar Studentobjekt i en arraylist
         return sList.getStudentHashMap();
- */
+
     public StudentList getStudentList(){
         return sList;
     }
-    public void poop(){
-        System.out.println("oioioioio");
-    }
-    public String getName(){
-        return name;
-    }
-/*
+
     public String getStudents(){
         String students = "";
 
-        //Iterator it = sList.entrySet().iterator();
+        Iterator it = sList.getStudentHashMap().entrySet().iterator();
 
         while (it.hasNext()) {
             Map.Entry pair = (Map.Entry)it.next();
@@ -39,13 +42,9 @@ public class Course {
             it.remove(); // avoids a ConcurrentModificationException
         }
         return students;
-    } */
+    }*/
+
     public HashMap<String, Assignment> getAssignmentHList(){ //returnerar Assignmentobjekt i hashmap
         return aList.getAssignmentHList();
     }
-    public HashMap<String, Student> getStudentHList(){ //returnerar Assignmentobjekt i hashmap
-        return sList.getStudentHashMap();
-    }
-
-
 }
