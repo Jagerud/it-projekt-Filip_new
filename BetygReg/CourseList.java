@@ -31,16 +31,16 @@ public class CourseList {
     public Course getHCourse(String nameKey){
         return courseHash.get(nameKey);
     }
-    public StudentList getStudentList(){
+    //public StudentList getStudentList(){
 
-    }
+    //}
     public void addBullshit(){
         Course shit1 = new Course("725G00 - Projektledningsmojelimoj");
         courseHash.put("725G00",shit1);
         Course shit2 = new Course("725G01 - Materialkunskap");
-        courseHash.put("725G01",shit1);
+        courseHash.put("725G01",shit2);
         Course shit3 = new Course("725G02 - Programmeringsskoj");
-        courseHash.put("725G02",shit1);
+        courseHash.put("725G02",shit3);
 
     }
 }
