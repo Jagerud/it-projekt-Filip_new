@@ -83,6 +83,9 @@ public class StudentList {
 	/*public ArrayList<Student> getList(){
 		return studentList;
 	} */
+    public void test(){
+        System.out.println(studentHashMap.get("0").getName());
+    }
     public HashMap<String,Student> getStudentHashMap(){
         return studentHashMap;
     }

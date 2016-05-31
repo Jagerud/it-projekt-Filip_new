@@ -1,6 +1,8 @@
 package BetygReg;
 
 import java.io.FileNotFoundException;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Scanner;
 
 public class CourseAdmin {
@@ -26,9 +28,14 @@ public class CourseAdmin {
        // cList.getHCourse("725G00").getStudentList().getStudentHashMap().;
                 String students = "";
 
-        String input = sc.nextLine();
+        //String input = sc.nextLine();
 
-
+        System.out.println(cList.getCourseList().get(0).getName());
+        //cList.getCourse().poop();
+        //System.out.println(cList.getCourse().getStudentList().getStudentHashMap().get("0").getName());
+        //cList.getHCourse("11").getName();
+        //cList.getHCourse("725G00").getName();
+        //System.out.println(cList.getHCourse("725G00").getAssignmentHList().get("0").getName());
 /*        Iterator it = cList.getHCourse("725G00").getStudentList().getStudentHashMap().entrySet().iterator();
 
         while (it.hasNext()) {
@@ -37,7 +44,7 @@ public class CourseAdmin {
             students = students + pair.getKey() +  ", ";
             it.remove(); // avoids a ConcurrentModificationException
         }
-*/
+        */
         //lel
 
         //Hämtar listan över kurser

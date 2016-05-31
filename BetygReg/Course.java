@@ -20,6 +20,12 @@ public class Course {
     public StudentList getStudentList(){
         return sList;
     }
+    public void poop(){
+        System.out.println("oioioioio");
+    }
+    public String getName(){
+        return name;
+    }
 
     public String getStudents(){
         String students = "";
