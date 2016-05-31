@@ -1,8 +1,6 @@
 package BetygReg;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 public class CourseAdmin {
 
@@ -11,8 +9,19 @@ public class CourseAdmin {
 
     public void getCourse() throws FileNotFoundException{
         //Scanner sc = new Scanner(System.in);
-        CourseList cList = new CourseList();
-        cList.getHCourse("725G00");
+        CourseList cList = new CourseList("test");
+
+        //Tester
+        System.out.println(cList.getHCourse("725G00").getAssignementHList().get("0").getName());
+        System.out.println(cList.getHCourse("725G01").getStudentList().get("0").getGradeObject().getGrade());
+        cList.getHCourse("725G01").getStudentList().get("0").getGradeObject().setGrade("VG");
+
+        System.out.println(cList.getHCourse("725G01").getStudentList().get("0").getGradeObject().getGrade());
+        System.out.println(cList.getCourses());
+        System.out.println(cList.getHCourse("725G00").getStudents()); //TODO inte kopplade till kurs?
+
+
+
         //lel
 
         //Hämtar listan över kurser
@@ -32,8 +41,8 @@ public class CourseAdmin {
                 if (sList.getList() == null) {
                     System.exit(1);
                 }
-                sList.getStudent().getGrade().saveGrade(sList.getList());
-                System.out.println(sList.getStudent().getGrade());
+                sList.getStudent().getGradeObject().saveGrade(sList.getList());
+                System.out.println(sList.getStudent().getGradeObject());
             }
             //Hämta studenter
             if (list.contains(cID)) {

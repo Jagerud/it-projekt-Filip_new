@@ -60,12 +60,12 @@ public class StudentList {
 			current.alterGrade();
 			for(int i = 0; i< studentList.size(); i++){
 				if(studentList.get(i).contains(cID+" "+inputedStudent)){
-					studentList.set(i, cID+" "+inputedStudent+" "+current.getGrade().getGrade());
+					studentList.set(i, cID+" "+inputedStudent+" "+current.getGradeObject().getGradeObject());
 				}
 			}
 			for(int i = 0; i<list2.size(); i++){
 				if(list2.get(i).contains(inputedStudent)){
-					list2.set(i, inputedStudent+" "+current.getGrade().getGrade());
+					list2.set(i, inputedStudent+" "+current.getGradeObject().getGradeObject());
 				}
 			}
 			//Allt utom "y" och "end" tolkas som nej.
@@ -76,7 +76,7 @@ public class StudentList {
 				list2.clear();
 			}
 			else if(findFile.toUpperCase().equals("END")){
-				current.getGrade().saveGrade(studentList);
+				current.getGradeObject().saveGrade(studentList);
 			}
 		}*/
 	}
@@ -86,7 +86,21 @@ public class StudentList {
     public HashMap<String,Student> getStudentHashMap(){
         return studentHashMap;
     }
-	public void addBullShit(){
+    /*public String getStudents(){
+            String students = "";
+
+            Iterator it = studentHashMap.entrySet().iterator();
+
+            while (it.hasNext()) {
+                Map.Entry pair = (Map.Entry)it.next();
+                //System.out.println(pair.getKey() + " = " + pair.getValue());
+                students = students + pair.getKey() +  ", ";
+                it.remove(); // avoids a ConcurrentModificationException
+            }
+            return students;
+        }*/
+
+	private void addBullShit(){
         Student shit1 = new Student("0","shit1");
         Student shit2 = new Student("1","shit2");
         Student shit3 = new Student("2","shit3");

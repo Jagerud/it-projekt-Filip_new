@@ -2,6 +2,8 @@ package BetygReg;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class Course {
     private String name;
@@ -14,6 +16,19 @@ public class Course {
     }
     public HashMap<String,Student> getStudentList(){     //returnerar Studentobjekt i en arraylist
         return sList.getStudentHashMap();
+    }
+    public String getStudents(){
+        String students = "";
+
+        Iterator it = sList.getStudentHashMap().entrySet().iterator();
+
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry)it.next();
+            //System.out.println(pair.getKey() + " = " + pair.getValue());
+            students = students + pair.getKey() +  ", ";
+            it.remove(); // avoids a ConcurrentModificationException
+        }
+        return students;
     }
     public HashMap<String, Assignment> getAssignementHList(){ //returnerar Assignmentobjekt i hashmap
         return aList.getAssignmentHList();

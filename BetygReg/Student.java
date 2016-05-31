@@ -15,7 +15,7 @@ public class Student {
 		gradeObject =  new Grade();
 		//grade2 = grades2;
 	}
-	/*public String getGrade(){
+	/*public String getGradeObject(){
 		return grade;
 	} */
 	public void alterGrade(){
@@ -28,7 +28,7 @@ public class Student {
 		}
 
 	}
-	public Grade getGrade(){
+	public Grade getGradeObject(){
 		return gradeObject;
 	}
 

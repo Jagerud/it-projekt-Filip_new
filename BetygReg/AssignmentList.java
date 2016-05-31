@@ -15,7 +15,7 @@ public class AssignmentList {
     public HashMap<String, Assignment> getAssignmentHList(){
         return assignmentHList;
     }
-    public void addBullshit(){
+    private void addBullshit(){
         Assignment shit1 = new Assignment("0","Task0");
         Assignment shit2 = new Assignment("1","Task1");
         Assignment shit3 = new Assignment("2","Task2");
