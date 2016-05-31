@@ -6,10 +6,14 @@ package BetygReg;
 public class Assignment {
     private String id = null;       //TODO Hashmappa för att spara id och namn
     private String name = null;
+    private Grade assignmentGrade = new Grade();
 
     public Assignment(String id, String name){
         this.id = id;
         this.name = name;
+    }
+    public void setAssignmentGrade(String grade){
+        assignmentGrade.setGrade(grade);
     }
 
       //Oklart om de ska ändras utifrån

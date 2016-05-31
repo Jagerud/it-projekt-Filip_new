@@ -32,7 +32,8 @@ public class CourseAdmin {
 
         System.out.println(cList.getCourseList().get(0).getName());
         //cList.getCourse().poop();
-        //System.out.println(cList.getCourse().getStudentList().getStudentHashMap().get("0").getName());
+        //Object troll = cList.getCourse().getStudentList().getStudentHashMap().get("0");
+
         //cList.getHCourse("11").getName();
         //cList.getHCourse("725G00").getName();
         //System.out.println(cList.getHCourse("725G00").getAssignmentHList().get("0").getName());
