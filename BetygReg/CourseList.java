@@ -8,19 +8,19 @@ import java.util.HashMap;
  */
 public class CourseList {
     private HashMap<String,Course> courseHash = new HashMap<>();
-    private ArrayList<Course> courseList = new ArrayList<>();
-    private Course activeCourse = new Course("725G00"); //manuell inmatning av första kurs, ska hätmas ifrån databas
+    //private ArrayList<Course> courseList = new ArrayList<>();
+    //private Course activeCourse = new Course("725G00"); //manuell inmatning av första kurs, ska hätmas ifrån databas
     public CourseList(){
         //courseList.add(activeCourse); //Hämtar kurser ifrån databas? annars från här
         addBullshit();
 
     }
-    public ArrayList<Course> getCourseList(){
+    /*public ArrayList<Course> getCourseList(){
         return courseList;
     }
     public void addCourse(Course name){
         courseList.add(name);
-    }
+    } */
    /* public Course getActiveCourse(){
         courseList.get(
         return activeCourse;

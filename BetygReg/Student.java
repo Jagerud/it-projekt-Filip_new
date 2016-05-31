@@ -3,12 +3,14 @@ import java.util.*;
 
 public class Student {
 
-	private String ID;
+	private String id;
+    private String name;
 	//private String grade;
 	private Grade gradeObject;
 
-	public Student(String id){
-		ID = id;
+	public Student(String id, String name){
+		this.id = id;
+        this.name = name;
 		//grade = grades;
 		gradeObject =  new Grade();
 		//grade2 = grades2;
@@ -29,4 +31,9 @@ public class Student {
 	public Grade getGrade(){
 		return gradeObject;
 	}
+
+    public String getId() {
+        return id;
+    }
 }
+

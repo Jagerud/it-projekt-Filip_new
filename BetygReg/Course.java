@@ -12,8 +12,8 @@ public class Course {
     public Course(String name){
         this.name = name;
     }
-    public ArrayList<Student> getStudentList(){     //returnerar Studentobjekt i en arraylist
-        return sList.getList();
+    public HashMap<String,Student> getStudentList(){     //returnerar Studentobjekt i en arraylist
+        return sList.getStudentHashMap();
     }
     public HashMap<String, Assignment> getAssignementHList(){ //returnerar Assignmentobjekt i hashmap
         return aList.getAssignmentHList();

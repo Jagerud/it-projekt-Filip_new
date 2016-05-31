@@ -9,11 +9,12 @@ public class StudentList {
 	//private ArrayList<String> studentList;
 	//private ArrayList<String> list2 = new ArrayList<>();
 	private ArrayList<Student> studentList = new ArrayList<>(); //TODO Fyll med student
+    private HashMap<String, Student> studentHashMap = new HashMap<>();
 
 	//private boolean loop;
 	//private Student current;
 	public StudentList(){
-
+        addBullShit();
 	}
 	//TODO hämta alla studentobjekt och spara i en array kallad studentlist
 	public void getRelevant(String cID) throws FileNotFoundException{
@@ -79,10 +80,19 @@ public class StudentList {
 			}
 		}*/
 	}
-	public ArrayList<Student> getList(){
+	/*public ArrayList<Student> getList(){
 		return studentList;
+	} */
+    public HashMap<String,Student> getStudentHashMap(){
+        return studentHashMap;
+    }
+	public void addBullShit(){
+        Student shit1 = new Student("0","shit1");
+        Student shit2 = new Student("1","shit2");
+        Student shit3 = new Student("2","shit3");
+        studentHashMap.put(shit1.getId(),shit1);
+        studentHashMap.put(shit2.getId(),shit2);
+        studentHashMap.put(shit3.getId(),shit3);
+
 	}
-	/*public Student getStudent(){
-		return current;
-	}*/
 }
