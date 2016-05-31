@@ -1,8 +1,5 @@
 package BetygReg;
 
-/**
- * Created by Jaeger on 2016-05-31.
- */
 public class Assignment {
     private String id = null;       //TODO Hashmappa för att spara id och namn
     private String name = null;
@@ -28,5 +25,4 @@ public class Assignment {
     public void setName(String name) {
         this.name = name;
     }
-
 }

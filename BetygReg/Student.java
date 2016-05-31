@@ -15,10 +15,12 @@ public class Student {
 		gradeObject =  new Grade();
 		//grade2 = grades2;
 	}
+
 	/*public String getGradeObject(){
 		return grade;
 	} */
-	public void alterGrade(){
+
+	/*public void alterGrade(){ //TODO put it somewhere
 		System.out.println("Set grade. (u, g, vg)");
 		Scanner sc = new Scanner(System.in);
 		gradeObject.setGrade(sc.nextLine().toLowerCase());
@@ -26,8 +28,8 @@ public class Student {
 			System.out.println("Invalid grade.");
 			gradeObject.setGrade(sc.nextLine());
 		}
+	}*/
 
-	}
 	public Grade getGradeObject(){
 		return gradeObject;
 	}
@@ -35,8 +37,8 @@ public class Student {
     public String getId() {
         return id;
     }
+
     public String getName() {
         return name;
     }
 }
-

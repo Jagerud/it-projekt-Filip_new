@@ -16,6 +16,7 @@ public class StudentList {
 	public StudentList(){
         addBullShit();
 	}
+
 	//TODO hämta alla studentobjekt och spara i en array kallad studentlist
 	public void getRelevant(String cID) throws FileNotFoundException{
 		/*Scanner sc = new Scanner(System.in);
@@ -86,9 +87,9 @@ public class StudentList {
     public HashMap<String,Student> getStudentHashMap(){
         return studentHashMap;
     }
+
     public String getStudents(){
             String students = "";
-
 
             Iterator it = studentHashMap.entrySet().iterator();
 

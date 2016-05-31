@@ -5,20 +5,19 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/**
- * Created by Jaeger on 2016-05-30.
- */
 public class CourseList {
+
     private HashMap<String,Course> courseHash = new HashMap<>();
     private String name;
     //private ArrayList<Course> courseList = new ArrayList<>();
     //private Course activeCourse = new Course("725G00"); //manuell inmatning av första kurs, ska hätmas ifrån databas
+
     public CourseList(String name){
         this.name = name;
         //courseList.add(activeCourse); //Hämtar kurser ifrån databas? annars från här
         addBullshit();
-
     }
+
     /*public ArrayList<Course> getCourseList(){
         return courseList;
     }
@@ -29,6 +28,7 @@ public class CourseList {
         courseList.get(
         return activeCourse;
     } */
+
     public void addHCourse(String nameKey, Course course){
         courseHash.put(nameKey,course);
     }
@@ -54,6 +54,7 @@ public class CourseList {
         }
         return courses;
     }
+
     private void addBullshit(){
         Course shit1 = new Course("725G00 - Projektledningsmojelimoj");
         courseHash.put("725G00",shit1);
@@ -61,6 +62,5 @@ public class CourseList {
         courseHash.put("725G01",shit2);
         Course shit3 = new Course("725G02 - Programmeringsskoj");
         courseHash.put("725G02",shit3);
-
     }
 }

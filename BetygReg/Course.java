@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class Course {
+
     private String name;
     //enrolled students?
     private StudentList sList = new StudentList();
@@ -34,9 +35,8 @@ public class Course {
         }
         return students;
     }
+
     public HashMap<String, Assignment> getAssignmentHList(){ //returnerar Assignmentobjekt i hashmap
         return aList.getAssignmentHList();
     }
-
-
 }
