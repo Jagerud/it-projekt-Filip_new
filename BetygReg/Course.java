@@ -18,6 +18,11 @@ public class Course {
     public void printStudents() {
         System.out.println(sList.getStudents());
     }
+
+    public AssignmentList getaList() {
+        return aList;
+    }
+
     /*public HashMap<String,Student> getStudentList(){     //returnerar Studentobjekt i en arraylist
         return sList.getStudentHashMap();
 

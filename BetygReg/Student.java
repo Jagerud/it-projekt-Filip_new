@@ -1,4 +1,5 @@
 package BetygReg;
+
 import java.util.*;
 
 public class Student {
@@ -7,20 +8,22 @@ public class Student {
     private String name;
 	//private String grade;
 	private Grade gradeObject;
+    private AssignmentList aList;
 
-	public Student(String id, String name){
+	public Student(String id, String name) {
 		this.id = id;
         this.name = name;
 		//grade = grades;
 		gradeObject =  new Grade();
 		//grade2 = grades2;
+        //aList = selectedCourse.getaList();
 	}
 
 	/*public String getGradeObject(){
 		return grade;
 	} */
 
-	public void alterGrade(){ //TODO where the fuck=?!==!=!
+	public void alterGrade(){ //TODO where the fuck?
 		System.out.println("Set grade. (u, g, vg)");
 		Scanner sc = new Scanner(System.in);
 		gradeObject.setGrade(sc.nextLine().toLowerCase());

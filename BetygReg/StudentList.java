@@ -17,6 +17,8 @@ public class StudentList {
         addBullShit();
 	}
 
+
+
 	//TODO hämta alla studentobjekt och spara i en array kallad studentlist
 	public void getRelevant(String cID) throws FileNotFoundException{
 		/*Scanner sc = new Scanner(System.in);
