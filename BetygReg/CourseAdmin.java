@@ -12,7 +12,8 @@ public class CourseAdmin {
     public void getCourse() throws FileNotFoundException{
         //Scanner sc = new Scanner(System.in);
         CourseList cList = new CourseList();
-        cList.getHCourse("725G00")
+        cList.getHCourse("725G00");
+
 
         //Hämtar listan över kurser
         //findFile = "courseID.txt";

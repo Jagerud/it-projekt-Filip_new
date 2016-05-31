@@ -5,19 +5,19 @@ import java.util.*;
 
 public class StudentList {
 
-	private String findFile;
-	private ArrayList<String> studentList;
-	private ArrayList<String> list2 = new ArrayList<>();
-	private ArrayList<Student> studentList = new ArrayList<>();
-	private boolean loop;
-	private Student current;
+	//private String findFile;
+	//private ArrayList<String> studentList;
+	//private ArrayList<String> list2 = new ArrayList<>();
+	private ArrayList<Student> studentList = new ArrayList<>(); //TODO Fyll med student
 
+	//private boolean loop;
+	//private Student current;
 	public StudentList(){
 
 	}
 	//TODO hämta alla studentobjekt och spara i en array kallad studentlist
 	public void getRelevant(String cID) throws FileNotFoundException{
-		Scanner sc = new Scanner(System.in);
+		/*Scanner sc = new Scanner(System.in);
 		loop = true;
 		//Grade grade = new Grade();		//kolla upp när de ska initieras
 		findFile = "studentList.txt";
@@ -37,7 +37,7 @@ public class StudentList {
 				list2.add(b);
 			}
 		}
-		*/
+
 		while(loop){
 			if(list2.isEmpty()){
 				System.out.println("There are no students in this course.");
@@ -77,12 +77,12 @@ public class StudentList {
 			else if(findFile.toUpperCase().equals("END")){
 				current.getGrade().saveGrade(studentList);
 			}
-		}
+		}*/
 	}
-	public ArrayList<String> getList(){
+	public ArrayList<Student> getList(){
 		return studentList;
 	}
-	public Student getStudent(){
+	/*public Student getStudent(){
 		return current;
-	}
+	}*/
 }
