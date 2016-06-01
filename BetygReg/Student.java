@@ -7,7 +7,7 @@ public class Student {
 
 	private String id;
     private String name;
-    private final AssignmentList aList;
+    private  AssignmentList aList;
 	//private String grade;
 	//private Grade gradeObject;
 
