@@ -8,16 +8,21 @@ public class StudentList {
 	//private String findFile;
 	//private ArrayList<String> studentList;
 	//private ArrayList<String> list2 = new ArrayList<>();
-	//private ArrayList<Student> studentList = new ArrayList<>(); //TODO Fyll med student
+	//private ArrayList<Student> studentList = new ArrayList<>();
     private HashMap<String, Student> studentHashMap = new HashMap<>();
+    //private final AssignmentList aList;
+    private final HashMap<String, AssignmentList> assignmentListHashMap;
+
 
 	//private boolean loop;
 	//private Student current;
-	public StudentList(){
+	public StudentList(HashMap<String, AssignmentList> assignmentListHashMap){
+        //this.aList = aList;
+        this.assignmentListHashMap = assignmentListHashMap;
         addBullShit();
 	}
-	//TODO hämta alla studentobjekt och spara i en array kallad studentlist
-	public void getRelevant(String cID) throws FileNotFoundException{
+
+	/*public void getRelevant(String cID) throws FileNotFoundException{
 		/*Scanner sc = new Scanner(System.in);
 		loop = true;
 		//Grade grade = new Grade();		//kolla upp när de ska initieras
@@ -79,7 +84,7 @@ public class StudentList {
 				current.getGradeObject().saveGrade(studentList);
 			}
 		}*/
-	}
+
 	/*public ArrayList<Student> getList(){
 		return studentList;
 	} */
@@ -106,9 +111,9 @@ public class StudentList {
 
 
 	private void addBullShit(){
-        Student shit1 = new Student("0","shit1");
-        Student shit2 = new Student("1","shit2");
-        Student shit3 = new Student("2","shit3");
+        Student shit1 = new Student("0","shit1", assignmentListHashMap.get());
+        Student shit2 = new Student("1","shit2", assignmentListHashMap);
+        Student shit3 = new Student("2","shit3", aList);
         studentHashMap.put(shit1.getId(),shit1);
         studentHashMap.put(shit2.getId(),shit2);
         studentHashMap.put(shit3.getId(),shit3);

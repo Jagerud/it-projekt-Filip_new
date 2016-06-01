@@ -7,12 +7,15 @@ public class Student {
 
 	private String id;
     private String name;
+    private final AssignmentList aList;
 	//private String grade;
 	//private Grade gradeObject;
 
-	public Student(String id, String name){
+	public Student(String id, String name, AssignmentList aList){
 		this.id = id;
         this.name = name;
+        this.aList = aList;
+
 		//grade = grades;
 		//gradeObject =  new Grade();
 		//grade2 = grades2;
@@ -40,6 +43,10 @@ public class Student {
     }
     public String getName() {
         return name;
+    }
+
+    public AssignmentList getaList() {
+        return aList;
     }
 }
 

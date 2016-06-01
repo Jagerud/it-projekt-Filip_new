@@ -12,10 +12,12 @@ public class Assignment {
         this.id = id;
         this.name = name;
     }
-    public void setAssignmentGrade(String grade){
+    /*public void setAssignmentGrade(String grade){
         assignmentGrade.setGrade(grade);
+    }*/
+    public Grade getAssignmentGrade(){
+        return assignmentGrade;
     }
-
       //Oklart om de ska ändras utifrån
     public String getId() {
         return id;

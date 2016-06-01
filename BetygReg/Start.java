@@ -7,8 +7,6 @@ public class Start {
         CourseAdmin courseAdmin = new CourseAdmin();
         courseAdmin.getCourseList();
 
-        //Cepe
 
-        //heheh
     }
 }
