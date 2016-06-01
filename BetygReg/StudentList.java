@@ -12,8 +12,6 @@ public class StudentList {
     private HashMap<String, Student> studentHashMap = new HashMap<>();
     //private final AssignmentList aList;
     private final HashMap<String, AssignmentList> assignmentListHashMap;
-
-
 	//private boolean loop;
 	//private Student current;
 	public StudentList(HashMap<String, AssignmentList> assignmentListHashMap){
@@ -22,7 +20,39 @@ public class StudentList {
         addBullShit();
 	}
 
-	/*public void getRelevant(String cID) throws FileNotFoundException{
+
+    public void test(){
+        System.out.println(studentHashMap.get("0").getName());
+    }
+    public HashMap<String,Student> getStudentHashMap(){
+        return studentHashMap;
+    }
+    public String getStudents(){
+            String students = "";
+
+
+            Iterator it = studentHashMap.entrySet().iterator();
+
+            while (it.hasNext()) {
+                Map.Entry pair = (Map.Entry)it.next();
+                //System.out.println(pair.getKey() + " = " + pair.getValue());
+                students = students + pair.getKey() +  ", ";
+                it.remove(); // avoids a ConcurrentModificationException
+            }
+            return students;
+        }
+
+
+	private void addBullShit(){
+        //mata in namn i både namn och i put
+        Student shit1 = new Student("0","shit1", assignmentListHashMap.put("shit1",assignmentListHashMap.get()));
+        Student shit2 = new Student("1","shit2", assignmentListHashMap);
+        Student shit3 = new Student("2","shit3", aList);
+        studentHashMap.put(shit1.getId(),shit1);
+        studentHashMap.put(shit2.getId(),shit2);
+        studentHashMap.put(shit3.getId(),shit3);
+
+	}/*public void getRelevant(String cID) throws FileNotFoundException{
 		/*Scanner sc = new Scanner(System.in);
 		loop = true;
 		//Grade grade = new Grade();		//kolla upp när de ska initieras
@@ -88,35 +118,4 @@ public class StudentList {
 	/*public ArrayList<Student> getList(){
 		return studentList;
 	} */
-    public void test(){
-        System.out.println(studentHashMap.get("0").getName());
-    }
-    public HashMap<String,Student> getStudentHashMap(){
-        return studentHashMap;
-    }
-    public String getStudents(){
-            String students = "";
-
-
-            Iterator it = studentHashMap.entrySet().iterator();
-
-            while (it.hasNext()) {
-                Map.Entry pair = (Map.Entry)it.next();
-                //System.out.println(pair.getKey() + " = " + pair.getValue());
-                students = students + pair.getKey() +  ", ";
-                it.remove(); // avoids a ConcurrentModificationException
-            }
-            return students;
-        }
-
-
-	private void addBullShit(){
-        Student shit1 = new Student("0","shit1", assignmentListHashMap.get());
-        Student shit2 = new Student("1","shit2", assignmentListHashMap);
-        Student shit3 = new Student("2","shit3", aList);
-        studentHashMap.put(shit1.getId(),shit1);
-        studentHashMap.put(shit2.getId(),shit2);
-        studentHashMap.put(shit3.getId(),shit3);
-
-	}
 }
