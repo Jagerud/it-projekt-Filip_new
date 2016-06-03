@@ -10,9 +10,10 @@ public class CourseAdmin {
     //private  String findFile = null;
     //private  ArrayList<String> list;
 
-    public void getCourseList() throws FileNotFoundException {
+    public void getCourseList() throws Exception {
         Scanner sc = new Scanner(System.in);
         CourseList cList = new CourseList("test");
+        PersistentStorage ps = new PersistentStorage();
 
         //
         //
@@ -69,6 +70,7 @@ public class CourseAdmin {
         System.out.println("Set grade");
         String input4 = sc.next();
         cList.setStudentGrade(input, input2, input3, input4);
+        ps.setGrade("1", "VG");
         System.out.println(cList.getStudentGrade(input, input2, input3));
 
 
