@@ -18,6 +18,9 @@ public class Assignment {
     public Grade getAssignmentGrade(){
         return assignmentGrade;
     }
+    public String getGrade(){
+        return assignmentGrade.getGrade();
+    }
       //Oklart om de ska ändras utifrån
     public String getId() {
         return id;

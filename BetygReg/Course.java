@@ -40,6 +40,9 @@ public class Course {
     public String getName(){
         return name;
     }
+    public String getStudentGrade(String listKey,  String studentKey){
+        return sList.getStudentGrade(listKey,studentKey);
+    }
 
     public String getStudents(){
         String students = "";

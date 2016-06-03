@@ -13,7 +13,7 @@ public class CourseAdmin {
     public void getCourseList() throws FileNotFoundException {
         Scanner sc = new Scanner(System.in);
         CourseList cList = new CourseList("test");
-        System.out.print("Choose course:");
+
 
 
         //
@@ -26,14 +26,41 @@ public class CourseAdmin {
         //
         //
         //
-        System.out.println(cList.getCourses());
+        while(true) {
+            System.out.print("Choose course:");
+
+            System.out.println(cList.getCourseHash().get("725G00").getName());
+            System.out.println(cList.getCourses());
+            String input = sc.next();
+            System.out.println(input);
+            if (input.compareTo("725G00") == 0) {
+                System.out.println(cList.getCourseHash().get("725G00").getName());
+            } else {
+                System.out.println("bugg så får bara välja kurs 1, går att nå de andra via hårdkodning");
+                break;
+            }
+            System.out.println("choose student: ");
+            String input2 = sc.next();
+            String input3 = sc.next();
+            System.out.println(cList.getHCourse(input).getStudentGrade("0", "0"));
+
+            System.out.println(cList.getHCourse("725G00").getStudentGrade("0", "0"));
+            System.out.println(cList.getCourseHash().get("725G00").getName());
+
+            System.out.println("inte samma");
+        }
+
+  /*      System.out.println(cList.getCourseHash().get(input).getStudentGrade(input2,input3));/*
+        System.out.println(cList.getCourseList().get(input).getStudentHlist().get("0").getStudentGrade("0"));/*
+        System.out.println(cList.getCourseList().get(input).getStudentHlist().get("0").getaList().getAssignmentGrade("0"));/*
+        System.out.println(cList.getCourseList().get(input).getStudentHlist().get("0").getaList().getAssignmentHList().get("0").getGrade());/*
+
         System.out.println("students in 725G00: ");
         System.out.println(cList.getCourseList().get(0).getStudentHlist().get("0").getName());
 
         System.out.println(cList.getCourseList().get(0).getStudentHlist().get("2").getName());
 
         System.out.println(cList.getCourseList().get(0).getStudentHlist().get("1").getName());
-        System.out.println(cList.getCourseList().get(0).getStudentHlist().get("0").getaList().getAssignmentHList().get("0").getAssignmentGrade().getGrade());
         cList.getCourseList().get(0).getStudentHlist().get("0").getaList().getAssignmentHList().get("0").getAssignmentGrade().setGrade("VG");
         System.out.println(cList.getCourseList().get(0).getStudentHlist().get("0").getaList().getAssignmentHList().get("0").getAssignmentGrade().getGrade());
         System.out.println(cList.getCourseList().get(0).getStudentHlist().get("0").getaList().getAssignmentHList().get("1").getAssignmentGrade().getGrade());

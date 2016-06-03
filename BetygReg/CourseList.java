@@ -9,7 +9,7 @@ import java.util.Map;
  * Created by Jaeger on 2016-05-30.
  */
 public class CourseList {
-    private Course test = new Course("0");
+   // private Course test = new Course("0");
 
     private HashMap<String,Course> courseHash = new HashMap<>();
     private String name;
@@ -18,14 +18,14 @@ public class CourseList {
     public CourseList(String name){
         this.name = name;
         //courseList.add(activeCourse); //Hämtar kurser ifrån databas? annars från här
-        courseHash.put("10",test);
+        //courseHash.put("10",test);
         addBullshit();
         addBullshitList();
 
     }
-    public Course getCourse(){
-        return test;
-    }
+    //public Course getCourse(){
+    //    return test;
+    //}
     public ArrayList<Course> getCourseList(){
         return courseList;
     }
@@ -43,7 +43,9 @@ public class CourseList {
         return courseHash.get(nameKey);
     }
     //public StudentList getStudentList(){
-
+    public HashMap<String,Course> getCourseHash(){
+        return courseHash;
+    }
     //}
     public String getCourses(){
         String courses = "";
@@ -72,11 +74,11 @@ public class CourseList {
 
     }
     private void addBullshitList(){
-        Course shit1 = new Course("725G00 - Projektledningsmojelimoj");
+        Course shit1 = new Course("0 725G00 - Projektledningsmojelimoj");
         courseList.add(shit1);
-        Course shit2 = new Course("725G01 - Materialkunskap");
+        Course shit2 = new Course("1 725G01 - Materialkunskap");
         courseList.add(shit2);
-        Course shit3 = new Course("725G02 - Programmeringsskoj");
+        Course shit3 = new Course("2 725G02 - Programmeringsskoj");
         courseList.add(shit3);
 
     }

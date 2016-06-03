@@ -43,6 +43,9 @@ public class StudentList {
             }
             return students;
         }
+    public String getStudentGrade(String listKey, String studentKey){
+        return studentHashMap.get(listKey).getStudentGrade(studentKey);
+    }
 
 
 	private void addBullShit(){

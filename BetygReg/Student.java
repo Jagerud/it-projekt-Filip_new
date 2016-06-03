@@ -44,6 +44,9 @@ public class Student {
     public String getName() {
         return name;
     }
+    public String getStudentGrade(String key){
+        return aList.getAssignmentGrade(key);
+    }
 
     public AssignmentList getaList() {
         return aList;
