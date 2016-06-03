@@ -70,7 +70,7 @@ public class CourseList {
         courseHash.put("725G01",shit2);
         Course shit3 = new Course("725G02 - Programmeringsskoj");
         courseHash.put("725G02",shit3);
-        courseHash.put("11",new Course("Funka som fan"));
+        //courseHash.put("11",new Course("Funka som fan"));
 
     }
     private void addBullshitList(){

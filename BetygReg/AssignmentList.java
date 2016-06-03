@@ -10,6 +10,7 @@ public class AssignmentList {
     private String name;//TODO tänk här
     private String id;
     public AssignmentList(){
+
         addBullshit();
     }
     public HashMap<String, Assignment> getAssignmentHList(){

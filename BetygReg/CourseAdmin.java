@@ -29,23 +29,24 @@ public class CourseAdmin {
         while(true) {
             System.out.print("Choose course:");
 
-            System.out.println(cList.getCourseHash().get("725G00").getName());
+//            System.out.println(cList.getCourseHash().get("725G00").getName());
             System.out.println(cList.getCourses());
-            String input = sc.next();
+            int input = sc.nextInt();
             System.out.println(input);
-            if (input.compareTo("725G00") == 0) {
+/*            if (input.compareTo("725G00") == 0) {
                 System.out.println(cList.getCourseHash().get("725G00").getName());
             } else {
                 System.out.println("bugg så får bara välja kurs 1, går att nå de andra via hårdkodning");
                 break;
             }
-            System.out.println("choose student: ");
+      */      System.out.println("choose student: ");
             String input2 = sc.next();
             String input3 = sc.next();
-            System.out.println(cList.getHCourse(input).getStudentGrade("0", "0"));
+//            System.out.println(cList.getHCourse("725G00").getStudentGrade(input2, input3));
+            System.out.println(cList.getCourseList().get(input).getName());
 
-            System.out.println(cList.getHCourse("725G00").getStudentGrade("0", "0"));
-            System.out.println(cList.getCourseHash().get("725G00").getName());
+//            System.out.println(cList.getHCourse("725G00").getStudentGrade("0", "0"));
+//            System.out.println(cList.getCourseHash().get("725G00").getName());
 
             System.out.println("inte samma");
         }
