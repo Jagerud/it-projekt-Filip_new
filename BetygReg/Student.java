@@ -5,6 +5,7 @@ public class Student {
 	private String id;
     private String name;
     private  AssignmentList aList;
+    private int points = 0;
 	//private String grade;
 	//private Grade gradeObject;
 
@@ -46,6 +47,31 @@ public class Student {
     }
     public void setStudentGrade(String key, String grade){
         aList.setAssignmentGrade(key,grade);
+    }
+    public String progress(){ //hårdkodat just nu
+        if(aList.getAssignmentGrade("0").compareTo("VG")==0){
+            points++;
+        }else if(aList.getAssignmentGrade("0").compareTo("U")==0){
+            points = points - 100;
+        }
+        if(aList.getAssignmentGrade("1").compareTo("VG")==0){
+            points++;
+        }else if(aList.getAssignmentGrade("1").compareTo("U")==0){
+            points = points - 100;
+        }
+        if(aList.getAssignmentGrade("2").compareTo("VG")==0){
+            points++;
+        }else if(aList.getAssignmentGrade("2").compareTo("U")==0){
+            points = points - 100;
+        }
+        if(points<0){
+            return "Incomplete course results";
+        }if(points==0){
+            return "G";
+        }else{
+            return "VG";
+        }
+
     }
 
     public AssignmentList getaList() {

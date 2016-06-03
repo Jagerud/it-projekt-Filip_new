@@ -25,18 +25,20 @@ public class CourseAdmin {
         //
         //
         //System.out.println(cList.getCourseList().get(0).getStudentList().getStudentHashMap().containsKey("0"));
-        System.out.println(cList.getCourseList().get(0).getStudentList().getStudentHashMap().get("0").getName());
+        //System.out.println(cList.getCourseList().get(0).getStudentList().getStudentHashMap().get("0").getName());
 
-        System.out.println(cList.getCourseList().get(0).getStudentList().getStudentHashMap().get("0").getName());
+        //System.out.println(cList.getCourseList().get(0).getStudentList().getStudentHashMap().get("0").getName());
+
         while (true) {
 
             System.out.println("Wanna change names on assignments (1) or handle student grades? (0)");
             int check = sc.nextInt();
             if (check == 1) {
+                System.out.println(cList.getCourseList().get(0).getAssignmentLists().get(0).getAssignments("0"));
                 System.out.println("Here is the name change!");
                 System.out.println(cList.getCourseList().get(0).getAssignmentLists().get(0).getAssignmentName("0"));
                 System.out.println("Is now:");
-                cList.getCourseList().get(0).getAssignmentLists().get(0).renameAssignment("0", "snopppppppp");
+                cList.getCourseList().get(0).getAssignmentLists().get(0).renameAssignment("0", "New taskname!");
                 System.out.println(cList.getCourseList().get(0).getAssignmentLists().get(0).getAssignmentName("0"));
             } else if (check == 0) {
                 break;
@@ -56,14 +58,21 @@ public class CourseAdmin {
         //System.out.println(cList.getCourseList().get(input).getStudentList().getStudentName("0"));
 
         System.out.println(cList.getCourseList().get(0).getStudentList().getStudentHashMap().get("0").getName());
-
+        System.out.println("Choose assignment");
+        System.out.println(cList.getCourseList().get(0).getAssignmentLists().get(0).getAssignments("0"));
         String input3 = sc.next();
-        System.out.println(cList.getCourseList().get(input).getName());
+        System.out.println("Student: ");
+        //System.out.println(cList.getCourseList().get(input).getName());
+        //skriv ut uppgift
         System.out.println(cList.getStudentGrade(input, input2, input3));
+
         System.out.println("Set grade");
         String input4 = sc.next();
         cList.setStudentGrade(input, input2, input3, input4);
         System.out.println(cList.getStudentGrade(input, input2, input3));
+
+
+
         System.out.println(cList.getStudentGrade(input, input2, "1"));
         System.out.println(cList.getStudentGrade(input, input2, "2"));
         cList.setStudentGrade(input, input2, "1", "G");
@@ -72,9 +81,17 @@ public class CourseAdmin {
         System.out.println(cList.getStudentGrade(input, input2, "1"));
 
         System.out.println(cList.getStudentGrade(input, input2, "2"));
+        System.out.println("Course grade: ");
+        System.out.println(cList.getCourseList().get(0).getStudentList().getStudentHashMap().get("0").progress());
 
 
-
+        System.out.println("Wanna register on Ladok?");
+        int end = sc.nextInt();
+        if(end==0){
+            System.out.println("You can register later");
+        }else{
+            System.out.println("Registering in Ladok");
+        }
 
 
 
