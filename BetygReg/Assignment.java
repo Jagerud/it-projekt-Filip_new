@@ -21,6 +21,9 @@ public class Assignment {
     public String getGrade(){
         return assignmentGrade.getGrade();
     }
+    public void setGrade(String grade){
+        assignmentGrade.setGrade(grade);
+    }
       //Oklart om de ska ändras utifrån
     public String getId() {
         return id;

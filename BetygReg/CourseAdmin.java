@@ -44,11 +44,13 @@ public class CourseAdmin {
             String input3 = sc.next();
 //            System.out.println(cList.getHCourse("725G00").getStudentGrade(input2, input3));
             System.out.println(cList.getCourseList().get(input).getName());
+            System.out.println(cList.getStudentGrade(input,input2,input3));
+            cList.setStudentGrade(input,input2);
 
-//            System.out.println(cList.getHCourse("725G00").getStudentGrade("0", "0"));
-//            System.out.println(cList.getCourseHash().get("725G00").getName());
+            //System.out.println(cList.getHCourse("725G00").getStudentGrade("0", "0"));
+  //          System.out.println(cList.getCourseHash().get("725G00").getName());
 
-            System.out.println("inte samma");
+            //System.out.println("inte samma");
         }
 
   /*      System.out.println(cList.getCourseHash().get(input).getStudentGrade(input2,input3));/*

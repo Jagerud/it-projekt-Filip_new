@@ -36,6 +36,13 @@ public class CourseList {
         courseList.get(
         return activeCourse;
     } */
+    public String getStudentGrade(int courseKey, String listKey, String studentKey ){
+        return courseList.get(courseKey).getStudentGrade(listKey, studentKey);
+    }
+    public void setStudentGrade(int courseKey, String listKey, String grade){
+        courseList.get(courseKey).setStudentGrade(listKey, grade);
+    }
+
     public void addHCourse(String nameKey, Course course){
         courseHash.put(nameKey,course);
     }

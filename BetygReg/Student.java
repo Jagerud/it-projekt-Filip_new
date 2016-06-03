@@ -47,6 +47,9 @@ public class Student {
     public String getStudentGrade(String key){
         return aList.getAssignmentGrade(key);
     }
+    public void setStudentGrade(String key, String grade){
+        aList.seAssignmentGrade(key,grade);
+    }
 
     public AssignmentList getaList() {
         return aList;

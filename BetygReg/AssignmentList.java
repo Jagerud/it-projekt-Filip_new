@@ -19,6 +19,9 @@ public class AssignmentList {
     public String getAssignmentGrade(String key){
         return assignmentHList.get(key).getGrade();
     }
+    public void seAssignmentGrade(String key, String grade){
+        assignmentHList.get(key).setGrade(grade);
+    }
     private void addBullshit(){
         Assignment shit1 = new Assignment("0","Task0");
         Assignment shit2 = new Assignment("1","Task1");
