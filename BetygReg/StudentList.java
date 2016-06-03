@@ -46,8 +46,8 @@ public class StudentList {
     public String getStudentGrade(String listKey, String studentKey){
         return studentHashMap.get(listKey).getStudentGrade(studentKey);
     }
-    public void setStudentGrade(String key, String grade){
-        studentHashMap.get(key).setStudentGrade(key,grade);
+    public void setStudentGrade(String key, String studentKey,String grade){
+        studentHashMap.get(key).setStudentGrade(studentKey,grade);
     }
 
 

@@ -19,9 +19,16 @@ public class AssignmentList {
     public String getAssignmentGrade(String key){
         return assignmentHList.get(key).getGrade();
     }
-    public void seAssignmentGrade(String key, String grade){
+    public void setAssignmentGrade(String key, String grade){
         assignmentHList.get(key).setGrade(grade);
     }
+    public void renameAssignment(String key, String name){
+        assignmentHList.get(key).setName(name);
+    }
+    public String getAssignmentName(String key){
+        return assignmentHList.get(key).getName();
+    }
+
     private void addBullshit(){
         Assignment shit1 = new Assignment("0","Task0");
         Assignment shit2 = new Assignment("1","Task1");

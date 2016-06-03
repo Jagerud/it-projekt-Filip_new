@@ -1,7 +1,4 @@
 package BetygReg;
-import javafx.scene.Parent;
-
-import java.util.*;
 
 public class Student {
 
@@ -48,7 +45,7 @@ public class Student {
         return aList.getAssignmentGrade(key);
     }
     public void setStudentGrade(String key, String grade){
-        aList.seAssignmentGrade(key,grade);
+        aList.setAssignmentGrade(key,grade);
     }
 
     public AssignmentList getaList() {

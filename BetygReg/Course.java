@@ -43,8 +43,8 @@ public class Course {
     public String getStudentGrade(String listKey,  String studentKey){
         return sList.getStudentGrade(listKey,studentKey);
     }
-    public void setStudentGrade(String key, String grade){
-        sList.getStudentGrade(key,grade);
+    public void setStudentGrade(String key, String studentKey, String grade){
+        sList.setStudentGrade(key,studentKey,grade);
     }
 
     public String getStudents(){

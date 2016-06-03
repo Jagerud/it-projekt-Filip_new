@@ -14,14 +14,12 @@ public class CourseAdmin {
         Scanner sc = new Scanner(System.in);
         CourseList cList = new CourseList("test");
 
-
-
         //
         //
         //
         //
         //
-        //Huvudanvädningsfall finns nedan i kod men inte inmatning för tillfället
+        //Huvudanvädningsfall finns nedan
         //
         //
         //
@@ -39,13 +37,30 @@ public class CourseAdmin {
                 System.out.println("bugg så får bara välja kurs 1, går att nå de andra via hårdkodning");
                 break;
             }
-      */      System.out.println("choose student: ");
+
+      */
+            System.out.println(cList.getCourseList().get(0).getAssignmentLists().get(0).getAssignmentName("0"));
+            cList.getCourseList().get(0).getAssignmentLists().get(0).renameAssignment("0","snopppppppp");
+            System.out.println(cList.getCourseList().get(0).getAssignmentLists().get(0).getAssignmentName("0"));
+
+            System.out.println("choose student: ");
             String input2 = sc.next();
             String input3 = sc.next();
 //            System.out.println(cList.getHCourse("725G00").getStudentGrade(input2, input3));
             System.out.println(cList.getCourseList().get(input).getName());
             System.out.println(cList.getStudentGrade(input,input2,input3));
-            cList.setStudentGrade(input,input2);
+            System.out.println("Set grade");
+            String input4 = sc.next();
+            cList.setStudentGrade(input,input2,input3,input4);
+            System.out.println(cList.getStudentGrade(input,input2,input3));
+            System.out.println(cList.getStudentGrade(input,input2,"1"));
+            System.out.println(cList.getStudentGrade(input,input2,"2"));
+            cList.setStudentGrade(input,input2,"1","G");
+            cList.setStudentGrade(input,input2,"2","G");
+
+            System.out.println(cList.getStudentGrade(input,input2,"1"));
+
+            System.out.println(cList.getStudentGrade(input,input2,"2"));
 
             //System.out.println(cList.getHCourse("725G00").getStudentGrade("0", "0"));
   //          System.out.println(cList.getCourseHash().get("725G00").getName());

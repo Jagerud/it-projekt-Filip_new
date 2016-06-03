@@ -39,8 +39,8 @@ public class CourseList {
     public String getStudentGrade(int courseKey, String listKey, String studentKey ){
         return courseList.get(courseKey).getStudentGrade(listKey, studentKey);
     }
-    public void setStudentGrade(int courseKey, String listKey, String grade){
-        courseList.get(courseKey).setStudentGrade(listKey, grade);
+    public void setStudentGrade(int courseKey, String listKey, String studentKey, String grade){
+        courseList.get(courseKey).setStudentGrade(listKey, studentKey, grade);
     }
 
     public void addHCourse(String nameKey, Course course){
