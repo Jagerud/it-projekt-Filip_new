@@ -24,49 +24,76 @@ public class CourseAdmin {
         //
         //
         //
-        while(true) {
-            System.out.print("Choose course:");
+        //System.out.println(cList.getCourseList().get(0).getStudentList().getStudentHashMap().containsKey("0"));
+        System.out.println(cList.getCourseList().get(0).getStudentList().getStudentHashMap().get("0").getName());
 
-//            System.out.println(cList.getCourseHash().get("725G00").getName());
-            System.out.println(cList.getCourses());
-            int input = sc.nextInt();
-            System.out.println(input);
-/*            if (input.compareTo("725G00") == 0) {
-                System.out.println(cList.getCourseHash().get("725G00").getName());
-            } else {
-                System.out.println("bugg så får bara välja kurs 1, går att nå de andra via hårdkodning");
+        System.out.println(cList.getCourseList().get(0).getStudentList().getStudentHashMap().get("0").getName());
+        while (true) {
+
+            System.out.println("Wanna change names on assignments (1) or handle student grades? (0)");
+            int check = sc.nextInt();
+            if (check == 1) {
+                System.out.println("Here is the name change!");
+                System.out.println(cList.getCourseList().get(0).getAssignmentLists().get(0).getAssignmentName("0"));
+                System.out.println("Is now:");
+                cList.getCourseList().get(0).getAssignmentLists().get(0).renameAssignment("0", "snopppppppp");
+                System.out.println(cList.getCourseList().get(0).getAssignmentLists().get(0).getAssignmentName("0"));
+            } else if (check == 0) {
                 break;
             }
-
-      */
-            System.out.println(cList.getCourseList().get(0).getAssignmentLists().get(0).getAssignmentName("0"));
-            cList.getCourseList().get(0).getAssignmentLists().get(0).renameAssignment("0","snopppppppp");
-            System.out.println(cList.getCourseList().get(0).getAssignmentLists().get(0).getAssignmentName("0"));
-
-            System.out.println("choose student: ");
-            String input2 = sc.next();
-            String input3 = sc.next();
-//            System.out.println(cList.getHCourse("725G00").getStudentGrade(input2, input3));
-            System.out.println(cList.getCourseList().get(input).getName());
-            System.out.println(cList.getStudentGrade(input,input2,input3));
-            System.out.println("Set grade");
-            String input4 = sc.next();
-            cList.setStudentGrade(input,input2,input3,input4);
-            System.out.println(cList.getStudentGrade(input,input2,input3));
-            System.out.println(cList.getStudentGrade(input,input2,"1"));
-            System.out.println(cList.getStudentGrade(input,input2,"2"));
-            cList.setStudentGrade(input,input2,"1","G");
-            cList.setStudentGrade(input,input2,"2","G");
-
-            System.out.println(cList.getStudentGrade(input,input2,"1"));
-
-            System.out.println(cList.getStudentGrade(input,input2,"2"));
-
-            //System.out.println(cList.getHCourse("725G00").getStudentGrade("0", "0"));
-  //          System.out.println(cList.getCourseHash().get("725G00").getName());
-
-            //System.out.println("inte samma");
         }
+        System.out.print("Choose course:");
+
+
+        System.out.println(cList.getCourses());
+        int input = sc.nextInt();
+        System.out.println(input);
+
+
+        System.out.println("choose student: ");
+        System.out.println(cList.getCourseList().get(input).getStudents());
+        String input2 = sc.next();
+        //System.out.println(cList.getCourseList().get(input).getStudentList().getStudentName("0"));
+
+        System.out.println(cList.getCourseList().get(0).getStudentList().getStudentHashMap().get("0").getName());
+
+        String input3 = sc.next();
+        System.out.println(cList.getCourseList().get(input).getName());
+        System.out.println(cList.getStudentGrade(input, input2, input3));
+        System.out.println("Set grade");
+        String input4 = sc.next();
+        cList.setStudentGrade(input, input2, input3, input4);
+        System.out.println(cList.getStudentGrade(input, input2, input3));
+        System.out.println(cList.getStudentGrade(input, input2, "1"));
+        System.out.println(cList.getStudentGrade(input, input2, "2"));
+        cList.setStudentGrade(input, input2, "1", "G");
+        cList.setStudentGrade(input, input2, "2", "G");
+
+        System.out.println(cList.getStudentGrade(input, input2, "1"));
+
+        System.out.println(cList.getStudentGrade(input, input2, "2"));
+
+
+
+
+
+
+        //System.out.println(cList.getHCourse("725G00").getStudentGrade("0", "0"));
+        //          System.out.println(cList.getCourseHash().get("725G00").getName());
+
+        //System.out.println("inte samma");
+    }
+    //
+    //
+    //
+    // cList.getCourseList().get(0).getStudentHlist().get("0").getaList().getAssignmentHList().get("0").getAssignmentGrade().setGrade("VG");
+    // System.out.println(cList.getCourseList().get(0).getStudentHlist().get("0").getaList().getAssignmentHList().get("0").getAssignmentGrade().getGrade());
+    //
+    // cList.setStudentGrade(input,input2,"1","G");
+    // System.out.println(cList.getStudentGrade(input,input2,"1"));
+
+
+
 
   /*      System.out.println(cList.getCourseHash().get(input).getStudentGrade(input2,input3));/*
         System.out.println(cList.getCourseList().get(input).getStudentHlist().get("0").getStudentGrade("0"));/*
@@ -79,8 +106,7 @@ public class CourseAdmin {
         System.out.println(cList.getCourseList().get(0).getStudentHlist().get("2").getName());
 
         System.out.println(cList.getCourseList().get(0).getStudentHlist().get("1").getName());
-        cList.getCourseList().get(0).getStudentHlist().get("0").getaList().getAssignmentHList().get("0").getAssignmentGrade().setGrade("VG");
-        System.out.println(cList.getCourseList().get(0).getStudentHlist().get("0").getaList().getAssignmentHList().get("0").getAssignmentGrade().getGrade());
+
         System.out.println(cList.getCourseList().get(0).getStudentHlist().get("0").getaList().getAssignmentHList().get("1").getAssignmentGrade().getGrade());
         cList.getCourseList().get(0).getStudentHlist().get("0").getaList().getAssignmentHList().get("1").getAssignmentGrade().setGrade("G");
 
@@ -126,13 +152,13 @@ public class CourseAdmin {
             it.remove(); // avoids a ConcurrentModificationException
         }
         */
-        //lel
+    //lel
 
-        //Hämtar listan över kurser
-        //findFile = "courseID.txt";
-        //String content = new Scanner(new File(findFile)).useDelimiter("\\Z").next();
-        //Filens innehåll --> array
-        //list = new ArrayList<>(Arrays.asList(content.split("\n")));
+    //Hämtar listan över kurser
+    //findFile = "courseID.txt";
+    //String content = new Scanner(new File(findFile)).useDelimiter("\\Z").next();
+    //Filens innehåll --> array
+    //list = new ArrayList<>(Arrays.asList(content.split("\n")));
         /*while(true) {
             //System.out.println(list);
             //System.out.println("Which course would you ike to view?\nIf you would like to end the session write \"end\".");
@@ -157,5 +183,5 @@ public class CourseAdmin {
         }
         public
         */
-    }
+    //}
 }

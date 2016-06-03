@@ -56,7 +56,7 @@ public class Course {
             Map.Entry pair = (Map.Entry)it.next();
             //System.out.println(pair.getKey() + " = " + pair.getValue());
             students = students + pair.getKey() +  ", ";
-            it.remove(); // avoids a ConcurrentModificationException
+            //it.remove(); // avoids a ConcurrentModificationException
         }
         return students;
     }

@@ -9,7 +9,8 @@ public class StudentList {
 	//private ArrayList<String> studentList;
 	//private ArrayList<String> list2 = new ArrayList<>();
 	//private ArrayList<Student> studentList = new ArrayList<>();
-    private HashMap<String, Student> studentHashMap = new HashMap<>();
+    private HashMap<String, Student> studentHashMap;// = new HashMap<>();
+
     //private final AssignmentList aList;
     //private final HashMap<String, AssignmentList> assignmentListHashMap;
     private ArrayList<AssignmentList> a;
@@ -19,17 +20,20 @@ public class StudentList {
         //this.aList = aList;
         //this.assignmentListHashMap = assignmentListHashMap;
         this.a = a;
+        studentHashMap = new HashMap<>();
         addBullShit();
 	}
 
-
+    public String getStudentName(String key){
+        return studentHashMap.get(key).getName();
+    }
     public void test(){
         System.out.println(studentHashMap.get("0").getName());
     }
     public HashMap<String,Student> getStudentHashMap(){
         return studentHashMap;
     }
-    public String getStudents(){
+    /*public String getStudents(){
             String students = "";
 
 
@@ -39,10 +43,10 @@ public class StudentList {
                 Map.Entry pair = (Map.Entry)it.next();
                 //System.out.println(pair.getKey() + " = " + pair.getValue());
                 students = students + pair.getKey() +  ", ";
-                it.remove(); // avoids a ConcurrentModificationException
+                //it.remove(); // avoids a ConcurrentModificationException
             }
             return students;
-        }
+        }*/
     public String getStudentGrade(String listKey, String studentKey){
         return studentHashMap.get(listKey).getStudentGrade(studentKey);
     }
