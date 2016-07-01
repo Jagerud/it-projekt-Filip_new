@@ -1,11 +1,8 @@
 package BetygReg;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
-public class Course {
+public class Course implements Observer {
     private String name;
     //enrolled students?
     //private HashMap<String,AssignmentList> assignmentListHashMap = new HashMap<>();
@@ -83,4 +80,8 @@ public class Course {
         assignmentLists.add(aList3);
     }
 
+    @Override
+    public void update(Observable o, Object arg) {
+        System.out.println(arg);
+    }
 }

@@ -57,7 +57,7 @@ public class CourseAdmin {
         System.out.println(cList.getCourseList().get(input).getStudents());
         String input2 = sc.next();
         //System.out.println(cList.getCourseList().get(input).getStudentList().getStudentName("0"));
-
+        cList.getCourseList().get(0).getStudentList().getStudentHashMap().get(input2).addObserver(cList.getCourseList().get(input)); //Adding observer to student
         System.out.println(cList.getCourseList().get(0).getStudentList().getStudentHashMap().get("0").getName());
         System.out.println("Choose assignment");
         System.out.println(cList.getCourseList().get(0).getAssignmentLists().get(0).getAssignments("0"));

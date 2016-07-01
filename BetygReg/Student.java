@@ -1,6 +1,8 @@
 package BetygReg;
 
-public class Student {
+import java.util.Observable;
+
+public class Student extends Observable {
 
 	private String id;
     private String name;
@@ -9,7 +11,7 @@ public class Student {
 	//private String grade;
 	//private Grade gradeObject;
 
-	public Student(String id, String name, AssignmentList aList){
+	public Student (String id, String name, AssignmentList aList){
 		this.id = id;
         this.name = name;
         this.aList = aList;
@@ -29,6 +31,8 @@ public class Student {
     }
     public void setStudentGrade(String key, String grade){
         aList.setAssignmentGrade(key,grade);
+        setChanged();
+        notifyObservers("Studenten " + name + " har fått betyget " + getStudentGrade(key) + " på upppgift " + key);
     }
     public String progress(){ //går inte komplettera
         if(aList.getAssignmentGrade("0").compareTo("VG")==0){
