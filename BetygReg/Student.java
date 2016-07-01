@@ -18,24 +18,6 @@ public class Student {
 		//gradeObject =  new Grade();
 		//grade2 = grades2;
 	}
-
-	/*public String getGradeObject(){
-		return grade;
-	} */
-	/*public void alterGrade(){
-		System.out.println("Set grade. (u, g, vg)");
-		Scanner sc = new Scanner(System.in);
-		gradeObject.setGrade(sc.nextLine().toLowerCase());
-		while(!gradeObject.getGrade().equals("g") && !gradeObject.getGrade().equals("vg") && !gradeObject.getGrade().equals("u")){
-			System.out.println("Invalid grade.");
-			gradeObject.setGrade(sc.nextLine());
-		}
-
-	}
-	public Grade getGradeObject(){
-		return gradeObject;
-	}
-	*/
     public String getId() {
         return id;
     }
@@ -48,7 +30,7 @@ public class Student {
     public void setStudentGrade(String key, String grade){
         aList.setAssignmentGrade(key,grade);
     }
-    public String progress(){ //hårdkodat just nu
+    public String progress(){ //går inte komplettera
         if(aList.getAssignmentGrade("0").compareTo("VG")==0){
             points++;
         }else if(aList.getAssignmentGrade("0").compareTo("U")==0){
@@ -79,3 +61,21 @@ public class Student {
     }
 }
 
+
+	/*public String getGradeObject(){
+		return grade;
+	} */
+	/*public void alterGrade(){
+		System.out.println("Set grade. (u, g, vg)");
+		Scanner sc = new Scanner(System.in);
+		gradeObject.setGrade(sc.nextLine().toLowerCase());
+		while(!gradeObject.getGrade().equals("g") && !gradeObject.getGrade().equals("vg") && !gradeObject.getGrade().equals("u")){
+			System.out.println("Invalid grade.");
+			gradeObject.setGrade(sc.nextLine());
+		}
+
+	}
+	public Grade getGradeObject(){
+		return gradeObject;
+	}
+	*/
