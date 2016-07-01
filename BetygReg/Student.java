@@ -38,17 +38,17 @@ public class Student extends Observable {
         if(aList.getAssignmentGrade("0").compareTo("VG")==0){
             points++;
         }else if(aList.getAssignmentGrade("0").compareTo("U")==0){
-            points = points - 100;
+            return "Incomplete course results";
         }
         if(aList.getAssignmentGrade("1").compareTo("VG")==0){
             points++;
         }else if(aList.getAssignmentGrade("1").compareTo("U")==0){
-            points = points - 100;
+            return "Incomplete course results";
         }
         if(aList.getAssignmentGrade("2").compareTo("VG")==0){
             points++;
         }else if(aList.getAssignmentGrade("2").compareTo("U")==0){
-            points = points - 100;
+            return "Incomplete course results";
         }
         if(points<0){
             return "Incomplete course results";
