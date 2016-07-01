@@ -19,6 +19,7 @@
                 st.setString(2, id);
                 st.executeUpdate();
                 conn.close();
+                System.out.println("Updated DB");
 
             }
             catch (ClassNotFoundException cnfe) {

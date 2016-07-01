@@ -13,6 +13,7 @@ public class CourseAdmin {
     public void getCourseList() throws FileNotFoundException {
         Scanner sc = new Scanner(System.in);
         CourseList cList = new CourseList("test");
+        PersistentStorage pS = new PersistentStorage();
 
         //
         //
@@ -91,6 +92,11 @@ public class CourseAdmin {
             System.out.println("You can register later");
         }else{
             System.out.println("Registering in Ladok");
+            /*try {                                     //TODO Registrering i DB funkar ej
+                pS.setGrade(input3, input4);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }*/
         }
 
 
