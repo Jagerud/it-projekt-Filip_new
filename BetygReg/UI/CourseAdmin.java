@@ -1,4 +1,7 @@
-package BetygReg;
+package BetygReg.UI;
+
+import BetygReg.CourseList;
+import BetygReg.PersistentStorage;
 
 import java.io.FileNotFoundException;
 import java.util.Iterator;

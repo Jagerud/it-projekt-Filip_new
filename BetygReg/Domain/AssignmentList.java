@@ -1,4 +1,4 @@
-package BetygReg;
+package BetygReg.Domain;
 
 import java.util.HashMap;
 import java.util.Iterator;

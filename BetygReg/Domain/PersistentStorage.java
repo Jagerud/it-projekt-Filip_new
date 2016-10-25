@@ -1,4 +1,6 @@
-package BetygReg;
+package BetygReg.Domain;
+
+import BetygReg.TechnicalServices.DBFacade;
 
 public class PersistentStorage {
 

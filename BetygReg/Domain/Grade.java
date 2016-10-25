@@ -1,4 +1,4 @@
-package BetygReg;
+package BetygReg.Domain;
 
 import java.io.BufferedWriter;
 import java.io.File;

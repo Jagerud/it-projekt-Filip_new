@@ -1,4 +1,6 @@
-package BetygReg;
+package BetygReg.Domain;
+
+import BetygReg.AssignmentList;
 
 import java.util.Observable;
 
@@ -6,7 +8,7 @@ public class Student extends Observable {
 
 	private String id;
     private String name;
-    private  AssignmentList aList;
+    private AssignmentList aList;
     private int points = 0;
 	//private String grade;
 	//private Grade gradeObject;

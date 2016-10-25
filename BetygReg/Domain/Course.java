@@ -1,4 +1,6 @@
-package BetygReg;
+package BetygReg.Domain;
+
+import BetygReg.StudentList;
 
 import java.util.*;
 
