@@ -1,7 +1,5 @@
 package BetygReg.Domain;
 
-import BetygReg.StudentList;
-
 import java.util.*;
 
 public class Course implements Observer {

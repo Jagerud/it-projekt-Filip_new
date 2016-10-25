@@ -1,11 +1,9 @@
 package BetygReg.UI;
 
-import BetygReg.CourseList;
-import BetygReg.PersistentStorage;
+import BetygReg.Domain.CourseList;
+import BetygReg.Domain.PersistentStorage;
 
 import java.io.FileNotFoundException;
-import java.util.Iterator;
-import java.util.Map;
 import java.util.Scanner;
 
 public class CourseAdmin {

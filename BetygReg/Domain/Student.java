@@ -1,7 +1,5 @@
 package BetygReg.Domain;
 
-import BetygReg.AssignmentList;
-
 import java.util.Observable;
 
 public class Student extends Observable {

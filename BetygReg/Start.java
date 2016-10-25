@@ -1,5 +1,7 @@
 package BetygReg;
 
+import BetygReg.UI.CourseAdmin;
+
 import java.io.FileNotFoundException;
 
 public class Start {
