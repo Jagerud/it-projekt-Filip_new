@@ -15,6 +15,7 @@ public class CourseAdmin {
         Scanner sc = new Scanner(System.in);
         CourseList cList = new CourseList("test");
         PersistentStorage pS = new PersistentStorage();
+        DomainFacade domainFacade = new DomainFacade();
 
         while (true) {
 
@@ -51,8 +52,8 @@ public class CourseAdmin {
 */
             System.out.print("Choose course:");
 
-
-            System.out.println(cList.getCourses());
+            System.out.println(domainFacade.getCourses()); //via fasad
+            //System.out.println(cList.getCourses());       //samma som ovan utan fasad
             int input = sc.nextInt();
             System.out.println(input);
 
