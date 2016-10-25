@@ -1,4 +1,4 @@
-package BetygReg;
+package BetygReg.Domain;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -7,14 +7,26 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Grade {
-	private String[] grades = new String[]{"U","G","VG"};
+    private String[] grades = new String[]{"U", "G", "VG"};
     private String grade = "U";
 
-    public Grade(){
+    public Grade() {
 
-	}
+    }
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {         //Kontroll av inmatning
+        if (grade.compareTo(grades[0]) == 0 || grade.compareTo(grades[1]) == 0 || grade.compareTo(grades[2]) == 0) {
+            this.grade = grade;
+        }else{
+            System.out.println("Wrong input");
+        }
+    }
+}
 /*
-	public void saveGrade(ArrayList<String> list){
+    public void saveGrade(ArrayList<String> list){
 		try {
 			File file = new File("studentList.txt");
 			// if file doesnt exists, then create it
@@ -37,14 +49,3 @@ public class Grade {
 		System.exit(1); //Oklart om vi ska ha system.exit() dolt i kod här
 	}
 	*/
-
-	public String getGrade(){
-		return grade;
-	}
-
-	public void setGrade(String grade){         //Kontroll av inmatning
-        if(grade.compareTo(grades[0])==0 || grade.compareTo(grades[1])==0 || grade.compareTo(grades[2])==0) {
-            this.grade = grade;
-        }
-	}
-}

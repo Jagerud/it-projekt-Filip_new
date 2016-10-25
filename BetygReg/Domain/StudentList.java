@@ -1,6 +1,8 @@
-package BetygReg;
+package BetygReg.Domain;
 
-import java.io.*;
+import BetygReg.Domain.AssignmentList;
+import BetygReg.Domain.Student;
+
 import java.util.*;
 
 public class StudentList {
@@ -8,17 +10,63 @@ public class StudentList {
 	//private String findFile;
 	//private ArrayList<String> studentList;
 	//private ArrayList<String> list2 = new ArrayList<>();
-	//private ArrayList<Student> studentList = new ArrayList<>(); //TODO Fyll med student
-    private HashMap<String, Student> studentHashMap = new HashMap<>();
+	//private ArrayList<Student> studentList = new ArrayList<>();
+    private HashMap<String, Student> studentHashMap;// = new HashMap<>();
 
+    //private final AssignmentList aList;
+    //private final HashMap<String, AssignmentList> assignmentListHashMap;
+    private ArrayList<AssignmentList> a;
 	//private boolean loop;
 	//private Student current;
-	public StudentList(){
+	public StudentList(/*HashMap<String, AssignmentList> assignmentListHashMap*/ ArrayList<AssignmentList> a ){
+        //this.aList = aList;
+        //this.assignmentListHashMap = assignmentListHashMap;
+        this.a = a;
+        studentHashMap = new HashMap<>();
         addBullShit();
 	}
 
-	//TODO hämta alla studentobjekt och spara i en array kallad studentlist
-	public void getRelevant(String cID) throws FileNotFoundException{
+    public String getStudentName(String key){
+        return studentHashMap.get(key).getName();
+    }
+    public void test(){
+        System.out.println(studentHashMap.get("0").getName());
+    }
+    public HashMap<String,Student> getStudentHashMap(){
+        return studentHashMap;
+    }
+    /*public String getStudents(){
+            String students = "";
+
+
+            Iterator it = studentHashMap.entrySet().iterator();
+
+            while (it.hasNext()) {
+                Map.Entry pair = (Map.Entry)it.next();
+                //System.out.println(pair.getKey() + " = " + pair.getValue());
+                students = students + pair.getKey() +  ", ";
+                //it.remove(); // avoids a ConcurrentModificationException
+            }
+            return students;
+        }*/
+    public String getStudentGrade(String listKey, String studentKey){
+        return studentHashMap.get(listKey).getStudentGrade(studentKey);
+    }
+    public void setStudentGrade(String key, String studentKey,String grade){
+        studentHashMap.get(key).setStudentGrade(studentKey,grade);
+    }
+
+
+	private void addBullShit(){
+        //mata in namn i både namn och i put
+        Student shit1 = new Student("0","shit1", a.get(0));
+        Student shit2 = new Student("1","shit2", a.get(1));
+        Student shit3 = new Student("2","shit3", a.get(2));
+        studentHashMap.put(shit1.getId(),shit1);
+        studentHashMap.put(shit2.getId(),shit2);
+        studentHashMap.put(shit3.getId(),shit3);
+
+	}/*public void getRelevant(String cID) throws FileNotFoundException{
 		/*Scanner sc = new Scanner(System.in);
 		loop = true;
 		//Grade grade = new Grade();		//kolla upp när de ska initieras
@@ -80,36 +128,8 @@ public class StudentList {
 				current.getGradeObject().saveGrade(studentList);
 			}
 		}*/
-	}
+
 	/*public ArrayList<Student> getList(){
 		return studentList;
 	} */
-    public HashMap<String,Student> getStudentHashMap(){
-        return studentHashMap;
-    }
-
-    public String getStudents(){
-            String students = "";
-
-            Iterator it = studentHashMap.entrySet().iterator();
-
-            while (it.hasNext()) {
-                Map.Entry pair = (Map.Entry)it.next();
-                //System.out.println(pair.getKey() + " = " + pair.getValue());
-                students = students + pair.getKey() +  ", ";
-                it.remove(); // avoids a ConcurrentModificationException
-            }
-            return students;
-        }
-
-
-	private void addBullShit(){
-        Student shit1 = new Student("0","shit1");
-        Student shit2 = new Student("1","shit2");
-        Student shit3 = new Student("2","shit3");
-        studentHashMap.put(shit1.getId(),shit1);
-        studentHashMap.put(shit2.getId(),shit2);
-        studentHashMap.put(shit3.getId(),shit3);
-
-	}
 }
