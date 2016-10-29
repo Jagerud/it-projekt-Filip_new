@@ -14,6 +14,9 @@ public class DomainFacade {
     CourseList courseList = new CourseList("test");
     PersistentStorage persistentStorage = new PersistentStorage();
 
+    public DomainFacade(){
+
+    }
 
     public String getCourses() {
         return courseList.getCourses();

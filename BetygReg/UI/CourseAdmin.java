@@ -8,11 +8,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class CourseAdmin {
-
-    //private  String findFile = null;
-    //private  ArrayList<String> list;
-
-    public void getCourseList() throws FileNotFoundException {
+    public static void getCourseList() throws FileNotFoundException {
         Scanner sc = new Scanner(System.in);
         DomainFacade domainFacade = new DomainFacade();
 
@@ -222,5 +218,8 @@ public class CourseAdmin {
         public
         */
         //}
+    }
+    public static void main(String[] args)throws FileNotFoundException{
+        getCourseList();
     }
 }
