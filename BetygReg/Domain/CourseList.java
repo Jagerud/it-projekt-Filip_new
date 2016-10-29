@@ -72,22 +72,21 @@ public class CourseList {
         return courses;
     }
     private void addBullshit(){
-        Course shit1 = new Course("725G00 - Projektledningsmojelimoj");
-        courseHash.put("725G00",shit1);
-        Course shit2 = new Course("725G01 - Materialkunskap");
-        courseHash.put("725G01",shit2);
-        Course shit3 = new Course("725G02 - Programmeringsskoj");
-        courseHash.put("725G02",shit3);
-        //courseHash.put("11",new Course("Funka som fan"));
+        Course course0 = new Course("0 725G00 - Projektledningsmojelimoj");
+        courseHash.put("725G00",course0);
+        Course course1 = new Course("1 725G01 - Materialkunskap");
+        courseHash.put("725G01",course1);
+        Course course2 = new Course("2 725G02 - Programmeringsskoj");
+        courseHash.put("725G02",course2);
 
     }
     private void addBullshitList(){
-        Course shit1 = new Course("0 725G00 - Projektledningsmojelimoj");
-        courseList.add(shit1);
-        Course shit2 = new Course("1 725G01 - Materialkunskap");
-        courseList.add(shit2);
-        Course shit3 = new Course("2 725G02 - Programmeringsskoj");
-        courseList.add(shit3);
+        Course course_0 = new Course("0 725G00 - Projektledningsmojelimoj");
+        courseList.add(course_0);
+        Course course_1 = new Course("1 725G01 - Materialkunskap");
+        courseList.add(course_1);
+        Course course_2 = new Course("2 725G02 - Programmeringsskoj");
+        courseList.add(course_2);
 
     }
 }

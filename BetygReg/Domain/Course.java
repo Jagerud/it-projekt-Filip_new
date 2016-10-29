@@ -5,7 +5,7 @@ import java.util.*;
 public class Course implements Observer {
     private String name;
     //enrolled students?
-    //private HashMap<String,AssignmentList> assignmentListHashMap = new HashMap<>();
+    private HashMap<String,AssignmentList> assignmentListHashMap = new HashMap<>();
     private ArrayList<AssignmentList>  assignmentLists = new ArrayList<>();
 
     //private AssignmentList aList = new AssignmentList();
@@ -72,12 +72,12 @@ public class Course implements Observer {
         assignmentListHashMap.put(getStudentHlist().get("2").getName(),aList3);
     } */
     private void addBullshitToAssignmentList(){
+        AssignmentList aList0 = new AssignmentList();
         AssignmentList aList1 = new AssignmentList();
         AssignmentList aList2 = new AssignmentList();
-        AssignmentList aList3 = new AssignmentList();
+        assignmentLists.add(aList0);
         assignmentLists.add(aList1);
         assignmentLists.add(aList2);
-        assignmentLists.add(aList3);
     }
 
     @Override

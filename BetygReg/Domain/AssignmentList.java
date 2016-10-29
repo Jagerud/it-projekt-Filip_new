@@ -47,12 +47,12 @@ public class AssignmentList {
     }
 
     private void addBullshit(){
-        Assignment shit1 = new Assignment("0","Task0");
-        Assignment shit2 = new Assignment("1","Task1");
-        Assignment shit3 = new Assignment("2","Task2");
-        assignmentHList.put(shit1.getId(),shit1);
-        assignmentHList.put(shit2.getId(),shit2);
-        assignmentHList.put(shit3.getId(),shit3);
+        Assignment assignment0 = new Assignment("0","Task0");
+        Assignment assigment1 = new Assignment("1","Task1");
+        Assignment assignment2 = new Assignment("2","Task2");
+        assignmentHList.put(assignment0.getId(),assignment0);
+        assignmentHList.put(assigment1.getId(),assigment1);
+        assignmentHList.put(assignment2.getId(),assignment2);
 
 
 
