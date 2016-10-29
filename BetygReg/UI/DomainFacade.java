@@ -2,6 +2,7 @@ package BetygReg.UI;
 
 import BetygReg.Domain.Course;
 import BetygReg.Domain.CourseList;
+import BetygReg.Domain.PersistentStorage;
 
 import java.util.ArrayList;
 
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 public class DomainFacade {
 
     CourseList courseList = new CourseList("test");
+    PersistentStorage persistentStorage = new PersistentStorage();
 
 
     public String getCourses() {
@@ -24,5 +26,8 @@ public class DomainFacade {
     }
     public void setStudentGrade(int courseKey, String listKey, String studentKey, String grade){
         courseList.getCourseList().get(courseKey).setStudentGrade(listKey, studentKey, grade);
+    }
+    public void setGrade (String id, String grade) throws Exception {
+        persistentStorage.getDbFasad().setStudentGrade(id, grade);
     }
 }

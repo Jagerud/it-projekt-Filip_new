@@ -14,7 +14,6 @@ public class CourseAdmin {
 
     public void getCourseList() throws FileNotFoundException {
         Scanner sc = new Scanner(System.in);
-        PersistentStorage pS = new PersistentStorage();
         DomainFacade domainFacade = new DomainFacade();
 
         while (true) {
@@ -109,7 +108,7 @@ public class CourseAdmin {
             } else {
                 System.out.println("Registering in Ladok");
                 try {                                     //TODO Registrering i DB funkar ej
-                    pS.setGrade(input3, input4);
+                    domainFacade.setGrade(input3, input4);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
