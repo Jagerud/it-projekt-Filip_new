@@ -1,3 +1,4 @@
+//Grade kommentar
 package BetygReg.Domain;
 
 import java.io.BufferedWriter;
