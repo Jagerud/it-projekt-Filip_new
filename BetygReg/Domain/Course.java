@@ -11,7 +11,7 @@ public class Course implements Observer {
     //private AssignmentList aList = new AssignmentList();
     private StudentList sList;
 
-    public Course(String name){
+    Course(String name){
         this.name = name;
         addBullshitToAssignmentList();
         sList = new StudentList(assignmentLists);

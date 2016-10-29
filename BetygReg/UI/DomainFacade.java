@@ -31,6 +31,9 @@ public class DomainFacade {
         courseList.getCourseList().get(courseKey).setStudentGrade(listKey, studentKey, grade);
     }
     public void setGrade (String id, String grade) throws Exception {
-        persistentStorage.getDbFasad().setStudentGrade(id, grade);
+        persistentStorage.setGrade(id, grade);
+    }
+    public void getGrade (String id) throws Exception {
+        persistentStorage.getGrade(id);
     }
 }

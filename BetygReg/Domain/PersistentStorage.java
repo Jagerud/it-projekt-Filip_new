@@ -17,7 +17,4 @@ public class PersistentStorage {
     public void getGrade (String id) throws Exception {
         dbFasad.getStudentGrade(id);
     }
-    public DBFacade getDbFasad(){
-        return dbFasad;
-    }
 }
