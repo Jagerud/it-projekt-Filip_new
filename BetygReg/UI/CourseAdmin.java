@@ -2,6 +2,7 @@ package BetygReg.UI;
 
 import BetygReg.Domain.CourseList;
 import BetygReg.Domain.PersistentStorage;
+import BetygReg.TechnicalServices.DBFacade;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -13,7 +14,7 @@ public class CourseAdmin {
 
     public void getCourseList() throws FileNotFoundException {
         Scanner sc = new Scanner(System.in);
-        //PersistentStorage pS = new PersistentStorage();
+        PersistentStorage pS = new PersistentStorage();
         DomainFacade domainFacade = new DomainFacade();
 
         while (true) {
@@ -65,17 +66,19 @@ public class CourseAdmin {
             domainFacade.getCourseList().get(input).getStudentList().getStudentHashMap().get(input2).addObserver(domainFacade.getCourseList().get(input)); //Adding observer to student
             //domainFacade.getCourseList().get(input).getStudentList().getStudentHashMap().get(input2).addObserver(domainFacade.getCourseList().get(input)); //Adding observer to student
             System.out.println(domainFacade.getCourseList().get(input).getStudentList().getStudentHashMap().get(input2).getName());
+
+            String input3, input4;
             while (true) {
             System.out.println("Choose assignment");
             System.out.println(domainFacade.getCourseList().get(input).getAssignmentLists().get(0).getAssignments(input2));
-            String input3 = sc.next();
+            input3 = sc.next();
             System.out.println("Student: ");
             //System.out.println(domainFacade.getCourseList().get(input).getName());
             //skriv ut uppgift
             System.out.println(domainFacade.getStudentGrade(input, input2, input3));
 
                 System.out.println("Set grade");
-                String input4 = sc.next();
+                input4 = sc.next();
                 domainFacade.setStudentGrade(input, input2, input3, input4);
                 System.out.println(domainFacade.getStudentGrade(input, input2, input3));
 
@@ -105,12 +108,11 @@ public class CourseAdmin {
 
             } else {
                 System.out.println("Registering in Ladok");
-            /*try {                                     //TODO Registrering i DB funkar ej
-                pS.setGrade(input3, input4);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }*/
-
+                try {                                     //TODO Registrering i DB funkar ej
+                    pS.setGrade(input3, input4);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
 
 

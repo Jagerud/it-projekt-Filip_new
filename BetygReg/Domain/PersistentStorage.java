@@ -11,6 +11,10 @@ public class PersistentStorage {
     }
 
     public void setGrade (String id, String grade) throws Exception {
-        this.dbFasad.setStudentGrade(id, grade);
+        dbFasad.setStudentGrade(id, grade);
+    }
+
+    public void getGrade (String id) throws Exception {
+        dbFasad.getStudentGrade(id);
     }
 }
