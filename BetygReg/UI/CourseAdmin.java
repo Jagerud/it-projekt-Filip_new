@@ -15,22 +15,7 @@ public class CourseAdmin {
         DomainFacade domainFacade = new DomainFacade();
 
         while (true) {
-
-            //
-            //
-            //
-            //
-            //
-            //Huvudanvädningsfall finns nedan
-            //
-            //
-            //
-            //
-            //System.out.println(domainFacade.getCourseList().get(0).getStudentList().getStudentHashMap().containsKey("0"));
-            //System.out.println(domainFacade.getCourseList().get(0).getStudentList().getStudentHashMap().get("0").getName());
-
-            //System.out.println(domainFacade.getCourseList().get(0).getStudentList().getStudentHashMap().get("0").getName());
-/*
+/*          //Annat användingsfall
         while (true) {
 
             System.out.println("Wanna change names on assignments (1) or handle student grades? (0)");
@@ -50,18 +35,15 @@ public class CourseAdmin {
             System.out.print("Make selections by typing 0-2 \nChoose course:");
 
             System.out.println(domainFacade.getCourses()); //via fasad
-            //System.out.println(domainFacade.getCourses());       //samma som ovan utan fasad
-            //String studentInput = sc.next();
             int courseInput = sc.nextInt();
-            //System.out.println(studentInput);
-
-
             System.out.println("Choose student: ");
-            System.out.println(domainFacade.getCourseList().get(courseInput).getStudents()); //fasad
+            //System.out.println(domainFacade.getCourseList().get(courseInput).getStudents()); //fasad
+            System.out.println("students in 725G00: ");
+            System.out.print(domainFacade.getCourseList().get(0).getStudentHlist().get("0").getName() + " ");
 
-            //System.out.println(domainFacade.getCourseHash().get(studentInput).get); //fasad
+            System.out.print(domainFacade.getCourseList().get(0).getStudentHlist().get("1").getName() + " ");
 
-            //System.out.println(domainFacade.getCourseList().get(studentInput).getStudents());
+            System.out.println(domainFacade.getCourseList().get(0).getStudentHlist().get("2").getName());
             String studentInput = sc.next();
             //System.out.println(domainFacade.getCourseList().get(studentInput).getStudentList().getStudentName("0"));
 
@@ -88,21 +70,21 @@ public class CourseAdmin {
                 //System.out.println(domainFacade.getStudentGrade(studentInput, input2, "2"));
                 //domainFacade.setStudentGrade(studentInput, input2, "1", "G");
                 //domainFacade.setStudentGrade(studentInput, input2, "2", "G");
-
-                System.out.println(domainFacade.getStudentGrade(courseInput, studentInput, "0"));
-                System.out.println(domainFacade.getStudentGrade(courseInput, studentInput, "1"));
-                System.out.println(domainFacade.getStudentGrade(courseInput, studentInput, "2"));
+                System.out.println("\nAssignment grades for student: \n");
+                System.out.println("Assignment 0 grade: " + domainFacade.getStudentGrade(courseInput, studentInput, "0"));
+                System.out.println("Assignment 1 grade: " + domainFacade.getStudentGrade(courseInput, studentInput, "1"));
+                System.out.println("Assignment 2 grade: " + domainFacade.getStudentGrade(courseInput, studentInput, "2") + "\n");
 
                 System.out.print("Course grade: ");
                 System.out.println(domainFacade.getCourseList().get(courseInput).getStudentList().getStudentHashMap().get(studentInput).progress());
-                System.out.println("Wanna register more assignments\n0 to exit");
+                System.out.println("Wanna register more assignments\n\n0 to change student");
                 String end = sc.next();
                 if (end.compareTo("0") == 0) {
                     break;
                 }
             }
 
-            System.out.println("Wanna register on Ladok?");
+            System.out.println("Do you want to register on Ladok or grade more students?\n1 to register and 0 to continue");
             int end = sc.nextInt();
             if (end == 0) {
                 System.out.println("You can register later");
