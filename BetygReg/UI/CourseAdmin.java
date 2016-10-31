@@ -1,6 +1,7 @@
 package BetygReg.UI;
 
 import BetygReg.Domain.CourseList;
+import BetygReg.Domain.GradeConvert;
 import BetygReg.Domain.PersistentStorage;
 import BetygReg.TechnicalServices.DBFacade;
 
@@ -71,10 +72,16 @@ public class CourseAdmin {
             //System.out.println(domainFacade.getCourseList().get(input).getName());
             //skriv ut uppgift
             System.out.println(domainFacade.getStudentGrade(input, input2, input3));
-
+            
+            GradeConvert Conv = new GradeConvert();
+            domainFacade.setStudentGrade(input, input2, input3, Conv.ConvertGrade(domainFacade.getStudentGrade(input, input2, input3)));
+            
                 System.out.println("Set grade");
                 input4 = sc.next();
                 domainFacade.setStudentGrade(input, input2, input3, input4);
+                
+                domainFacade.setStudentGrade(input, input2, input3, Conv.ConvertGrade(domainFacade.getStudentGrade(input, input2, input3)));
+
                 System.out.println(domainFacade.getStudentGrade(input, input2, input3));
 
 
