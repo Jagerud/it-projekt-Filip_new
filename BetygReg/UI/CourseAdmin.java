@@ -6,6 +6,8 @@ import BetygReg.Domain.PersistentStorage;
 import BetygReg.TechnicalServices.DBFacade;
 
 import java.io.FileNotFoundException;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Scanner;
 
 public class CourseAdmin {
@@ -14,22 +16,7 @@ public class CourseAdmin {
         DomainFacade domainFacade = new DomainFacade();
 
         while (true) {
-
-            //
-            //
-            //
-            //
-            //
-            //Huvudanvädningsfall finns nedan
-            //
-            //
-            //
-            //
-            //System.out.println(domainFacade.getCourseList().get(0).getStudentList().getStudentHashMap().containsKey("0"));
-            //System.out.println(domainFacade.getCourseList().get(0).getStudentList().getStudentHashMap().get("0").getName());
-
-            //System.out.println(domainFacade.getCourseList().get(0).getStudentList().getStudentHashMap().get("0").getName());
-/*
+/*          //Annat användingsfall
         while (true) {
 
             System.out.println("Wanna change names on assignments (1) or handle student grades? (0)");
@@ -46,64 +33,66 @@ public class CourseAdmin {
             }
         }
 */
-            System.out.print("Choose course:");
+            System.out.print("Make selections by typing 0-2 \nChoose course:");
 
             System.out.println(domainFacade.getCourses()); //via fasad
-            //System.out.println(domainFacade.getCourses());       //samma som ovan utan fasad
-            int input = sc.nextInt();
-            System.out.println(input);
+            int courseInput = sc.nextInt();
+            System.out.println("Choose student: ");
+            //System.out.println(domainFacade.getCourseList().get(courseInput).getStudents()); //fasad
+            System.out.println("students in 725G00: ");
+            System.out.print(domainFacade.getCourseList().get(0).getStudentHlist().get("0").getName() + " ");
 
+            System.out.print(domainFacade.getCourseList().get(0).getStudentHlist().get("1").getName() + " ");
 
-            System.out.println("choose student: ");
-            System.out.println(domainFacade.getCourseList().get(input).getStudents()); //fasad
-            //System.out.println(domainFacade.getCourseList().get(input).getStudents());
-            String input2 = sc.next();
-            //System.out.println(domainFacade.getCourseList().get(input).getStudentList().getStudentName("0"));
-            domainFacade.getCourseList().get(input).getStudentList().getStudentHashMap().get(input2).addObserver(domainFacade.getCourseList().get(input)); //Adding observer to student
-            //domainFacade.getCourseList().get(input).getStudentList().getStudentHashMap().get(input2).addObserver(domainFacade.getCourseList().get(input)); //Adding observer to student
-            System.out.println(domainFacade.getCourseList().get(input).getStudentList().getStudentHashMap().get(input2).getName());
+            System.out.println(domainFacade.getCourseList().get(0).getStudentHlist().get("2").getName());
+            String studentInput = sc.next();
+            //System.out.println(domainFacade.getCourseList().get(studentInput).getStudentList().getStudentName("0"));
 
-            String input3, input4;
+            domainFacade.getCourseList().get(courseInput).getStudentList().getStudentHashMap().get(studentInput).addObserver(domainFacade.getCourseList().get(courseInput)); //Adding observer to student
+            //domainFacade.getCourseList().get(studentInput).getStudentList().getStudentHashMap().get(input2).addObserver(domainFacade.getCourseList().get(studentInput)); //Adding observer to student
+            System.out.println(domainFacade.getCourseList().get(courseInput).getStudentList().getStudentHashMap().get(studentInput).getName());
+
+            String assignmentInput, gradeInput;
             while (true) {
-            System.out.println("Choose assignment");
-            System.out.println(domainFacade.getCourseList().get(input).getAssignmentLists().get(0).getAssignments(input2));
-            input3 = sc.next();
-            System.out.println("Student: ");
-            //System.out.println(domainFacade.getCourseList().get(input).getName());
-            //skriv ut uppgift
-            System.out.println(domainFacade.getStudentGrade(input, input2, input3));
-            
-            GradeConvert Conv = new GradeConvert();
-            domainFacade.setStudentGrade(input, input2, input3, Conv.ConvertGrade(domainFacade.getStudentGrade(input, input2, input3)));
-            
-                System.out.println("Set grade");
-                input4 = sc.next();
-                domainFacade.setStudentGrade(input, input2, input3, input4);
+
+                System.out.println("Choose assignment");
+                System.out.println(domainFacade.getCourseList().get(courseInput).getAssignmentLists().get(0).getAssignments(studentInput));
+                assignmentInput = sc.next();
+                System.out.println("Student grade on assignment " + assignmentInput + " ");
+                //System.out.println(domainFacade.getCourseList().get(studentInput).getName());
+                System.out.println(domainFacade.getStudentGrade(courseInput, studentInput, assignmentInput));
                 
-                domainFacade.setStudentGrade(input, input2, input3, Conv.ConvertGrade(domainFacade.getStudentGrade(input, input2, input3)));
+                GradeConvert Conv = new GradeConvert();
+                domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, Conv.ConvertGrade(domainFacade.getStudentGrade(courseInput, studentInput, assignmentInput)));
 
-                System.out.println(domainFacade.getStudentGrade(input, input2, input3));
+                System.out.println("Set grade");
 
+                gradeInput = sc.next();
+                domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, gradeInput);
+                System.out.println(domainFacade.getStudentGrade(courseInput, studentInput, assignmentInput));
+                
+                domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, Conv.ConvertGrade(domainFacade.getStudentGrade(courseInput, studentInput, assignmentInput)));
+                
 
-                //System.out.println(domainFacade.getStudentGrade(input, input2, "1"));
-                //System.out.println(domainFacade.getStudentGrade(input, input2, "2"));
-                //domainFacade.setStudentGrade(input, input2, "1", "G");
-                //domainFacade.setStudentGrade(input, input2, "2", "G");
-
-                System.out.println(domainFacade.getStudentGrade(input, input2, "0"));
-                System.out.println(domainFacade.getStudentGrade(input, input2, "1"));
-                System.out.println(domainFacade.getStudentGrade(input, input2, "2"));
+                //System.out.println(domainFacade.getStudentGrade(studentInput, input2, "1"));
+                //System.out.println(domainFacade.getStudentGrade(studentInput, input2, "2"));
+                //domainFacade.setStudentGrade(studentInput, input2, "1", "G");
+                //domainFacade.setStudentGrade(studentInput, input2, "2", "G");
+                System.out.println("\nAssignment grades for student: \n");
+                System.out.println("Assignment 0 grade: " + domainFacade.getStudentGrade(courseInput, studentInput, "0"));
+                System.out.println("Assignment 1 grade: " + domainFacade.getStudentGrade(courseInput, studentInput, "1"));
+                System.out.println("Assignment 2 grade: " + domainFacade.getStudentGrade(courseInput, studentInput, "2") + "\n");
 
                 System.out.print("Course grade: ");
-                System.out.println(domainFacade.getCourseList().get(input).getStudentList().getStudentHashMap().get(input2).progress());
-                System.out.println("Wanna register more assignments?");
-                String ass = sc.next();
-                if (ass.compareTo("0")==0){
+                System.out.println(domainFacade.getCourseList().get(courseInput).getStudentList().getStudentHashMap().get(studentInput).progress());
+                System.out.println("Wanna register more assignments\n\n0 to change student");
+                String end = sc.next();
+                if (end.compareTo("0") == 0) {
                     break;
                 }
             }
 
-            System.out.println("Wanna register on Ladok?");
+            System.out.println("Do you want to register on Ladok or grade more students?\n1 to register and 0 to continue");
             int end = sc.nextInt();
             if (end == 0) {
                 System.out.println("You can register later");
@@ -111,12 +100,11 @@ public class CourseAdmin {
             } else {
                 System.out.println("Registering in Ladok");
                 try {                                     //TODO Registrering i DB funkar ej
-                    domainFacade.setGrade(input3, input4);
+                    domainFacade.setGrade(assignmentInput, gradeInput);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
-
 
 
             //System.out.println(domainFacade.getHCourse("725G00").getStudentGrade("0", "0"));
@@ -224,9 +212,9 @@ public class CourseAdmin {
         }
         public
         */
-        //}
     }
-    public static void main(String[] args)throws FileNotFoundException{
+
+    public static void main(String[] args) throws FileNotFoundException {
         getCourseList();
     }
 }

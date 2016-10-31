@@ -5,6 +5,7 @@ import BetygReg.Domain.CourseList;
 import BetygReg.Domain.PersistentStorage;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Jaeger on 2016-10-25.
@@ -24,6 +25,10 @@ public class DomainFacade {
     public ArrayList<Course> getCourseList(){
         return courseList.getCourseList();
     }
+    public HashMap<String,Course> getCourseHash(){
+        return courseList.getCourseHash();
+    }
+
     public String getStudentGrade(int courseKey, String listKey, String studentKey ){
         return courseList.getCourseList().get(courseKey).getStudentGrade(listKey, studentKey);
     }

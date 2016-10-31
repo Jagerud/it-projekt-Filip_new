@@ -35,7 +35,7 @@ public class StudentList {
     public HashMap<String,Student> getStudentHashMap(){
         return studentHashMap;
     }
-    /*public String getStudents(){
+    public String getStudents(){
             String students = "";
 
 
@@ -48,7 +48,7 @@ public class StudentList {
                 //it.remove(); // avoids a ConcurrentModificationException
             }
             return students;
-        }*/
+        }
     public String getStudentGrade(String listKey, String studentKey){
         return studentHashMap.get(listKey).getStudentGrade(studentKey);
     }
@@ -59,12 +59,12 @@ public class StudentList {
 
 	private void addBullShit(){
         //mata in namn i både namn och i put
-        Student shit1 = new Student("0","shit1", a.get(0));
-        Student shit2 = new Student("1","shit2", a.get(1));
-        Student shit3 = new Student("2","shit3", a.get(2));
-        studentHashMap.put(shit1.getId(),shit1);
-        studentHashMap.put(shit2.getId(),shit2);
-        studentHashMap.put(shit3.getId(),shit3);
+        Student student0 = new Student("0","student0", a.get(0));
+        Student student1 = new Student("1","student1", a.get(1));
+        Student student2 = new Student("2","student2", a.get(2));
+        studentHashMap.put(student0.getId(),student0);
+        studentHashMap.put(student1.getId(),student1);
+        studentHashMap.put(student2.getId(),student2);
 
 	}/*public void getRelevant(String cID) throws FileNotFoundException{
 		/*Scanner sc = new Scanner(System.in);
