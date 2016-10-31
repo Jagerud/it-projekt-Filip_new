@@ -2,6 +2,7 @@ package BetygReg.UI;
 
 import BetygReg.Domain.Course;
 import BetygReg.Domain.CourseList;
+import BetygReg.Domain.GradeConvert;
 import BetygReg.Domain.PersistentStorage;
 
 import java.util.ArrayList;
@@ -12,8 +13,9 @@ import java.util.HashMap;
  */
 public class DomainFacade {
 
-    CourseList courseList = new CourseList("test");
-    PersistentStorage persistentStorage = new PersistentStorage();
+    private CourseList courseList = new CourseList("test");
+    private PersistentStorage persistentStorage = new PersistentStorage();
+    private GradeConvert conv = new GradeConvert();
 
     public DomainFacade(){
 
@@ -41,4 +43,8 @@ public class DomainFacade {
     public void getGrade (String id) throws Exception {
         persistentStorage.getGrade(id);
     }
+    public String convertGrade(String grade){
+        return conv.ConvertGrade(grade);
+    }
+
 }

@@ -61,9 +61,8 @@ public class CourseAdmin {
                 System.out.println("Student grade on assignment " + assignmentInput + " ");
                 //System.out.println(domainFacade.getCourseList().get(studentInput).getName());
                 System.out.println(domainFacade.getStudentGrade(courseInput, studentInput, assignmentInput));
-                
-                GradeConvert Conv = new GradeConvert();
-                domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, Conv.ConvertGrade(domainFacade.getStudentGrade(courseInput, studentInput, assignmentInput)));
+
+                domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, domainFacade.convertGrade(domainFacade.getStudentGrade(courseInput, studentInput, assignmentInput)));
 
                 System.out.println("Set grade");
 
@@ -71,7 +70,7 @@ public class CourseAdmin {
                 domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, gradeInput);
                 System.out.println(domainFacade.getStudentGrade(courseInput, studentInput, assignmentInput));
                 
-                domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, Conv.ConvertGrade(domainFacade.getStudentGrade(courseInput, studentInput, assignmentInput)));
+                domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, domainFacade.convertGrade(domainFacade.getStudentGrade(courseInput, studentInput, assignmentInput)));
                 
 
                 //System.out.println(domainFacade.getStudentGrade(studentInput, input2, "1"));
