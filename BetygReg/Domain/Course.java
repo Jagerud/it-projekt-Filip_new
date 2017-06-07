@@ -13,7 +13,7 @@ public class Course implements Observer {
 
     Course(String name){
         this.name = name;
-        addBullshitToAssignmentList();
+        addTempAssignmentList();
         sList = new StudentList(assignmentLists);
     }
     /*public HashMap<String,Student> getStudentList(){     //returnerar Studentobjekt i en arraylist
@@ -71,7 +71,7 @@ public class Course implements Observer {
         assignmentListHashMap.put(getStudentHlist().get("1").getName(),aList2);
         assignmentListHashMap.put(getStudentHlist().get("2").getName(),aList3);
     } */
-    private void addBullshitToAssignmentList(){
+    private void addTempAssignmentList(){
         AssignmentList aList0 = new AssignmentList();
         AssignmentList aList1 = new AssignmentList();
         AssignmentList aList2 = new AssignmentList();

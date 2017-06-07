@@ -1,12 +1,6 @@
 package UI;
 
-import Domain.CourseList;
-import Domain.PersistentStorage;
-import TechnicalServices.DBFacade;
-
 import java.io.FileNotFoundException;
-import java.util.Iterator;
-import java.util.Map;
 import java.util.Scanner;
 
 public class CourseAdmin {
@@ -40,6 +34,7 @@ public class CourseAdmin {
             //System.out.println(domainFacade.getCourseList().get(courseInput).getStudents()); //fasad
             System.out.println("students in 725G00: ");
             System.out.print(domainFacade.getCourseList().get(0).getStudentHlist().get("0").getName() + " ");
+//            System.out.println(domainFacade.getCourseHash().get("725G00").getStudentHlist().get("0").getName()); //nullpoint
 
             System.out.print(domainFacade.getCourseList().get(0).getStudentHlist().get("1").getName() + " ");
 

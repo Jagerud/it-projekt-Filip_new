@@ -19,8 +19,8 @@ public class CourseList {
         this.name = name;
         //courseList.add(activeCourse); //Hämtar kurser ifrån databas? annars från här
         //courseHash.put("10",test);
-        addBullshit();
-        addBullshitList();
+        addTempCourseHash();
+        addTempCourseList();
 
     }
     //public Course getCourse(){
@@ -71,7 +71,7 @@ public class CourseList {
         }
         return courses;
     }
-    private void addBullshit(){
+    private void addTempCourseHash(){
         Course course0 = new Course("0 725G00 - Projektledningsmojelimoj");
         courseHash.put("725G00",course0);
         Course course1 = new Course("1 725G01 - Materialkunskap");
@@ -80,7 +80,7 @@ public class CourseList {
         courseHash.put("725G02",course2);
 
     }
-    private void addBullshitList(){
+    private void addTempCourseList(){
         Course course_0 = new Course("0 725G00 - Projektledningsmojelimoj");
         courseList.add(course_0);
         Course course_1 = new Course("1 725G01 - Materialkunskap");
