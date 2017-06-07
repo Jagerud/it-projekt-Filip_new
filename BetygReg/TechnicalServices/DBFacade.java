@@ -1,5 +1,5 @@
 
-    package BetygReg.TechnicalServices;
+    package TechnicalServices;
 
     import java.sql.*;
 

@@ -1,8 +1,8 @@
-package BetygReg.UI;
+package UI;
 
-import BetygReg.Domain.CourseList;
-import BetygReg.Domain.PersistentStorage;
-import BetygReg.TechnicalServices.DBFacade;
+import Domain.CourseList;
+import Domain.PersistentStorage;
+import TechnicalServices.DBFacade;
 
 import java.io.FileNotFoundException;
 import java.util.Iterator;

@@ -1,7 +1,7 @@
-package BetygReg.Domain;
+package Domain;
 
-import BetygReg.Domain.AssignmentList;
-import BetygReg.Domain.Student;
+import Domain.AssignmentList;
+import Domain.Student;
 
 import java.util.*;
 
