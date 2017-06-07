@@ -34,7 +34,7 @@ public class CourseAdmin {
             //System.out.println(domainFacade.getCourseList().get(courseInput).getStudents()); //fasad
             System.out.println("students in 725G00: ");
             System.out.print(domainFacade.getCourseList().get(0).getStudentHlist().get("0").getName() + " ");
-//            System.out.println(domainFacade.getCourseHash().get("725G00").getStudentHlist().get("0").getName()); //nullpoint
+//            System.out.println(domainFacade.getCourseHash().get("725G00").getStudentHlist().get("0").getName()); //TODO nullpointer, vill använda hashs
 
             System.out.print(domainFacade.getCourseList().get(0).getStudentHlist().get("1").getName() + " ");
 
