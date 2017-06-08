@@ -2,7 +2,7 @@
     package TechnicalServices;
 
 
-    import BetygReg.Domain.Grade;
+    import Domain.Grade;
 
     import java.sql.*;
 
