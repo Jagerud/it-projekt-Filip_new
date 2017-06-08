@@ -1,9 +1,10 @@
-package BetygReg.UI;
+package UI;
 
-import BetygReg.Domain.Course;
-import BetygReg.Domain.CourseList;
-import BetygReg.Domain.GradeConvert;
-import BetygReg.Domain.PersistentStorage;
+import Domain.Course;
+import Domain.CourseList;
+import Domain.GradeConvert;
+import Domain.PersistentStorage;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,9 +1,12 @@
 
-    package BetygReg.TechnicalServices;
+    package TechnicalServices;
+
 
     import BetygReg.Domain.Grade;
 
     import java.sql.*;
+
+    
 
     public class DBFacade {
 

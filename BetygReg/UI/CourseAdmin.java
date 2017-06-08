@@ -1,13 +1,11 @@
-package BetygReg.UI;
+
+package UI;
 
 import BetygReg.Domain.CourseList;
 import BetygReg.Domain.GradeConvert;
 import BetygReg.Domain.PersistentStorage;
 import BetygReg.TechnicalServices.DBFacade;
-
 import java.io.FileNotFoundException;
-import java.util.Iterator;
-import java.util.Map;
 import java.util.Scanner;
 
 public class CourseAdmin {
@@ -41,6 +39,7 @@ public class CourseAdmin {
             //System.out.println(domainFacade.getCourseList().get(courseInput).getStudents()); //fasad
             System.out.println("students in 725G00: ");
             System.out.print(domainFacade.getCourseList().get(0).getStudentHlist().get("0").getName() + " ");
+//            System.out.println(domainFacade.getCourseHash().get("725G00").getStudentHlist().get("0").getName()); //TODO nullpointer, vill använda hashs
 
             System.out.print(domainFacade.getCourseList().get(0).getStudentHlist().get("1").getName() + " ");
 
