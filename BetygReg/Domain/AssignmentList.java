@@ -1,4 +1,4 @@
-package BetygReg.Domain;
+package Domain;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -13,7 +13,7 @@ public class AssignmentList {
     private String id;
     public AssignmentList(){
 
-        addBullshit();
+        addTempAssignmentHash();
     }
     public HashMap<String, Assignment> getAssignmentHList(){
         return assignmentHList;
@@ -46,12 +46,12 @@ public class AssignmentList {
         return assignments;
     }
 
-    private void addBullshit(){
+    private void addTempAssignmentHash(){
         Assignment assignment0 = new Assignment("0","Task0");
-        Assignment assigment1 = new Assignment("1","Task1");
+        Assignment assignment1 = new Assignment("1","Task1");
         Assignment assignment2 = new Assignment("2","Task2");
         assignmentHList.put(assignment0.getId(),assignment0);
-        assignmentHList.put(assigment1.getId(),assigment1);
+        assignmentHList.put(assignment1.getId(),assignment1);
         assignmentHList.put(assignment2.getId(),assignment2);
 
 

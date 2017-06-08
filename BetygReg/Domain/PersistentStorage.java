@@ -1,6 +1,6 @@
-package BetygReg.Domain;
+package Domain;
 
-import BetygReg.TechnicalServices.DBFacade;
+import TechnicalServices.DBFacade;
 
 public class PersistentStorage {
 
