@@ -1,4 +1,4 @@
-package BetygReg.Domain;
+package Domain;
 
 public interface GradeInterface {
 	
