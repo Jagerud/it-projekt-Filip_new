@@ -32,7 +32,7 @@ public class Student extends Observable {
     public void setStudentGrade(String key, String grade){
         aList.setAssignmentGrade(key,grade);
         setChanged();
-        notifyObservers("Studenten " + name + " har fått betyget " + getStudentGrade(key) + " på upppgift " + key);
+        notifyObservers("The student " + name + " has gotten the grade " + getStudentGrade(key) + " on assignment " + key);
     }
     public String progress(){ //går inte komplettera
         if(aList.getAssignmentGrade("0").compareTo("VG")==0){

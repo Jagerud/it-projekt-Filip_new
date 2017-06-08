@@ -1,10 +1,12 @@
 
     package TechnicalServices;
 
-    import java.sql.Connection;
-    import java.sql.DriverManager;
-    import java.sql.PreparedStatement;
-    import java.sql.SQLException;
+
+    import BetygReg.Domain.Grade;
+
+    import java.sql.*;
+
+    
 
     public class DBFacade {
 
@@ -40,10 +42,18 @@
                 String connectionUrl = "jdbc:sqlserver://IDASQL.ad.liu.se;database=725G79;";
                 Connection conn = DriverManager.getConnection(connectionUrl, "725G79L5caral311", "zPttfbC80");
 
-                PreparedStatement st = conn.prepareStatement("SELECT Grade WHERE ID = (?)");
-                st.executeUpdate();
+                String query = "SELECT Grade FROM StudentGrade WHERE ID = '0'";
+                Statement stmt = null;
+                stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(query);
+
+                String grade = "";
+                while (rs.next()) {
+                    grade = rs.getString("Grade");
+                }
+
                 conn.close();
-                System.out.println(st);
+                System.out.println(grade);
             }
             catch (ClassNotFoundException | SQLException cnfe) {
                 //Problem med att ladda drivern?
