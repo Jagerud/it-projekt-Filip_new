@@ -1,10 +1,5 @@
-
 package UI;
 
-import Domain.CourseList;
-import Domain.GradeConvert;
-import Domain.PersistentStorage;
-import TechnicalServices.DBFacade;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -69,9 +64,9 @@ public class CourseAdmin {
                 gradeInput = sc.next();
                 domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, gradeInput);
                 //System.out.println(domainFacade.getStudentGrade(courseInput, studentInput, assignmentInput));
-                
+
                 domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, domainFacade.convertGrade(domainFacade.getStudentGrade(courseInput, studentInput, assignmentInput)));
-                
+
 
                 //System.out.println(domainFacade.getStudentGrade(studentInput, input2, "1"));
                 //System.out.println(domainFacade.getStudentGrade(studentInput, input2, "2"));

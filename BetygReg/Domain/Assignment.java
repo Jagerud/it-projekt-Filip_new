@@ -5,23 +5,27 @@ public class Assignment {
     private String name = null;
     private Grade assignmentGrade = new Grade();
 
-    public Assignment(String id, String name){
+    public Assignment(String id, String name) {
         this.id = id;
         this.name = name;
     }
+
     /*public void setAssignmentGrade(String grade){
         assignmentGrade.setGrade(grade);
     }*/
-    public Grade getAssignmentGrade(){
+    public Grade getAssignmentGrade() {
         return assignmentGrade;
     }
-    public String getGrade(){
+
+    public String getGrade() {
         return assignmentGrade.getGrade();
     }
-    public void setGrade(String grade){
+
+    public void setGrade(String grade) {
         assignmentGrade.setGrade(grade);
     }
-      //Oklart om de ska ändras utifrån
+
+    //Oklart om de ska ändras utifrån
     public String getId() {
         return id;
     }

@@ -5,7 +5,6 @@ import Domain.CourseList;
 import Domain.GradeConvert;
 import Domain.PersistentStorage;
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -18,33 +17,39 @@ public class DomainFacade {
     private PersistentStorage persistentStorage = new PersistentStorage();
     private GradeConvert conv = new GradeConvert();
 
-    public DomainFacade(){
+    public DomainFacade() {
 
     }
 
     public String getCourses() {
         return courseList.getCourses();
     }
-    public ArrayList<Course> getCourseList(){
+
+    public ArrayList<Course> getCourseList() {
         return courseList.getCourseList();
     }
-    public HashMap<String,Course> getCourseHash(){
+
+    public HashMap<String, Course> getCourseHash() {
         return courseList.getCourseHash();
     }
 
-    public String getStudentGrade(int courseKey, String listKey, String studentKey ){
+    public String getStudentGrade(int courseKey, String listKey, String studentKey) {
         return courseList.getCourseList().get(courseKey).getStudentGrade(listKey, studentKey);
     }
-    public void setStudentGrade(int courseKey, String listKey, String studentKey, String grade){
+
+    public void setStudentGrade(int courseKey, String listKey, String studentKey, String grade) {
         courseList.getCourseList().get(courseKey).setStudentGrade(listKey, studentKey, grade);
     }
-    public void setGrade (String id, String grade) throws Exception {
+
+    public void setGrade(String id, String grade) throws Exception {
         persistentStorage.setGrade(id, grade);
     }
-    public void getGrade (String id) throws Exception {
+
+    public void getGrade(String id) throws Exception {
         persistentStorage.getGrade(id);
     }
-    public String convertGrade(String grade){
+
+    public String convertGrade(String grade) {
         return conv.ConvertGrade(grade);
     }
 

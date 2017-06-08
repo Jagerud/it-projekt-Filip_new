@@ -1,20 +1,20 @@
 package Domain;
 
-import TechnicalServices.DBFacade;
+import TechnicalServices.DBFacadeSingleton;
 
 public class PersistentStorage {
 
-    private DBFacade dbFasad;
+    private DBFacadeSingleton dbFasad;
 
     public PersistentStorage() {
-        dbFasad = new DBFacade();
+        dbFasad = dbFasad.getDBFacadeSingleton();
     }
 
-    public void setGrade (String id, String grade) throws Exception {
+    public void setGrade(String id, String grade) throws Exception {
         dbFasad.setStudentGrade(id, grade);
     }
 
-    public void getGrade (String id) throws Exception {
+    public void getGrade(String id) throws Exception {
         dbFasad.getStudentGrade(id);
     }
 }
