@@ -1,8 +1,5 @@
 package TechnicalServices;
 
-
-import org.jetbrains.annotations.Contract;
-
 import java.sql.*;
 
 
@@ -13,31 +10,31 @@ public class DBFacadeSingleton {
 
     }
 
-    @Contract(pure = true)
     public static DBFacadeSingleton getDBFacadeSingleton() {
         return dBFacadeSingleton;
     }
 
     public static void setStudentGrade(String id, String grade) throws Exception {
-        try {
-
+       // try {
+            System.out.println(id + "   " + grade);
+            /*
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
             String connectionUrl = "jdbc:sqlserver://IDASQL.ad.liu.se;database=725G79;";
             Connection conn = DriverManager.getConnection(connectionUrl, "725G79L5caral311", "zPttfbC80");
 
-            System.out.println(id + "   " + grade);
+
 
             PreparedStatement st = conn.prepareStatement("UPDATE StudentGrade SET Grade = (?) WHERE ID = (?)");
             st.setString(1, grade);
             st.setString(2, id);
             st.executeUpdate();
-            conn.close();
-            System.out.println("Updated DB");
+            conn.close(); */
+            System.out.println("Updated DB"); /*
         } catch (ClassNotFoundException | SQLException cnfe) {
             //Problem med att ladda drivern?
             System.err.println("ERROR: " + cnfe.toString());
             System.exit(1);
-        }
+        } */
     }
 
     public static void getStudentGrade(String id) throws Exception {
