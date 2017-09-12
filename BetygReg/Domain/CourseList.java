@@ -44,6 +44,9 @@ public class CourseList {
 
         return courseList.get(courseKey).getStudentGrade(listKey, studentKey);
     }
+    public Grade getStudentGradeOject(int courseKey, String listKey, String studentKey){
+        return courseList.get(courseKey).getStudentGradeObejct(listKey, studentKey);
+    }
 
     public void setStudentGrade(int courseKey, String listKey, String studentKey, String grade) {
         courseList.get(courseKey).setStudentGrade(listKey, studentKey, grade);

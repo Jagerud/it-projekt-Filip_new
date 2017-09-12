@@ -3,75 +3,63 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="647.0" y="1310.0">TechnicalServices.DBFacade</node>
-    <node x="0.0" y="1199.0">Domain.Course</node>
-    <node x="131.5" y="359.0">Domain.AssignmentList</node>
-    <node x="111.6796875" y="1567.0">Domain.CourseList</node>
-    <node x="6.9296875" y="661.0">Domain.Student</node>
-    <node x="264.1953125" y="1913.0">UI.DomainFacade</node>
-    <node x="142.5" y="169.0">Domain.Assignment</node>
-    <node x="366.6953125" y="2259.0">UI.CourseAdmin</node>
-    <node x="619.0" y="1655.5">Domain.PersistentStorage</node>
-    <node x="7.3203125" y="919.0">Domain.StudentList</node>
-    <node x="185.0" y="0.0">Domain.Grade</node>
+    <node x="2.4464285714284983" y="1199.0">Domain.Course</node>
+    <node x="105.20535714285708" y="1545.0">Domain.CourseList</node>
+    <node x="126.44642857142856" y="359.0">Domain.AssignmentList</node>
+    <node x="0.4553571428571104" y="661.0">Domain.Student</node>
+    <node x="93.45535714285708" y="1891.0">UI.DomainFacade</node>
+    <node x="137.44642857142856" y="169.0">Domain.Assignment</node>
+    <node x="195.95535714285708" y="2237.0">UI.CourseAdmin</node>
+    <node x="0.0" y="919.0">Domain.StudentList</node>
+    <node x="179.94642857142856" y="0.0">Domain.Grade</node>
   </nodes>
   <notes />
   <edges>
     <edge source="Domain.Assignment" target="Domain.Grade">
       <point x="72.75" y="-70.0" />
-      <point x="360.75" y="144.0" />
-      <point x="339.5" y="144.0" />
+      <point x="355.69642857142856" y="144.0" />
+      <point x="334.44642857142856" y="144.0" />
       <point x="51.5" y="59.5" />
     </edge>
-    <edge source="UI.DomainFacade" target="Domain.PersistentStorage">
-      <point x="150.0" y="-148.0" />
-      <point x="614.1953125" y="1893.0" />
-      <point x="790.0" y="1893.0" />
-      <point x="57.0" y="59.5" />
-    </edge>
     <edge source="Domain.StudentList" target="Domain.Student">
-      <point x="-127.0" y="-115.0" />
-      <point x="-64.75" y="104.0" />
+      <point x="0.0" y="-115.0" />
+      <point x="190.5" y="894.0" />
+      <point x="194.7053571428571" y="894.0" />
+      <point x="64.75" y="104.0" />
     </edge>
     <edge source="Domain.StudentList" target="Domain.AssignmentList">
       <point x="127.0" y="-115.0" />
-      <point x="324.8203125" y="894.0" />
-      <point x="305.125" y="894.0" />
-      <point x="305.125" y="636.0" />
-      <point x="248.875" y="636.0" />
+      <point x="317.5" y="894.0" />
+      <point x="293.1517857142857" y="894.0" />
+      <point x="293.1517857142857" y="636.0" />
+      <point x="243.82142857142856" y="636.0" />
       <point x="-39.125" y="126.0" />
     </edge>
     <edge source="Domain.Course" target="Domain.StudentList">
-      <point x="-235.125" y="-159.0" />
-      <point x="78.375" y="1174.0" />
-      <point x="102.5703125" y="1174.0" />
+      <point x="-227.62499999999994" y="-148.0" />
+      <point x="78.32142857142856" y="1174.0" />
+      <point x="95.25" y="1174.0" />
       <point x="-95.25" y="115.0" />
     </edge>
     <edge source="Domain.AssignmentList" target="Domain.Assignment">
       <point x="-78.25" y="-126.0" />
-      <point x="209.75" y="334.0" />
-      <point x="215.25" y="334.0" />
+      <point x="204.69642857142856" y="334.0" />
+      <point x="210.19642857142856" y="334.0" />
       <point x="-72.75" y="70.0" />
     </edge>
     <edge source="Domain.Course" target="Domain.AssignmentList">
-      <point x="235.125" y="-159.0" />
-      <point x="548.625" y="1174.0" />
-      <point x="409.8203125" y="1174.0" />
-      <point x="409.8203125" y="636.0" />
-      <point x="405.375" y="636.0" />
-      <point x="117.375" y="126.0" />
+      <point x="75.87500000000006" y="-148.0" />
+      <point x="381.82142857142856" y="1174.0" />
+      <point x="391.5" y="1174.0" />
+      <point x="391.5" y="636.0" />
+      <point x="322.07142857142856" y="636.0" />
+      <point x="39.125" y="126.0" />
     </edge>
     <edge source="Domain.Student" target="Domain.AssignmentList">
       <point x="0.0" y="-104.0" />
-      <point x="136.4296875" y="636.0" />
-      <point x="170.625" y="636.0" />
+      <point x="129.9553571428571" y="636.0" />
+      <point x="165.57142857142856" y="636.0" />
       <point x="-117.375" y="126.0" />
-    </edge>
-    <edge source="Domain.PersistentStorage" target="TechnicalServices.DBFacade">
-      <point x="57.0" y="-59.5" />
-      <point x="790.0" y="1542.0" />
-      <point x="776.0" y="1542.0" />
-      <point x="43.0" y="48.0" />
     </edge>
     <edge source="UI.CourseAdmin" target="UI.DomainFacade">
       <point x="0.0" y="-36.5" />
@@ -79,18 +67,18 @@
     </edge>
     <edge source="Domain.CourseList" target="Domain.Course">
       <point x="88.25" y="-148.0" />
-      <point x="376.4296875" y="1542.0" />
-      <point x="470.25" y="1542.0" />
-      <point x="156.75" y="159.0" />
+      <point x="369.9553571428571" y="1520.0" />
+      <point x="457.6964285714285" y="1520.0" />
+      <point x="151.75" y="148.0" />
     </edge>
     <edge source="UI.DomainFacade" target="Domain.CourseList">
-      <point x="-150.0" y="-148.0" />
-      <point x="314.1953125" y="1893.0" />
-      <point x="199.9296875" y="1893.0" />
-      <point x="-88.25" y="148.0" />
+      <point x="100.0" y="-148.0" />
+      <point x="393.4553571428571" y="1866.0" />
+      <point x="369.9553571428571" y="1866.0" />
+      <point x="88.25" y="148.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.6840136054421768" x="531.4440105578911" y="1529.1155155075676" />
+  <settings layout="Hierarchic Group" zoom="0.7965665236051501" x="305.0" y="1817.736530172414" />
   <SelectedNodes />
   <Categories>
     <Category>Fields</Category>

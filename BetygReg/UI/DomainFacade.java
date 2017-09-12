@@ -1,17 +1,16 @@
 package UI;
 
-import Domain.Course;
-import Domain.CourseList;
-import Domain.GradeConvert;
-import Domain.TechnicalServicesFacade;
+import Domain.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Created by Jaeger on 2016-10-25.
  */
-public class DomainFacade {
+public class DomainFacade implements Observer {
 
     private CourseList courseList = new CourseList("test");
     private TechnicalServicesFacade technicalServicesFacade = new TechnicalServicesFacade();
@@ -36,6 +35,9 @@ public class DomainFacade {
     public String getStudentGrade(int courseKey, String listKey, String studentKey) {
         return courseList.getCourseList().get(courseKey).getStudentGrade(listKey, studentKey);
     }
+    public Grade getStudentGradeObject(int courseKey, String listKey, String studentKey) {
+        return courseList.getCourseList().get(courseKey).getStudentGradeObejct(listKey, studentKey);
+    }
 
     public void setStudentGrade(int courseKey, String listKey, String studentKey, String grade) {
         courseList.getCourseList().get(courseKey).setStudentGrade(listKey, studentKey, grade);
@@ -49,8 +51,12 @@ public class DomainFacade {
         technicalServicesFacade.getGrade(id);
     }
 
-    public String convertGrade(String grade) {
-        return conv.ConvertGrade(grade);
+    public String convertGrade(Grade grade, String newGrade, String student, String assignment) {
+        return conv.convertGrade(grade, newGrade, student, assignment);
     }
 
+    @Override
+    public void update(Observable o, Object arg) {
+        System.out.println(arg);
+    }
 }

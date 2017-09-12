@@ -20,6 +20,9 @@ public class Assignment {
     public String getGrade() {
         return assignmentGrade.getGrade();
     }
+    public Grade getGradeObject() {
+        return assignmentGrade;
+    }
 
     public void setGrade(String grade) {
         assignmentGrade.setGrade(grade);

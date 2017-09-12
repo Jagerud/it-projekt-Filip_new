@@ -62,11 +62,11 @@ public class CourseAdmin {
                 System.out.println("Set grade");
 
                 gradeInput = sc.next();
-                domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, gradeInput);
+                //domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, gradeInput);
                 //System.out.println(domainFacade.getStudentGrade(courseInput, studentInput, assignmentInput));
 
-                domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, domainFacade.convertGrade(domainFacade.getStudentGrade(courseInput, studentInput, assignmentInput)));
-
+                //domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, domainFacade.convertGrade(domainFacade.getStudentGrade(courseInput, studentInput, assignmentInput));
+                domainFacade.convertGrade(domainFacade.getStudentGradeObject(courseInput, studentInput, assignmentInput), gradeInput, studentInput, assignmentInput);
 
                 //System.out.println(domainFacade.getStudentGrade(studentInput, input2, "1"));
                 //System.out.println(domainFacade.getStudentGrade(studentInput, input2, "2"));
@@ -79,7 +79,7 @@ public class CourseAdmin {
 
                 System.out.print("Course grade: ");
                 System.out.println(domainFacade.getCourseList().get(courseInput).getStudentList().getStudentHashMap().get(studentInput).progress());
-                System.out.println("Wanna register more assignments\n\n0 to change student");
+                System.out.println("Wanna register more assignments\n\n0 to register or change student");
                 String end = sc.next();
                 if (end.compareTo("0") == 0) {
                     break;

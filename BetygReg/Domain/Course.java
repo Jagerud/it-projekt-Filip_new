@@ -16,7 +16,6 @@ public class Course implements Observer {
         addTempAssignmentList();
         sList = new StudentList(assignmentLists);
     }
-
     /*public HashMap<String,Student> getStudentList(){     //returnerar Studentobjekt i en arraylist
         return sList.getStudentHashMap();
  */
@@ -36,16 +35,15 @@ public class Course implements Observer {
         return sList.getStudentHashMap();
     }
 
-    public void poop() {
-        System.out.println("oioioioio");
-    }
-
     public String getName() {
         return name;
     }
 
     public String getStudentGrade(String listKey, String studentKey) {
         return sList.getStudentGrade(listKey, studentKey);
+    }
+    public Grade getStudentGradeObejct(String listKey, String studentKey) {
+        return sList.getStudentGradeObject(listKey,studentKey);
     }
 
     public void setStudentGrade(String key, String studentKey, String grade) {

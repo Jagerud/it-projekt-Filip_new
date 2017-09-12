@@ -32,6 +32,9 @@ public class Student extends Observable {
     public String getStudentGrade(String key) {
         return aList.getAssignmentGrade(key);
     }
+    public Grade getStudentGradeObject (String key){
+        return aList.getAssignmentGradeObject(key);
+    }
 
     public void setStudentGrade(String key, String grade) {
         aList.setAssignmentGrade(key, grade);

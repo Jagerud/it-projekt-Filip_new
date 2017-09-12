@@ -2,8 +2,8 @@ package Domain;
 
 public interface GradeInterface {
 
-    String grade = "U";
+    //String grade = "U";
 
-    String ConvertGrade(String newGrade);
+    String convertGrade(Grade grade, String newGrade, String student, String assignment);
 
 }
