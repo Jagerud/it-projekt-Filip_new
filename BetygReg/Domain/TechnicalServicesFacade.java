@@ -2,12 +2,9 @@ package Domain;
 
 import TechnicalServices.DBFacadeSingleton;
 
-public class PersistentStorage {
+public class TechnicalServicesFacade {
 
-
-
-    public PersistentStorage() {
-
+    public TechnicalServicesFacade() {
     }
 
     public void setGrade(String id, String grade) throws Exception {

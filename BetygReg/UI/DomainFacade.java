@@ -3,7 +3,7 @@ package UI;
 import Domain.Course;
 import Domain.CourseList;
 import Domain.GradeConvert;
-import Domain.PersistentStorage;
+import Domain.TechnicalServicesFacade;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,7 +14,7 @@ import java.util.HashMap;
 public class DomainFacade {
 
     private CourseList courseList = new CourseList("test");
-    private PersistentStorage persistentStorage = new PersistentStorage();
+    private TechnicalServicesFacade technicalServicesFacade = new TechnicalServicesFacade();
     private GradeConvert conv = new GradeConvert();
 
     public DomainFacade() {
@@ -42,11 +42,11 @@ public class DomainFacade {
     }
 
     public void setGrade(String id, String grade) throws Exception {
-        persistentStorage.setGrade(id, grade);
+        technicalServicesFacade.setGrade(id, grade);
     }
 
     public void getGrade(String id) throws Exception {
-        persistentStorage.getGrade(id);
+        technicalServicesFacade.getGrade(id);
     }
 
     public String convertGrade(String grade) {

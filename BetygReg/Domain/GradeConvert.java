@@ -6,12 +6,21 @@ public class GradeConvert implements GradeInterface {
 
     @Override
     public String ConvertGrade(String newGrade) {
-        if (newGrade.equals("3") || newGrade.equals("G")) {
-            grade = "G";
-        } else if (newGrade.equals("4") || newGrade.equals("5") || newGrade.equals("VG")) {
-            grade = "VG";
-        } else if (newGrade.equals("1") || newGrade.equals("2")) {
-            grade = "U";
+        switch (newGrade) {
+            case "3":
+            case "G":
+                grade = "G";
+                break;
+            case "4":
+            case "5":
+            case "VG":
+                grade = "VG";
+                break;
+            case "1":
+            case "2":
+            case "U":
+                grade = "U";
+                break;
         }
         return grade;
     }
