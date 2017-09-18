@@ -4,15 +4,16 @@ import java.sql.*;
 
 
 public class DBFacadeSingleton {
-    private static DBFacadeSingleton dBFacadeSingleton = new DBFacadeSingleton();
+    //private static DBFacadeSingleton dBFacadeSingleton = new DBFacadeSingleton();
 
     private DBFacadeSingleton() {
 
     }
-
+    /*
     public static DBFacadeSingleton getDBFacadeSingleton() {
         return dBFacadeSingleton;
     }
+    */
 
     public static void setStudentGrade(String id, String grade) throws Exception {
        // try {

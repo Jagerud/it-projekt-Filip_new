@@ -13,13 +13,12 @@ import java.util.Observer;
 public class DomainFacade implements Observer {
 
     private CourseList courseList = new CourseList("test");
-    private TechnicalServicesFacade technicalServicesFacade = new TechnicalServicesFacade();
-    private GradeConvert conv = new GradeConvert();
+    private TechnicalServicesFacade technicalServicesFacade; //= new TechnicalServicesFacade();
+    private GradeConvert gradeConvert = new GradeConvert();
 
-    public DomainFacade() {
-
+    public DomainFacade(TechnicalServicesFacade technicalServicesFacade) {
+        this.technicalServicesFacade = technicalServicesFacade;
     }
-
     public String getCourses() {
         return courseList.getCourses();
     }
@@ -38,7 +37,6 @@ public class DomainFacade implements Observer {
     public Grade getStudentGradeObject(int courseKey, String listKey, String studentKey) {
         return courseList.getCourseList().get(courseKey).getStudentGradeObejct(listKey, studentKey);
     }
-
     public void setStudentGrade(int courseKey, String listKey, String studentKey, String grade) {
         courseList.getCourseList().get(courseKey).setStudentGrade(listKey, studentKey, grade);
     }
@@ -46,13 +44,11 @@ public class DomainFacade implements Observer {
     public void setGrade(String id, String grade) throws Exception {
         technicalServicesFacade.setGrade(id, grade);
     }
-
     public void getGrade(String id) throws Exception {
         technicalServicesFacade.getGrade(id);
     }
-
     public String convertGrade(Grade grade, String newGrade, String student, String assignment) {
-        return conv.convertGrade(grade, newGrade, student, assignment);
+        return gradeConvert.convertGrade(grade, newGrade, student, assignment);
     }
 
     @Override
