@@ -2,11 +2,11 @@ package UI;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import Domain.TechnicalServicesFacade;
 
 public class CourseAdmin {
-    public static void getCourseList() throws FileNotFoundException {
+    public static void getCourseList(DomainFacade domainFacade) throws FileNotFoundException {
         Scanner sc = new Scanner(System.in);
-        DomainFacade domainFacade = new DomainFacade();
 
         while (true) {
 /*          //Annat användingsfall
@@ -99,8 +99,6 @@ public class CourseAdmin {
                     e.printStackTrace();
                 }
             }
-
-
             //System.out.println(domainFacade.getHCourse("725G00").getStudentGrade("0", "0"));
             //          System.out.println(domainFacade.getCourseHash().get("725G00").getName());
 
@@ -207,8 +205,9 @@ public class CourseAdmin {
         public
         */
     }
-
     public static void main(String[] args) throws FileNotFoundException {
-        getCourseList();
+        TechnicalServicesFacade technicalServicesFacade = new TechnicalServicesFacade();
+        DomainFacade domainFacade = new DomainFacade(technicalServicesFacade);
+        getCourseList(domainFacade);
     }
 }
