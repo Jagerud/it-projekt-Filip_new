@@ -19,12 +19,16 @@ public class DBFacadeSingleton {
             System.out.println(id + "   " + grade);
             /*
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
-            String connectionUrl = "jdbc:sqlserver://IDASQL.ad.liu.se;database=725G79;";
-            Connection conn = DriverManager.getConnection(connectionUrl, "725G79L5caral311", "zPttfbC80");
+            //String connectionUrl = "jdbc:sqlserver://IDASQL.ad.liu.se;database=725G79;";
+            //String connectionUrl = "jdbc:sqlserver://localhost;database=test;integratedSecurity=true;"; //kan nog funka med annan driver
+            String connectionUrl = "jdbc:sqlserver://localhost;database=test;";
 
+            //Connection conn = DriverManager.getConnection(connectionUrl, "725G79L5caral311", "zPttfbC80");
+            Connection conn = DriverManager.getConnection(connectionUrl, "sa","password");
+            System.out.println(id + "   " + grade);
 
-
-            PreparedStatement st = conn.prepareStatement("UPDATE StudentGrade SET Grade = (?) WHERE ID = (?)");
+            PreparedStatement st = conn.prepareStatement("UPDATE assignments SET Grade = (?) WHERE ID = (?)");
+            // PreparedStatement st = conn.prepareStatement("UPDATE StudentGrade SET Grade = (?) WHERE ID = (?)");
             st.setString(1, grade);
             st.setString(2, id);
             st.executeUpdate();
