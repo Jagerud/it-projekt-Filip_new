@@ -5,7 +5,7 @@ import java.util.Scanner;
 import Domain.TechnicalServicesFacade;
 
 public class CourseAdmin {
-    public static void getCourseList(DomainFacade domainFacade) throws FileNotFoundException {
+    private static void getCourseList(DomainFacade domainFacade) throws FileNotFoundException {
         Scanner sc = new Scanner(System.in);
 
         while (true) {
@@ -93,7 +93,7 @@ public class CourseAdmin {
 
             } else {
                 System.out.println("Registering in Ladok");
-                try {                                     //TODO Registrering i DB funkar ej
+                try {                                     //TODO Registrering i DB funkar lokalt, registrerar bara 1 assiggment
                     domainFacade.setGrade(assignmentInput, gradeInput);
                 } catch (Exception e) {
                     e.printStackTrace();
