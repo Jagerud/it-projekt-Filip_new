@@ -98,6 +98,14 @@ public class CourseAdmin {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+                try {
+                    domainFacade.getGrade("0");
+                    domainFacade.getGrade("1");
+                    domainFacade.getGrade("2");
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
             //System.out.println(domainFacade.getHCourse("725G00").getStudentGrade("0", "0"));
             //          System.out.println(domainFacade.getCourseHash().get("725G00").getName());
