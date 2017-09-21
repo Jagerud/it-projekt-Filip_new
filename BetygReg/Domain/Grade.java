@@ -1,17 +1,16 @@
 package Domain;
+//TODO fix calls to old grade?
+public interface Grade {
+    String[] grades = new String[]{};
+    String grade = null;
 
-public class Grade {
-    private String[] grades = new String[]{"U", "G", "VG"};
-    private String grade = "U";
+    String getGrade();
+    void setGrade(String grade);
+    
+}
+        //Kontroll av inmatning
 
-    public Grade() {
-
-    }
-
-    public String getGrade() {
-        return grade;
-    }
-
+/*
     public void setGrade(String grade) {         //Kontroll av inmatning
         if (grade.compareTo(grades[0]) == 0 || grade.compareTo(grades[1]) == 0 || grade.compareTo(grades[2]) == 0 ||
                 grade.equals("1") || grade.equals("2") || grade.equals("3") || grade.equals("4") || grade.equals("5")) {
@@ -21,6 +20,7 @@ public class Grade {
         }
     }
 }
+*/
 /*
     public void saveGrade(ArrayList<String> list){
 		try {
