@@ -1,7 +1,6 @@
 package Domain;
 //TODO fix calls to old grade?
 public interface Grade {
-    String[] grades = new String[]{};
     String grade = null;
 
     String getGrade();

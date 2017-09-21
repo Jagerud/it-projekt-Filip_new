@@ -9,11 +9,11 @@ public class GradeFactory {
         if (gradeType == null){
             return null;
         }
-        //TODO kanske änndra till 12345/Ugvg ist för fil/tek?
-        if (gradeType.equalsIgnoreCase("FIL")){
+        if (gradeType.equalsIgnoreCase("U") || gradeType.equalsIgnoreCase("G") || gradeType.equalsIgnoreCase("VG")){
             return new GradeFil();
         }
-        if (gradeType.equalsIgnoreCase("TEK")){
+        if (gradeType.equalsIgnoreCase("1") || gradeType.equalsIgnoreCase("2") || gradeType.equalsIgnoreCase("3")
+                || gradeType.equalsIgnoreCase("4")|| gradeType.equalsIgnoreCase("5")){
             return new GradeTek();
         }
         return null;
