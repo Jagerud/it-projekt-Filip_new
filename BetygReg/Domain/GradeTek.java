@@ -17,7 +17,8 @@ public class GradeTek implements Grade {
             this.grade = grade;
         } else {
             System.out.println("Wrong input");
-            */
+
         }
+        */
     }
 }
