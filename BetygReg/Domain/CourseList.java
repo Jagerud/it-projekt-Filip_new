@@ -9,7 +9,6 @@ import java.util.Map;
  * Created by Jaeger on 2016-05-30.
  */
 public class CourseList {
-    // private Course test = new Course("0");
 
     private HashMap<String, Course> courseHash = new HashMap<>();
     private String name;
@@ -40,6 +39,7 @@ public class CourseList {
          courseList.get(
          return activeCourse;
      } */
+    /*
     public String getStudentGrade(int courseKey, String listKey, String studentKey) {
 
         return courseList.get(courseKey).getStudentGrade(listKey, studentKey);
@@ -47,6 +47,7 @@ public class CourseList {
     public Grade getStudentGradeOject(int courseKey, String listKey, String studentKey){
         return courseList.get(courseKey).getStudentGradeObejct(listKey, studentKey);
     }
+    */
 
     public void setStudentGrade(int courseKey, String listKey, String studentKey, String grade) {
         courseList.get(courseKey).setStudentGrade(listKey, studentKey, grade);

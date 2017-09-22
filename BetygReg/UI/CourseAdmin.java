@@ -39,6 +39,7 @@ public class CourseAdmin {
             System.out.print(domainFacade.getCourseList().get(0).getStudentHlist().get("1").getName() + " ");
 
             System.out.println(domainFacade.getCourseList().get(0).getStudentHlist().get("2").getName());
+            //System.out.println(domainFacade.getCourseList().get(0).getStudentList().getStudents());
             String studentInput = sc.next();
             //System.out.println(domainFacade.getCourseList().get(studentInput).getStudentList().getStudentName("0"));
 
@@ -55,30 +56,46 @@ public class CourseAdmin {
                 assignmentInput = sc.next();
                 System.out.println("Student grade on assignment " + assignmentInput + " ");
                 //System.out.println(domainFacade.getCourseList().get(studentInput).getName());
-                System.out.println(domainFacade.getStudentGrade(courseInput, studentInput, assignmentInput));
+                try {
+                    System.out.println(domainFacade.getGrade(assignmentInput));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
                 //domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, domainFacade.convertGrade(domainFacade.getStudentGrade(courseInput, studentInput, assignmentInput)));
 
                 System.out.println("Set grade");
 
                 gradeInput = sc.next();
-                //domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, gradeInput);
+                domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, gradeInput);
                 //System.out.println(domainFacade.getStudentGrade(courseInput, studentInput, assignmentInput));
 
                 //domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, domainFacade.convertGrade(domainFacade.getStudentGrade(courseInput, studentInput, assignmentInput));
-                domainFacade.convertGrade(domainFacade.getStudentGradeObject(courseInput, studentInput, assignmentInput), gradeInput, studentInput, assignmentInput);
+               // domainFacade.convertGrade(domainFacade.getStudentGradeObject(courseInput, studentInput, assignmentInput), gradeInput, studentInput, assignmentInput);
 
                 //System.out.println(domainFacade.getStudentGrade(studentInput, input2, "1"));
                 //System.out.println(domainFacade.getStudentGrade(studentInput, input2, "2"));
                 //domainFacade.setStudentGrade(studentInput, input2, "1", "G");
                 //domainFacade.setStudentGrade(studentInput, input2, "2", "G");
                 System.out.println("\nAssignment grades for student: \n");
-                System.out.println("Assignment 0 grade: " + domainFacade.getStudentGrade(courseInput, studentInput, "0"));
-                System.out.println("Assignment 1 grade: " + domainFacade.getStudentGrade(courseInput, studentInput, "1"));
-                System.out.println("Assignment 2 grade: " + domainFacade.getStudentGrade(courseInput, studentInput, "2") + "\n");
+
+                try {
+                    System.out.println("Assignment 0 grade: " + domainFacade.getGrade("0"));
+                    System.out.println("Assignment 0 grade: " + domainFacade.getGrade("1"));
+                    System.out.println("Assignment 0 grade: " + domainFacade.getGrade("2"));
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
 
                 System.out.print("Course grade: ");
-                System.out.println(domainFacade.getCourseList().get(courseInput).getStudentList().getStudentHashMap().get(studentInput).progress());
+                try {
+                    System.out.println(domainFacade.getCourseList().get(courseInput).getStudentList().getStudentHashMap().get(studentInput).progress(domainFacade.getGrade(assignmentInput)));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 System.out.println("Wanna register more assignments\n\n0 to register or change student");
                 String end = sc.next();
                 if (end.compareTo("0") == 0) {

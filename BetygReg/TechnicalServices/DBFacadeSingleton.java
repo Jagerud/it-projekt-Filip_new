@@ -26,7 +26,6 @@ public class DBFacadeSingleton {
 
             //Connection conn = DriverManager.getConnection(connectionUrl, "725G79L5caral311", "zPttfbC80");
             Connection conn = DriverManager.getConnection(connectionUrl, "sa","password");
-            System.out.println(id + "   " + grade);
 
             PreparedStatement st = conn.prepareStatement("UPDATE assignments SET Grade = (?) WHERE ID = (?)");
             st.setString(1, grade);
@@ -41,7 +40,7 @@ public class DBFacadeSingleton {
         }
     }
 
-    public static void getStudentGrade(String id) throws Exception {
+    public static String getStudentGrade(String id) throws Exception {
         try {
 
 
@@ -67,11 +66,13 @@ public class DBFacadeSingleton {
             }
 
             conn.close();
-            System.out.println("DB assignment " + id + " grade: " + grade);
+            //System.out.println("DB assignment " + id + " grade: " + grade);
+            return "DB assignment " + id + " grade: " + grade;
         } catch (ClassNotFoundException | SQLException cnfe) {
             //Problem med att ladda drivern?
             System.err.println("ERROR: " + cnfe.toString());
             System.exit(1);
         }
+        return "DB Failure";
     }
 }

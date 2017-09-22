@@ -1,3 +1,4 @@
+/*
 package Domain;
 
 public interface GradeInterface {
@@ -6,3 +7,4 @@ public interface GradeInterface {
     String convertGrade(Grade grade, String newGrade, String student, String assignment);
 
 }
+*/

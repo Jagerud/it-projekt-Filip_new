@@ -3,7 +3,8 @@ package Domain;
 public class Assignment {
     private String id = null;       //TODO Hashmappa för att spara id och namn
     private String name = null;
-    private Grade assignmentGrade = new Grade();
+    //private Grade assignmentGrade = new Grade();
+    private GradeFactory gradeFactory = new GradeFactory();
 
     public Assignment(String id, String name) {
         this.id = id;
@@ -12,20 +13,24 @@ public class Assignment {
 
     /*public void setAssignmentGrade(String grade){
         assignmentGrade.setGrade(grade);
-    }*/
+    }
     public Grade getAssignmentGrade() {
         return assignmentGrade;
     }
 
+
     public String getGrade() {
         return assignmentGrade.getGrade();
+        gradeFactory.getGrade(grade).getGrade(grade);
     }
+
     public Grade getGradeObject() {
         return assignmentGrade;
     }
-
+*/
     public void setGrade(String grade) {
-        assignmentGrade.setGrade(grade);
+        //assignmentGrade.setGrade(grade);
+        gradeFactory.getGrade(grade).setGrade(grade);
     }
 
     //Oklart om de ska ändras utifrån

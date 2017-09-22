@@ -5,7 +5,7 @@ import java.util.*;
 public class Course implements Observer {
     private String name;
     //enrolled students?
-    private HashMap<String, AssignmentList> assignmentListHashMap = new HashMap<>();
+    //private HashMap<String, AssignmentList> assignmentListHashMap = new HashMap<>();
     private ArrayList<AssignmentList> assignmentLists = new ArrayList<>();
 
     //private AssignmentList aList = new AssignmentList();
@@ -38,14 +38,15 @@ public class Course implements Observer {
     public String getName() {
         return name;
     }
-
+    /*
     public String getStudentGrade(String listKey, String studentKey) {
         return sList.getStudentGrade(listKey, studentKey);
     }
+
     public Grade getStudentGradeObejct(String listKey, String studentKey) {
         return sList.getStudentGradeObject(listKey,studentKey);
     }
-
+*/
     public void setStudentGrade(String key, String studentKey, String grade) {
         sList.setStudentGrade(key, studentKey, grade);
     }

@@ -11,7 +11,7 @@ public class TechnicalServicesFacade {
         DBFacadeSingleton.setStudentGrade(id, grade);
     }
 
-    public void getGrade(String id) throws Exception {
-        DBFacadeSingleton.getStudentGrade(id);
+    public String getGrade(String id) throws Exception {
+        return DBFacadeSingleton.getStudentGrade(id);
     }
 }

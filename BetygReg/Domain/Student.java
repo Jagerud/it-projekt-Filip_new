@@ -28,34 +28,34 @@ public class Student extends Observable {
     public String getName() {
         return name;
     }
-
+/*
     public String getStudentGrade(String key) {
         return aList.getAssignmentGrade(key);
     }
     public Grade getStudentGradeObject (String key){
         return aList.getAssignmentGradeObject(key);
     }
-
+*/
     public void setStudentGrade(String key, String grade) {
         aList.setAssignmentGrade(key, grade);
         setChanged();
-        notifyObservers("The student " + name + " has gotten the grade " + getStudentGrade(key) + " on assignment " + key);
+        notifyObservers("The student " + name + " has gotten the grade " + grade + " on assignment " + key);
     }
 
-    public String progress() { //går inte komplettera
-        if (aList.getAssignmentGrade("0").compareTo("VG") == 0) {
+    public String progress(String grade) { //går inte komplettera
+        if (grade.compareTo("VG") == 0) {
             points++;
-        } else if (aList.getAssignmentGrade("0").compareTo("U") == 0) {
+        } else if (grade.compareTo("U") == 0) {
             return "Incomplete course results";
         }
-        if (aList.getAssignmentGrade("1").compareTo("VG") == 0) {
+        if (grade.compareTo("VG") == 0) {
             points++;
-        } else if (aList.getAssignmentGrade("1").compareTo("U") == 0) {
+        } else if (grade.compareTo("U") == 0) {
             return "Incomplete course results";
         }
-        if (aList.getAssignmentGrade("2").compareTo("VG") == 0) {
+        if (grade.compareTo("VG") == 0) {
             points++;
-        } else if (aList.getAssignmentGrade("2").compareTo("U") == 0) {
+        } else if (grade.compareTo("U") == 0) {
             return "Incomplete course results";
         }
         if (points < 0) {

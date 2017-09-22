@@ -1,3 +1,4 @@
+/*
 package Domain;
 import java.util.Observable;
 public class GradeConvert extends Observable implements GradeInterface {
@@ -25,3 +26,4 @@ public class GradeConvert extends Observable implements GradeInterface {
         return newGrade;
     }
 }
+*/
