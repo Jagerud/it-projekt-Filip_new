@@ -5,7 +5,7 @@ public interface Grade {
 
     String getGrade();
     void setGrade(String grade);
-    
+
 }
         //Kontroll av inmatning
 

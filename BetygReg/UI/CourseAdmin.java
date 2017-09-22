@@ -1,6 +1,9 @@
 package UI;
 
 import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Scanner;
 import Domain.TechnicalServicesFacade;
 
@@ -48,6 +51,8 @@ public class CourseAdmin {
             System.out.println(domainFacade.getCourseList().get(courseInput).getStudentList().getStudentHashMap().get(studentInput).getName());
 
             String assignmentInput, gradeInput;
+            HashMap<String, String> assignmentGrade = new HashMap<String, String>();
+
             while (true) {
 
                 System.out.println("Choose assignment");
@@ -72,6 +77,8 @@ public class CourseAdmin {
 
                 //domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, domainFacade.convertGrade(domainFacade.getStudentGrade(courseInput, studentInput, assignmentInput));
                // domainFacade.convertGrade(domainFacade.getStudentGradeObject(courseInput, studentInput, assignmentInput), gradeInput, studentInput, assignmentInput);
+
+                assignmentGrade.put(assignmentInput, gradeInput);
 
                 //System.out.println(domainFacade.getStudentGrade(studentInput, input2, "1"));
                 //System.out.println(domainFacade.getStudentGrade(studentInput, input2, "2"));
@@ -110,16 +117,17 @@ public class CourseAdmin {
 
             } else {
                 System.out.println("Registering in Ladok");
-                try {                                     //TODO Registrering i DB funkar lokalt, registrerar bara 1 assiggment
-                    domainFacade.setGrade(assignmentInput, gradeInput);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                try {
-                    domainFacade.getGrade("0");
-                    domainFacade.getGrade("1");
-                    domainFacade.getGrade("2");
+                try {                                     //TODO Registrering i DB funkar ej
+                	Iterator i = assignmentGrade.entrySet().iterator();
 
+                    while(i.hasNext()) {
+                       Map.Entry me = (Map.Entry)i.next();
+                       domainFacade.setGrade(me.getKey().toString(), me.getValue().toString());
+                       System.out.print(me.getKey() + ": ");
+                       System.out.println(me.getValue());
+                    }
+
+                    //domainFacade.setGrade(assignmentInput, gradeInput);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
