@@ -1,6 +1,6 @@
-package BetygReg.UI;
+package UI;
 
-import BetygReg.Domain.*;
+import Domain.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;

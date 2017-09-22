@@ -1,6 +1,6 @@
-package BetygReg.Domain;
+package Domain;
 
-import BetygReg.TechnicalServices.DBFacadeSingleton;
+import TechnicalServices.DBFacadeSingleton;
 
 public class TechnicalServicesFacade {
 

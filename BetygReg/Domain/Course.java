@@ -1,4 +1,4 @@
-package BetygReg.Domain;
+package Domain;
 
 import java.util.*;
 
