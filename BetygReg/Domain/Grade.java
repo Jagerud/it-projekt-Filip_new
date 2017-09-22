@@ -1,4 +1,4 @@
-package Domain;
+package BetygReg.Domain;
 
 public class Grade {
     private String[] grades = new String[]{"U", "G", "VG"};

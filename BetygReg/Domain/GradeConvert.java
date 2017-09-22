@@ -1,6 +1,8 @@
-package Domain;
+package BetygReg.Domain;
+
 import java.util.Observable;
 public class GradeConvert extends Observable implements GradeInterface {
+
     @Override
     public String convertGrade(Grade grade, String newGrade, String student, String assignment) {
         switch (newGrade) {
