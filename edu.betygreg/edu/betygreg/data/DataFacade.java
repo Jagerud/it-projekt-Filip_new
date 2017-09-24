@@ -1,10 +1,10 @@
-package Domain;
+package edu.betygreg.data;
 
-import TechnicalServices.DBFacadeSingleton;
+import edu.betygreg.data.DBFacadeSingleton;
 
-public class TechnicalServicesFacade {
+public class DataFacade {
 
-    public TechnicalServicesFacade() {
+    public DataFacade() {
     }
 
     public void setGrade(String id, String grade) throws Exception {

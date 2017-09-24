@@ -1,4 +1,4 @@
-package Domain;
+package edu.betygreg.domain;
 //TODO fix calls to old grade?
 public interface Grade {
     String grade = null;

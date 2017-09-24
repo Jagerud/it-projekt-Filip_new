@@ -1,4 +1,4 @@
-package TechnicalServices;
+package edu.betygreg.data;
 
 import java.sql.*;
 
@@ -9,7 +9,7 @@ public class DBFacadeSingleton {
     private DBFacadeSingleton() {
 
     }
-    public static DBFacadeSingleton getDBFacadeSingleton() {
+    public static DBFacadeSingleton getDBFacadeSingleton() {    //TODO dubbelkolla att det är rätt lazy initiation, kanske metoder ist/med
         if(dBFacadeSingleton == null){
             dBFacadeSingleton = new DBFacadeSingleton();
         }

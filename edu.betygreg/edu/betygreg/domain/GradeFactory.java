@@ -1,4 +1,4 @@
-package Domain;
+package edu.betygreg.domain;
 
 /**
  * Created by Jaeger on 2017-09-20.

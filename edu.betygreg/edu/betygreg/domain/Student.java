@@ -1,4 +1,4 @@
-package Domain;
+package edu.betygreg.domain;
 
 import java.util.Observable;
 

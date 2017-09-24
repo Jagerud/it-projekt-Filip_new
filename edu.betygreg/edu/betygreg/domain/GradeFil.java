@@ -1,4 +1,4 @@
-package Domain;
+package edu.betygreg.domain;
 
 public class GradeFil implements Grade {
     private String grade = "U";

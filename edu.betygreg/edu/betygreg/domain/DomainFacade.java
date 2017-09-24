@@ -1,6 +1,7 @@
-package UI;
+package edu.betygreg.domain;
 
-import Domain.*;
+
+import edu.betygreg.data.DataFacade;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,11 +14,11 @@ import java.util.Observer;
 public class DomainFacade implements Observer {
 
     private CourseList courseList = new CourseList("test");
-    private TechnicalServicesFacade technicalServicesFacade; //= new TechnicalServicesFacade();
+    private DataFacade dataFacade; //= new DataFacade();
     //private GradeConvert gradeConvert = new GradeConvert();
 
-    public DomainFacade(TechnicalServicesFacade technicalServicesFacade) {
-        this.technicalServicesFacade = technicalServicesFacade;
+    public DomainFacade(DataFacade dataFacade) {
+        this.dataFacade = dataFacade;
     }
     public String getCourses() {
         return courseList.getCourses();
@@ -44,10 +45,10 @@ public class DomainFacade implements Observer {
     }
 
     public void setGrade(String id, String grade) throws Exception {
-        technicalServicesFacade.setGrade(id, grade);
+        dataFacade.setGrade(id, grade);
     }
     public String getGrade(String id) throws Exception {
-        return technicalServicesFacade.getGrade(id);
+        return dataFacade.getGrade(id);
     }
     /*
     public String convertGrade(Grade grade, String newGrade, String student, String assignment) {

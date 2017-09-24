@@ -1,4 +1,4 @@
-package Domain;
+package edu.betygreg.domain;
 
 public class Assignment {
     private String id = null;       //TODO Hashmappa för att spara id och namn

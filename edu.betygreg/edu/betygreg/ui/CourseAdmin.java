@@ -1,11 +1,13 @@
-package UI;
+package edu.betygreg.ui;
 
 import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
-import Domain.TechnicalServicesFacade;
+
+import edu.betygreg.data.DataFacade;
+import edu.betygreg.domain.DomainFacade;
 
 public class CourseAdmin {
     private static void getCourseList(DomainFacade domainFacade) throws FileNotFoundException {
@@ -239,8 +241,8 @@ public class CourseAdmin {
         */
     }
     public static void main(String[] args) throws FileNotFoundException {
-        TechnicalServicesFacade technicalServicesFacade = new TechnicalServicesFacade();
-        DomainFacade domainFacade = new DomainFacade(technicalServicesFacade);
+        DataFacade dataFacade = new DataFacade();
+        DomainFacade domainFacade = new DomainFacade(dataFacade);
         getCourseList(domainFacade);
     }
 }

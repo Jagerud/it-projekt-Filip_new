@@ -1,4 +1,4 @@
-package Domain;
+package edu.betygreg.domain;
 
 public class GradeTek implements Grade {
     private String grade = "U"; //TODO kan den vara u?
