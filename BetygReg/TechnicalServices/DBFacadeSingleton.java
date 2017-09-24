@@ -4,18 +4,20 @@ import java.sql.*;
 
 
 public class DBFacadeSingleton {
-    //private static DBFacadeSingleton dBFacadeSingleton = new DBFacadeSingleton();
+    private static DBFacadeSingleton dBFacadeSingleton = null;
 
     private DBFacadeSingleton() {
 
     }
-    /*
     public static DBFacadeSingleton getDBFacadeSingleton() {
+        if(dBFacadeSingleton == null){
+            dBFacadeSingleton = new DBFacadeSingleton();
+        }
         return dBFacadeSingleton;
     }
-    */
 
-    public static void setStudentGrade(String id, String grade) throws Exception {
+
+    public void setStudentGrade(String id, String grade) throws Exception {
         try {
             System.out.println(id + "   " + grade);
 
@@ -40,7 +42,7 @@ public class DBFacadeSingleton {
         }
     }
 
-    public static String getStudentGrade(String id) throws Exception {
+    public String getStudentGrade(String id) throws Exception {
         try {
 
 
