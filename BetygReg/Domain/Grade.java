@@ -1,7 +1,6 @@
-package Domain;
+package BetygReg.Domain;
 //TODO fix calls to old grade?
 public interface Grade {
-    String grade = null;
 
     String getGrade();
     void setGrade(String grade);

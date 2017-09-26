@@ -1,6 +1,7 @@
-package UI;
+package BetygReg.Domain;
 
-import Domain.*;
+import BetygReg.Domain.*;
+import edu.betygreg.technicalservices.TechnicalServicesFacade;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,7 +11,7 @@ import java.util.Observer;
 /**
  * Created by Jaeger on 2016-10-25.
  */
-public class DomainFacade implements Observer {
+public class DomainFacade {
 
     private CourseList courseList = new CourseList("test");
     private TechnicalServicesFacade technicalServicesFacade; //= new TechnicalServicesFacade();
@@ -55,8 +56,8 @@ public class DomainFacade implements Observer {
     }
     */
 
-    @Override
+    /*@Override
     public void update(Observable o, Object arg) {
         System.out.println(arg);
-    }
+    }*/
 }

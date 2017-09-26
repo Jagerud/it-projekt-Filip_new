@@ -1,4 +1,4 @@
-package Domain;
+package BetygReg.Domain;
 
 public class Assignment {
     private String id = null;       //TODO Hashmappa för att spara id och namn

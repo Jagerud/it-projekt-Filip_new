@@ -1,4 +1,4 @@
-package Domain;
+package BetygReg.Domain;
 
 /**
  * Created by Jaeger on 2017-09-20.

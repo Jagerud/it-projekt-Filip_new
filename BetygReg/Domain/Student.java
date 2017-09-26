@@ -1,4 +1,4 @@
-package Domain;
+package BetygReg.Domain;
 
 import java.util.Observable;
 

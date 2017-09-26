@@ -1,4 +1,4 @@
-package Domain;
+package BetygReg.Domain;
 
 public class GradeFil implements Grade {
     private String grade = "U";
