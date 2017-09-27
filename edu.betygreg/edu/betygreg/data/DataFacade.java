@@ -1,7 +1,5 @@
 package edu.betygreg.data;
 
-import edu.betygreg.data.DBFacadeSingleton;
-
 public class DataFacade {
 
     public DataFacade() {
