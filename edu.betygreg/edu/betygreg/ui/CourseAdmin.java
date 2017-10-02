@@ -10,7 +10,7 @@ import edu.betygreg.data.DataFacade;
 import edu.betygreg.domain.DomainFacade;
 
 public class CourseAdmin {
-    private static void getCourseList(DomainFacade domainFacade) throws FileNotFoundException {
+    private static void run(DomainFacade domainFacade)  { //TODO byt namn p� metoden
         Scanner sc = new Scanner(System.in);
 
         while (true) {
@@ -88,16 +88,6 @@ public class CourseAdmin {
                 //domainFacade.setStudentGrade(studentInput, input2, "2", "G");
                 System.out.println("\nAssignment grades for student: \n");
 
-                try {
-                    System.out.println("Assignment 0 grade: " + domainFacade.getGrade("0"));
-                    System.out.println("Assignment 0 grade: " + domainFacade.getGrade("1"));
-                    System.out.println("Assignment 0 grade: " + domainFacade.getGrade("2"));
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-
 
                 System.out.print("Course grade: ");
                 try {
@@ -125,8 +115,17 @@ public class CourseAdmin {
                     while(i.hasNext()) {
                        Map.Entry me = (Map.Entry)i.next();
                        domainFacade.setGrade(me.getKey().toString(), me.getValue().toString());
-                       System.out.print(me.getKey() + ": ");
-                       System.out.println(me.getValue());
+                       //System.out.print(me.getKey() + ": ");
+                       //System.out.println(me.getValue());
+                    }
+
+                    try {
+                        System.out.println("Assignment 0 grade: " + domainFacade.getGrade("0"));
+                        System.out.println("Assignment 1 grade: " + domainFacade.getGrade("1"));
+                        System.out.println("Assignment 2 grade: " + domainFacade.getGrade("2"));
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
 
                     //domainFacade.setGrade(assignmentInput, gradeInput);
@@ -240,9 +239,9 @@ public class CourseAdmin {
         public
         */
     }
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args)  {
         DataFacade dataFacade = new DataFacade();
         DomainFacade domainFacade = new DomainFacade(dataFacade);
-        getCourseList(domainFacade);
+        run(domainFacade);
     }
 }

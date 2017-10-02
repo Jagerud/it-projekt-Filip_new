@@ -11,7 +11,7 @@ import java.util.Observer;
 /**
  * Created by Jaeger on 2016-10-25.
  */
-public class DomainFacade implements Observer {
+public class DomainFacade {
 
     private CourseList courseList = new CourseList("test");
     private DataFacade dataFacade; //= new DataFacade();
@@ -54,10 +54,11 @@ public class DomainFacade implements Observer {
     public String convertGrade(Grade grade, String newGrade, String student, String assignment) {
         return gradeConvert.convertGrade(grade, newGrade, student, assignment);
     }
-    */
+
 
     @Override
     public void update(Observable o, Object arg) {
         System.out.println(arg);
     }
+    */
 }
