@@ -12,7 +12,7 @@ public class GradeConverter {
 
     }
 
-    public Grade getGrade (String id) {    //kan nog inte mata in grade förresten
+    public Grade getAsObject (String id) {    //kan nog inte mata in grade förresten
         try {
             grade = gradeFactory.getGrade(dataFacade.getGrade(id));
         } catch (Exception e) {
@@ -20,12 +20,8 @@ public class GradeConverter {
         }
         return grade;
     }
-    public void setGrade (String id, Grade grade){
-        try {
-            dataFacade.setGrade(id, grade.getGrade());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public String getAsString (Grade grade){
+            return grade.getGrade();
     }
 
 }
