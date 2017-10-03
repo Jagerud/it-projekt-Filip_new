@@ -13,7 +13,7 @@ public class DomainFacade {
 
     private CourseList courseList = new CourseList("test");
     private DataFacade dataFacade; //= new DataFacade();
-    //private GradeConvert gradeConvert = new GradeConvert();
+    //private GradeConverter gradeConvert = new GradeConverter();
 
     public DomainFacade(DataFacade dataFacade) {
         this.dataFacade = dataFacade;
