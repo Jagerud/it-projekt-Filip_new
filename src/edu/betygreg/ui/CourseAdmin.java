@@ -1,6 +1,5 @@
 package edu.betygreg.ui;
 
-import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -10,7 +9,7 @@ import edu.betygreg.data.DataFacade;
 import edu.betygreg.domain.DomainFacade;
 
 public class CourseAdmin {
-    private static void run(DomainFacade domainFacade)  { //TODO byt namn p� metoden
+    private static void run(DomainFacade domainFacade) {
         Scanner sc = new Scanner(System.in);
 
         while (true) {

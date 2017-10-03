@@ -1,29 +1,20 @@
-/*
-package Domain;
-import java.util.Observable;
-public class GradeConvert extends Observable implements GradeInterface {
-    @Override
-    public String convertGrade(Grade grade, String newGrade, String student, String assignment) {
-        switch (newGrade) {
-            case "3":
-            case "G":
-                grade.setGrade("G");
-                break;
-            case "4":
-            case "5":
-            case "VG":
-                grade.setGrade("VG");
-                break;
-            case "1":
-            case "2":
-            case "U":
-                grade.setGrade("U");
-                break;
+
+package edu.betygreg.domain;
+
+import edu.betygreg.data.DataFacade;
+
+public class GradeConvert {
+    private GradeFactory gradeFactory = new GradeFactory();
+    private DataFacade dataFacade = new DataFacade();
+
+    public Grade getGrade (Grade grade, String id) {    //kan nog inte mata in grade förresten
+        try {
+            grade = gradeFactory.getGrade(dataFacade.getGrade(id));
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        setChanged();
-        notifyObservers("The student " + student + " has gotten the grade " + newGrade + " on assignment " + assignment);
-        //TODO ligger observable högre upp än observer?
-        return newGrade;
+
+        return grade;
     }
+
 }
-*/

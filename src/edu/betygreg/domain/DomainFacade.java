@@ -5,8 +5,6 @@ import edu.betygreg.data.DataFacade;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Observable;
-import java.util.Observer;
 
 /**
  * Created by Jaeger on 2016-10-25.
