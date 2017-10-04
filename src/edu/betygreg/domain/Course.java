@@ -47,8 +47,8 @@ public class Course implements Observer {
         return sList.getStudentGradeObject(listKey,studentKey);
     }
 */
-    public void setStudentGrade(String key, String studentKey, String grade) {
-        sList.setStudentGrade(key, studentKey, grade);
+    public Grade setStudentGrade(String key, String studentKey, String grade) {
+        return sList.setStudentGrade(key, studentKey, grade);
     }
 
     public String getStudents() {

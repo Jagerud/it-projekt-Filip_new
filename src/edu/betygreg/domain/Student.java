@@ -36,10 +36,10 @@ public class Student extends Observable {
         return aList.getAssignmentGradeObject(key);
     }
 */
-    public void setStudentGrade(String key, String grade) {
-        aList.setAssignmentGrade(key, grade);
+    public Grade setStudentGrade(String key, String grade) {
         setChanged();
         notifyObservers("The student " + name + " has gotten the grade " + grade + " on assignment " + key);
+        return aList.setAssignmentGrade(key, grade);
     }
 
     public String progress(String grade) { //går inte komplettera

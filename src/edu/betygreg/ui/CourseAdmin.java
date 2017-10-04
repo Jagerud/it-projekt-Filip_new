@@ -6,10 +6,13 @@ import java.util.Map;
 import java.util.Scanner;
 
 import edu.betygreg.data.DataFacade;
+import edu.betygreg.domain.Doer;
 import edu.betygreg.domain.DomainFacade;
+import edu.betygreg.domain.Grade;
 
 public class CourseAdmin {
     private static void run(DomainFacade domainFacade) {
+        Doer doer = new Doer();
         Scanner sc = new Scanner(System.in);
 
         while (true) {
@@ -52,7 +55,7 @@ public class CourseAdmin {
             System.out.println(domainFacade.getCourseList().get(courseInput).getStudentList().getStudentHashMap().get(studentInput).getName());
 
             String assignmentInput, gradeInput;
-            HashMap<String, String> assignmentGrade = new HashMap<String, String>();
+            //HashMap<String, String> assignmentGrade = new HashMap<String, String>();
 
             while (true) {
 
@@ -63,7 +66,7 @@ public class CourseAdmin {
                 System.out.println("Student grade on assignment " + assignmentInput + " ");
                 //System.out.println(domainFacade.getCourseList().get(studentInput).getName());
                 try {
-                    System.out.println(domainFacade.getGrade(assignmentInput));
+                    System.out.println(domainFacade.getGrade(assignmentInput).getGrade());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -73,14 +76,15 @@ public class CourseAdmin {
                 System.out.println("Set grade");
 
                 gradeInput = sc.next();
-                domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, gradeInput);
+                //domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, gradeInput);
+
                 //System.out.println(domainFacade.getStudentGrade(courseInput, studentInput, assignmentInput));
 
                 //domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, domainFacade.convertGrade(domainFacade.getStudentGrade(courseInput, studentInput, assignmentInput));
                // domainFacade.convertGrade(domainFacade.getStudentGradeObject(courseInput, studentInput, assignmentInput), gradeInput, studentInput, assignmentInput);
 
-                assignmentGrade.put(assignmentInput, gradeInput);
-
+                //assignmentGrade.put(assignmentInput, gradeInput);
+                doer.putAssignMentGrade(assignmentInput, domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, gradeInput));
                 //System.out.println(domainFacade.getStudentGrade(studentInput, input2, "1"));
                 //System.out.println(domainFacade.getStudentGrade(studentInput, input2, "2"));
                 //domainFacade.setStudentGrade(studentInput, input2, "1", "G");
@@ -90,11 +94,11 @@ public class CourseAdmin {
 
                 System.out.print("Course grade: ");
                 try {
-                    System.out.println(domainFacade.getCourseList().get(courseInput).getStudentList().getStudentHashMap().get(studentInput).progress(domainFacade.getGrade(assignmentInput).getGrade())); //TODO nullpointer
+                   // System.out.println(domainFacade.getCourseList().get(courseInput).getStudentList().getStudentHashMap().get(studentInput).progress(domainFacade.getGrade(assignmentInput).getGrade())); //TODO nullpointer
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                System.out.println("Wanna register more assignments\n\n0 to register or change student");
+                System.out.println("Do you want to register more assignments?\n\n0 to register or change student");
                 String end = sc.next();
                 if (end.compareTo("0") == 0) {
                     break;
@@ -109,24 +113,26 @@ public class CourseAdmin {
             } else {
                 System.out.println("Registering in Ladok");
                 try {
-                	Iterator i = assignmentGrade.entrySet().iterator();
+                	Iterator i = doer.getAssignmentGrade().entrySet().iterator();
 
                     while(i.hasNext()) {
-                       Map.Entry me = (Map.Entry)i.next();
-                       //domainFacade.setGrade(me.getKey().toString(), me.getValue().toString()); //TODO fattar inte detta riktigt Carl, funkar inte med grade nu iaf
+                        Map.Entry me = (Map.Entry)i.next();
+                        System.out.println("Grade: " + me.getKey().toString() + " Assignment: " + ((Grade)me.getValue()).getGrade());
+                        domainFacade.setGrade(me.getKey().toString(), (Grade)me.getValue()); //TODO fattar inte detta riktigt Carl, funkar inte med grade nu iaf
+
                        //System.out.print(me.getKey() + ": ");
                        //System.out.println(me.getValue());
                     }
-
+/*
                     try {
-                        System.out.println("Assignment 0 grade: " + domainFacade.getGrade("0"));
-                        System.out.println("Assignment 1 grade: " + domainFacade.getGrade("1"));
-                        System.out.println("Assignment 2 grade: " + domainFacade.getGrade("2"));
+                        System.out.println("Assignment 0 grade: " + domainFacade.getGrade("0").getGrade());
+                        System.out.println("Assignment 1 grade: " + domainFacade.getGrade("1").getGrade());
+                        System.out.println("Assignment 2 grade: " + domainFacade.getGrade("2").getGrade());
 
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-
+*/
                     //domainFacade.setGrade(assignmentInput, gradeInput);
                 } catch (Exception e) {
                     e.printStackTrace();

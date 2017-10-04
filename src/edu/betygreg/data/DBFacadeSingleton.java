@@ -19,7 +19,7 @@ public class DBFacadeSingleton {
 
     public void setStudentGrade(String id, String grade) throws Exception {
         try {
-            System.out.println(id + "   " + grade);
+            //System.out.println(id + "   " + grade);
 
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
             //String connectionUrl = "jdbc:sqlserver://IDASQL.ad.liu.se;database=725G79;";
@@ -69,7 +69,7 @@ public class DBFacadeSingleton {
 
             conn.close();
             //System.out.println("DB assignment " + id + " grade: " + grade);
-            return "DB assignment " + id + " grade: " + grade;
+            return grade;
         } catch (ClassNotFoundException | SQLException cnfe) {
             //Problem med att ladda drivern?
             System.err.println("ERROR: " + cnfe.toString());

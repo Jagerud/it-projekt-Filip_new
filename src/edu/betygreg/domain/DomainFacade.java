@@ -39,8 +39,8 @@ public class DomainFacade {
         return courseList.getCourseList().get(courseKey).getStudentGradeObejct(listKey, studentKey);
     }
     */
-    public void setStudentGrade(int courseKey, String listKey, String studentKey, String grade) {
-        courseList.getCourseList().get(courseKey).setStudentGrade(listKey, studentKey, grade);
+    public Grade setStudentGrade(int courseKey, String listKey, String studentKey, String grade) {
+        return courseList.getCourseList().get(courseKey).setStudentGrade(listKey, studentKey, grade);
     }
 
     public void setGrade(String id, Grade grade) throws Exception {
@@ -55,10 +55,5 @@ public class DomainFacade {
         return gradeConvert.convertGrade(grade, newGrade, student, assignment);
     }
 
-
-    @Override
-    public void update(Observable o, Object arg) {
-        System.out.println(arg);
-    }
-    */
+*/
 }
