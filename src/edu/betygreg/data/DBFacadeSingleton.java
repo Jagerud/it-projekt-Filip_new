@@ -4,16 +4,16 @@ import java.sql.*;
 
 
 public class DBFacadeSingleton {
-    private static DBFacadeSingleton dBFacadeSingleton = null;
+    private static DBFacadeSingleton instance_ = null;
 
     private DBFacadeSingleton() {
 
     }
     public static DBFacadeSingleton getDBFacadeSingleton() {    //TODO dubbelkolla att det är rätt lazy initiation, kanske metoder ist/med
-        if(dBFacadeSingleton == null){
-            dBFacadeSingleton = new DBFacadeSingleton();
+        if(instance_ == null){
+            instance_ = new DBFacadeSingleton();
         }
-        return dBFacadeSingleton;
+        return instance_;
     }
 
 

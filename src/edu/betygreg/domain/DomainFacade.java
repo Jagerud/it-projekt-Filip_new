@@ -13,6 +13,7 @@ public class DomainFacade {
 
     private CourseList courseList = new CourseList("test");
     private DataFacade dataFacade; //= new DataFacade();
+    private GradeConverter gradeConverter = new GradeConverter();
     //private GradeConverter gradeConvert = new GradeConverter();
 
     public DomainFacade(DataFacade dataFacade) {
@@ -42,11 +43,12 @@ public class DomainFacade {
         courseList.getCourseList().get(courseKey).setStudentGrade(listKey, studentKey, grade);
     }
 
-    public void setGrade(String id, String grade) throws Exception {
-        dataFacade.setGrade(id, grade);
+    public void setGrade(String id, Grade grade) throws Exception {
+        dataFacade.setGrade(id, gradeConverter.getAsString(grade));
     }
-    public String getGrade(String id) throws Exception {
-        return dataFacade.getGrade(id);
+    public Grade getGrade(String id) throws Exception {
+        return gradeConverter.getAsObject(id);
+        //return dataFacade.getGrade(id);
     }
     /*
     public String convertGrade(Grade grade, String newGrade, String student, String assignment) {

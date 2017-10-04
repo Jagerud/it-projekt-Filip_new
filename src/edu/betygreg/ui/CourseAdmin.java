@@ -90,7 +90,7 @@ public class CourseAdmin {
 
                 System.out.print("Course grade: ");
                 try {
-                    System.out.println(domainFacade.getCourseList().get(courseInput).getStudentList().getStudentHashMap().get(studentInput).progress(domainFacade.getGrade(assignmentInput)));
+                    System.out.println(domainFacade.getCourseList().get(courseInput).getStudentList().getStudentHashMap().get(studentInput).progress(domainFacade.getGrade(assignmentInput).getGrade())); //TODO nullpointer
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -108,12 +108,12 @@ public class CourseAdmin {
 
             } else {
                 System.out.println("Registering in Ladok");
-                try {                                     //TODO Registrering i DB funkar ej
+                try {
                 	Iterator i = assignmentGrade.entrySet().iterator();
 
                     while(i.hasNext()) {
                        Map.Entry me = (Map.Entry)i.next();
-                       domainFacade.setGrade(me.getKey().toString(), me.getValue().toString());
+                       //domainFacade.setGrade(me.getKey().toString(), me.getValue().toString()); //TODO fattar inte detta riktigt Carl, funkar inte med grade nu iaf
                        //System.out.print(me.getKey() + ": ");
                        //System.out.println(me.getValue());
                     }

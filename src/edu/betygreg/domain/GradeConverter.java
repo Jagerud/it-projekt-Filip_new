@@ -21,7 +21,7 @@ public class GradeConverter {
         return grade;
     }
     public String getAsString (Grade grade){
-            return grade.getGrade();
+        return grade.getGrade();
     }
 
 }
