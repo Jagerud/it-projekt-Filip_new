@@ -43,17 +43,7 @@ public class Student extends Observable {
     }
 
     public String progress(String grade) { //går inte komplettera
-        if (grade.compareTo("VG") == 0) {
-            points++;
-        } else if (grade.compareTo("U") == 0) {
-            return "Incomplete course results";
-        }
-        if (grade.compareTo("4") == 0) {
-            points++;
-        } else if (grade.compareTo("U") == 0) {
-            return "Incomplete course results";
-        }
-        if (grade.compareTo("5") == 0) {
+        if (grade.compareTo("VG") == 0 || grade.compareTo("4") == 0 || grade.compareTo("5") == 0) {
             points++;
         } else if (grade.compareTo("U") == 0) {
             return "Incomplete course results";
