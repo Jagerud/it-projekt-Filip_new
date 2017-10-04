@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 public class Doer {
     private HashMap<String, Grade> assignmentGrade = new HashMap<>();
+    private int points = 0;
 
     public Doer (){
 

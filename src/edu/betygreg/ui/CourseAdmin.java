@@ -74,7 +74,7 @@ public class CourseAdmin {
 
                 System.out.print("Course grade: ");
                 try {
-                   // System.out.println(domainFacade.getCourseList().get(courseInput).getStudentList().getStudentHashMap().get(studentInput).progress(domainFacade.getGrade(assignmentInput).getGrade())); //TODO nullpointer
+                    System.out.println(domainFacade.getCourseList().get(courseInput).getStudentList().getStudentHashMap().get(studentInput).progress(gradeInput)); //TODO nullpointer
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -96,7 +96,7 @@ public class CourseAdmin {
 
                     while(i.hasNext()) {
                         Map.Entry me = (Map.Entry)i.next();
-                        System.out.println("Grade: " + me.getKey().toString() + " Assignment: " + ((Grade)me.getValue()).getGrade());
+                        System.out.println("Assignment: " + me.getKey().toString() + " Grade: " + ((Grade)me.getValue()).getGrade());
                         domainFacade.setGrade(me.getKey().toString(), (Grade)me.getValue()); //TODO fattar inte detta riktigt Carl, funkar inte med grade nu iaf
                     }
 
