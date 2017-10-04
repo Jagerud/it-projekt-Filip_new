@@ -9,7 +9,6 @@ public class Doer {
 
     }
 
-
     public HashMap<String, Grade> getAssignmentGrade() {
         return assignmentGrade;
     }

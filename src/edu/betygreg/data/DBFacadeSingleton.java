@@ -52,13 +52,7 @@ public class DBFacadeSingleton {
 
             Connection conn = DriverManager.getConnection(connectionUrl, "sa","password");
             //Connection conn = DriverManager.getConnection(connectionUrl, "725G79L5caral311", "zPttfbC80");
-/*
-            String query = "SELECT Grade FROM assignments WHERE ID = (?)";
-            Statement stmt = null;
-            stmt = conn.createStatement();
-            stmt.setString(1, id);
-            ResultSet rs = stmt.executeQuery(query);
-*/
+
             PreparedStatement st = conn.prepareStatement("SELECT Grade FROM assignments WHERE ID = (?)");
             st.setString(1, id);
             ResultSet rs = st.executeQuery();
