@@ -28,9 +28,9 @@ public class Assignment {
         return assignmentGrade;
     }
 */
-    public void setGrade(String grade) {
+    public Grade setGrade(String grade) {
         //assignmentGrade.setGrade(grade);
-        gradeFactory.getGrade(grade).setGrade(grade);
+        return gradeFactory.getGrade(grade).setGrade(grade);
     }
 
     //Oklart om de ska ändras utifrån

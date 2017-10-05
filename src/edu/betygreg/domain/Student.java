@@ -7,7 +7,8 @@ public class Student extends Observable {
     private String id;
     private String name;
     private AssignmentList aList;
-    private int points = 0;
+    private boolean fail = false;
+    private boolean success = false;
     //private String grade;
     //private Grade gradeObject;
 
@@ -36,39 +37,12 @@ public class Student extends Observable {
         return aList.getAssignmentGradeObject(key);
     }
 */
-    public void setStudentGrade(String key, String grade) {
-        aList.setAssignmentGrade(key, grade);
+    public Grade setStudentGrade(String key, String grade) {
         setChanged();
         notifyObservers("The student " + name + " has gotten the grade " + grade + " on assignment " + key);
+        return aList.setAssignmentGrade(key, grade);
     }
-
-    public String progress(String grade) { //går inte komplettera
-        if (grade.compareTo("VG") == 0) {
-            points++;
-        } else if (grade.compareTo("U") == 0) {
-            return "Incomplete course results";
-        }
-        if (grade.compareTo("VG") == 0) {
-            points++;
-        } else if (grade.compareTo("U") == 0) {
-            return "Incomplete course results";
-        }
-        if (grade.compareTo("VG") == 0) {
-            points++;
-        } else if (grade.compareTo("U") == 0) {
-            return "Incomplete course results";
-        }
-        if (points < 0) {
-            return "Incomplete course results";
-        }
-        if (points == 0) {
-            return "G";
-        } else {
-            return "VG";
-        }
-
-    }
-
+    
     public AssignmentList getaList() {
         return aList;
     }

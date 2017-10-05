@@ -5,17 +5,17 @@ import edu.betygreg.data.DataFacade;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Observable;
-import java.util.Observer;
 
 /**
  * Created by Jaeger on 2016-10-25.
  */
-public class DomainFacade implements Observer {
+public class DomainFacade {
 
     private CourseList courseList = new CourseList("test");
     private DataFacade dataFacade; //= new DataFacade();
-    //private GradeConvert gradeConvert = new GradeConvert();
+    private GradeConverter gradeConverter = new GradeConverter();
+    //private GradeConverter gradeConvert = new GradeConverter();
+    private Doer doer = new Doer();
 
     public DomainFacade(DataFacade dataFacade) {
         this.dataFacade = dataFacade;
@@ -40,24 +40,33 @@ public class DomainFacade implements Observer {
         return courseList.getCourseList().get(courseKey).getStudentGradeObejct(listKey, studentKey);
     }
     */
-    public void setStudentGrade(int courseKey, String listKey, String studentKey, String grade) {
-        courseList.getCourseList().get(courseKey).setStudentGrade(listKey, studentKey, grade);
+    public Grade setStudentGrade(int courseKey, String listKey, String studentKey, String grade) {
+        return courseList.getCourseList().get(courseKey).setStudentGrade(listKey, studentKey, grade);
     }
 
-    public void setGrade(String id, String grade) throws Exception {
-        dataFacade.setGrade(id, grade);
+    public void setGrade(String id, Grade grade) throws Exception {
+        dataFacade.setGrade(id, gradeConverter.getAsString(grade));
     }
-    public String getGrade(String id) throws Exception {
-        return dataFacade.getGrade(id);
+    public Grade getGrade(String id) throws Exception {
+        return gradeConverter.getAsObject(id);
+        //return dataFacade.getGrade(id);
+    }
+    public void emptyHashMap() {
+    	doer.emptyHashMap();
+    }
+    public String progress() {
+    	return doer.progress();
+    }
+    public void putAssignmentGrade (String assignmentInput, Grade gradeInput) {
+        doer.putAssignmentGrade(assignmentInput, gradeInput);
+    }
+    public HashMap<String, Grade> getAssignmentGrade() {
+        return doer.getAssignmentGrade();
     }
     /*
     public String convertGrade(Grade grade, String newGrade, String student, String assignment) {
         return gradeConvert.convertGrade(grade, newGrade, student, assignment);
     }
-    */
 
-    @Override
-    public void update(Observable o, Object arg) {
-        System.out.println(arg);
-    }
+*/
 }

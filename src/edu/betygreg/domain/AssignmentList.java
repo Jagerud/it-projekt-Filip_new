@@ -29,8 +29,8 @@ public class AssignmentList {
         return assignmentHList.get(key).getGradeObject();
     }
     */
-    public void setAssignmentGrade(String key, String grade) {
-        assignmentHList.get(key).setGrade(grade);
+    public Grade setAssignmentGrade(String key, String grade) {
+        return assignmentHList.get(key).setGrade(grade);
     }
 
     public void renameAssignment(String key, String name) {
