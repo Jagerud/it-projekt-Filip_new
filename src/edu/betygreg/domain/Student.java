@@ -7,7 +7,8 @@ public class Student extends Observable {
     private String id;
     private String name;
     private AssignmentList aList;
-    private int points = 0;
+    private boolean fail = true;
+    private boolean success = false;
     //private String grade;
     //private Grade gradeObject;
 
@@ -44,17 +45,17 @@ public class Student extends Observable {
 
     public String progress(String grade) { //går inte komplettera
         if (grade.compareTo("VG") == 0 || grade.compareTo("4") == 0 || grade.compareTo("5") == 0) {
-            points++;
+            success = true;
         } else if (grade.compareTo("U") == 0) {
-            return "Incomplete course results";
+        	fail = true;;
         }
-        if (points < 0) {
-            return "Incomplete course results";
-        }
-        if (points == 0) {
-            return "G";
-        } else {
+        if (fail) {
+            return "Incomplete course results.";
+        } else if (success){
             return "VG";
+        }
+        else {
+        	return "G";
         }
 
     }
