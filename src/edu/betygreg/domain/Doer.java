@@ -31,6 +31,7 @@ public class Doer {
     public String progress() { //går inte komplettera
     	
     	Iterator i = assignmentGrade.entrySet().iterator();
+    	int counter = 0;
 
         while(i.hasNext()) {
             Map.Entry me = (Map.Entry)i.next();
@@ -47,8 +48,9 @@ public class Doer {
             else {
             	fail = false;
             }
+            counter ++;
         }
-        if (fail) {
+        if (fail || counter < 3) {
             return "Incomplete course results.";
         } else if (success){
             return "VG";
