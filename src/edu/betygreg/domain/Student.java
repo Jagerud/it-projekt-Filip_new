@@ -42,23 +42,7 @@ public class Student extends Observable {
         notifyObservers("The student " + name + " has gotten the grade " + grade + " on assignment " + key);
         return aList.setAssignmentGrade(key, grade);
     }
-
-    public String progress(String grade) { //går inte komplettera
-        if (grade.compareTo("VG") == 0 || grade.compareTo("4") == 0 || grade.compareTo("5") == 0) {
-            success = true;
-        } else if (grade.compareTo("U") == 0) {
-        	fail = true;;
-        }
-        if (fail) {
-            return "Incomplete course results.";
-        } else if (success){
-            return "VG";
-        }
-        else {
-        	return "G";
-        }
-    }
-
+    
     public AssignmentList getaList() {
         return aList;
     }

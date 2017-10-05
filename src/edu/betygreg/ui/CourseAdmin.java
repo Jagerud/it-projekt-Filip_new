@@ -61,7 +61,7 @@ public class CourseAdmin {
                 System.out.println("Student grade on assignment " + assignmentInput + " ");
                 //System.out.println(domainFacade.getCourseList().get(studentInput).getName());
                 try {
-                    System.out.println(domainFacade.getGrade(assignmentInput).getGrade());
+                    System.out.println("Database Grade: " + domainFacade.getGrade(assignmentInput).getGrade());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -69,11 +69,11 @@ public class CourseAdmin {
 
                 gradeInput = sc.next();
                 domainFacade.putAssignmentGrade(assignmentInput, domainFacade.setStudentGrade(courseInput, studentInput, assignmentInput, gradeInput));
-                System.out.println("\nAssignment grades for student: \n");
+                //System.out.println("\nAssignment grades for student: \n");
 
                 System.out.print("Course grade: ");
                 try {
-                    System.out.println(domainFacade.progress()); //TODO nullpointer
+                    System.out.println(domainFacade.progress());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -96,7 +96,7 @@ public class CourseAdmin {
                     while(i.hasNext()) {
                         Map.Entry me = (Map.Entry)i.next();
                         System.out.println("Assignment: " + me.getKey().toString() + " Grade: " + ((Grade)me.getValue()).getGrade());
-                        domainFacade.setGrade(me.getKey().toString(), (Grade)me.getValue()); //TODO fattar inte detta riktigt Carl, funkar inte med grade nu iaf
+                        domainFacade.setGrade(me.getKey().toString(), (Grade)me.getValue());
                     }
                     domainFacade.emptyHashMap();
                 } catch (Exception e) {
