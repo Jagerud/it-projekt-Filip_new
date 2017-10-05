@@ -57,7 +57,6 @@ public class Student extends Observable {
         else {
         	return "G";
         }
-
     }
 
     public AssignmentList getaList() {

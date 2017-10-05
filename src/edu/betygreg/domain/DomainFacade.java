@@ -15,6 +15,7 @@ public class DomainFacade {
     private DataFacade dataFacade; //= new DataFacade();
     private GradeConverter gradeConverter = new GradeConverter();
     //private GradeConverter gradeConvert = new GradeConverter();
+    private Doer doer = new Doer();
 
     public DomainFacade(DataFacade dataFacade) {
         this.dataFacade = dataFacade;
@@ -49,6 +50,18 @@ public class DomainFacade {
     public Grade getGrade(String id) throws Exception {
         return gradeConverter.getAsObject(id);
         //return dataFacade.getGrade(id);
+    }
+    public void emptyHashMap() {
+    	doer.emptyHashMap();
+    }
+    public String progress() {
+    	return doer.progress();
+    }
+    public void putAssignmentGrade (String assignmentInput, Grade gradeInput) {
+        doer.putAssignmentGrade(assignmentInput, gradeInput);
+    }
+    public HashMap<String, Grade> getAssignmentGrade() {
+        return doer.getAssignmentGrade();
     }
     /*
     public String convertGrade(Grade grade, String newGrade, String student, String assignment) {
