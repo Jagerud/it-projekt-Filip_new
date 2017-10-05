@@ -7,7 +7,7 @@ public class Student extends Observable {
     private String id;
     private String name;
     private AssignmentList aList;
-    private boolean fail = true;
+    private boolean fail = false;
     private boolean success = false;
     //private String grade;
     //private Grade gradeObject;
